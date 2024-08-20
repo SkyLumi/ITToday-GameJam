@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://dgiylk1w5nkt0"]
+
+[ext_resource type="Texture2D" uid="uid://bomqom3rdhldh" path="res://assets/characters/android.png" id="1_1syj7"]
+[ext_resource type="Script" path="res://scripts/CharacterMove.gd" id="1_ke1r7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjmbv"]
+atlas = ExtResource("1_1syj7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_li7vh"]
+atlas = ExtResource("1_1syj7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8jlc"]
+atlas = ExtResource("1_1syj7")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvh5l"]
+atlas = ExtResource("1_1syj7")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qidxm"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjmbv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_li7vh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8jlc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvh5l")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8tf2s"]
+radius = 5.52113
+height = 19.4175
+
+[node name="Robot" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_ke1r7")
+speed = 80
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qidxm")
+animation = &"idle"
+autoplay = "idle"
+frame = 2
+frame_progress = 0.285958
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7.255)
+rotation = 1.5708
+scale = Vector2(0.355, 0.515)
+shape = SubResource("CapsuleShape2D_8tf2s")
