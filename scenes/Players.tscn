@@ -10,7 +10,7 @@
 script = ExtResource("1_jtlp8")
 
 [node name="Manusia" parent="." instance=ExtResource("1_mjinc")]
-position = Vector2(0, 8)
+position = Vector2(0, 4.76837e-07)
 scale = Vector2(0.359998, 0.359998)
 is_active = true
 is_manusia = true
@@ -19,7 +19,7 @@ is_manusia = true
 zoom = Vector2(4, 4)
 
 [node name="plumbob" parent="Manusia" instance=ExtResource("3_w2sog")]
-position = Vector2(-2.77779, -66.667)
+position = Vector2(-2.77779, -50.0003)
 scale = Vector2(0.888895, 0.888895)
 
 [node name="Robot" parent="." instance=ExtResource("2_e8kqb")]
@@ -31,7 +31,7 @@ zoom = Vector2(4, 4)
 
 [node name="plumbob" parent="Robot" instance=ExtResource("3_w2sog")]
 visible = false
-position = Vector2(0, -31.25)
+position = Vector2(0, -33.75)
 scale = Vector2(0.405558, 0.405558)
 
 [node name="PointLight2D" type="PointLight2D" parent="Robot"]
