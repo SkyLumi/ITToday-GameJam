@@ -15,7 +15,6 @@ dest_files=["res://.godot/imported/SolusFont-Regurawr.ttf-565359db85c473340b44d1
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
-disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48
