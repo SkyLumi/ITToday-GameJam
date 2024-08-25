@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://d0u2krkq2c1av"]
+[gd_scene load_steps=12 format=4 uid="uid://d0u2krkq2c1av"]
 
 [ext_resource type="Texture2D" uid="uid://cgjejtofcuhab" path="res://assets/tilesets/Properties/Buku.png" id="1_gl7id"]
 [ext_resource type="Texture2D" uid="uid://cc2oo64jujapi" path="res://assets/tilesets/Ancient/TX Tileset Stone Ground.png" id="2_iu582"]
 [ext_resource type="Texture2D" uid="uid://bl3j488y2v4od" path="res://assets/tilesets/Ancient/TX Props.png" id="2_jubh2"]
 [ext_resource type="PackedScene" uid="uid://bclymq4a2o10s" path="res://scenes/Players.tscn" id="3_76hms"]
 [ext_resource type="Texture2D" uid="uid://b2hloj0guegch" path="res://assets/objects/meja.png" id="4_1hypr"]
+[ext_resource type="PackedScene" uid="uid://drbr7i78igbu8" path="res://scenes/interact_area.tscn" id="6_c3fq1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ycnfe"]
 texture = ExtResource("1_gl7id")
@@ -243,3 +244,9 @@ color = Color(0.359069, 0.359069, 0.359069, 1)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisons"]
 polygon = PackedVector2Array(-1, -1, -1, -130, 353, -130, 353, -12, 386, -12, 386, -164, -29, -164, -29, -3)
+
+[node name="InteractArea" parent="." instance=ExtResource("6_c3fq1")]
+position = Vector2(57, 82)
+interact_label = "YEEE Berhasill!!"
+interact_type = "print_text"
+interact_value = "YEYY"
