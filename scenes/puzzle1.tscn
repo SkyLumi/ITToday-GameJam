@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://clskk6ymevqxr"]
+[gd_scene load_steps=11 format=4 uid="uid://clskk6ymevqxr"]
 
 [ext_resource type="Texture2D" uid="uid://cc2oo64jujapi" path="res://assets/tilesets/Ancient/TX Tileset Stone Ground.png" id="1_auvaf"]
 [ext_resource type="Texture2D" uid="uid://cgjejtofcuhab" path="res://assets/tilesets/Properties/Buku.png" id="1_y61r0"]
 [ext_resource type="Texture2D" uid="uid://bl3j488y2v4od" path="res://assets/tilesets/Ancient/TX Props.png" id="2_77g5k"]
 [ext_resource type="Texture2D" uid="uid://b2hloj0guegch" path="res://assets/objects/meja.png" id="4_e5aca"]
+[ext_resource type="PackedScene" uid="uid://bclymq4a2o10s" path="res://scenes/Players.tscn" id="5_ymway"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_odm3c"]
 texture = ExtResource("1_y61r0")
@@ -223,3 +224,8 @@ y_sort_enabled = true
 use_parent_material = true
 tile_map_data = PackedByteArray("AAARAAoAAQAAAAMAAAAQAAkAAQAHAAIAAAAPAAkAAQAHAAIAAAAOAAkAAQAHAAIAAAANAAkAAQAHAAIAAAAMAAkAAQAHAAIAAAASAAkAAQAHAAIAAAATAAkAAQAHAAIAAAAUAAkAAQAHAAIAAAAVAAkAAQAHAAIAAAAWAAkAAQAHAAIAAAA=")
 tile_set = SubResource("TileSet_4fco3")
+
+[node name="Player" parent="." instance=ExtResource("5_ymway")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(539, 554)
