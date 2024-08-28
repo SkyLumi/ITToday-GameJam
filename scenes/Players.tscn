@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bclymq4a2o10s"]
+[gd_scene load_steps=4 format=3 uid="uid://bclymq4a2o10s"]
 
 [ext_resource type="Script" path="res://scripts/CharacterSwitch.gd" id="1_jtlp8"]
 [ext_resource type="PackedScene" uid="uid://2o51htk5nq6w" path="res://scenes/manusia.tscn" id="1_mjinc"]
 [ext_resource type="PackedScene" uid="uid://dgiylk1w5nkt0" path="res://scenes/robot.tscn" id="2_e8kqb"]
-[ext_resource type="PackedScene" uid="uid://b2r0pykksxfv6" path="res://scenes/plumbob.tscn" id="3_w2sog"]
-[ext_resource type="Texture2D" uid="uid://bp6p16nsg2aqw" path="res://assets/particles/light.png" id="5_s0arj"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_jtlp8")
@@ -13,28 +11,7 @@ script = ExtResource("1_jtlp8")
 position = Vector2(0, 4.76837e-07)
 scale = Vector2(0.359998, 0.359998)
 is_active = true
-is_manusia = true
-
-[node name="Camera2D" type="Camera2D" parent="Manusia"]
-zoom = Vector2(4, 4)
-
-[node name="plumbob" parent="Manusia" instance=ExtResource("3_w2sog")]
-position = Vector2(-2.77779, -50.0003)
-scale = Vector2(0.888895, 0.888895)
 
 [node name="Robot" parent="." instance=ExtResource("2_e8kqb")]
 position = Vector2(23, 9)
 scale = Vector2(0.800001, 0.800001)
-
-[node name="Camera2D" type="Camera2D" parent="Robot"]
-zoom = Vector2(4, 4)
-
-[node name="plumbob" parent="Robot" instance=ExtResource("3_w2sog")]
-visible = false
-position = Vector2(0, -33.75)
-scale = Vector2(0.405558, 0.405558)
-
-[node name="PointLight2D" type="PointLight2D" parent="Robot"]
-energy = 0.5
-texture = ExtResource("5_s0arj")
-texture_scale = 0.7
