@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bp7puqk4bdxj1"
-path="res://.godot/imported/SolusFont-Regurawr.ttf-565359db85c473340b44d1512bb76b2b.fontdata"
+uid="uid://d2h84huewt2ny"
+path="res://.godot/imported/SolusV2-Regular.ttf-f5541bac35efde065adc3db75238ebe5.fontdata"
 
 [deps]
 
-source_file="res://Font/SolusFont-Regurawr.ttf"
-dest_files=["res://.godot/imported/SolusFont-Regurawr.ttf-565359db85c473340b44d1512bb76b2b.fontdata"]
+source_file="res://Font/SolusV2-Regular.ttf"
+dest_files=["res://.godot/imported/SolusV2-Regular.ttf-f5541bac35efde065adc3db75238ebe5.fontdata"]
 
 [params]
 
