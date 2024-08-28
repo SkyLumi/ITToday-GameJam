@@ -2,10 +2,6 @@ extends CharacterBody2D
 
 @export var speed = 80
 @export var is_active = false
-@export var is_manusia = false
-
-@onready var all_interactions = []
-@onready var interactLabel = $"InteractionComponents/Label"
 
 func get_input():
 	if is_active:
@@ -25,34 +21,11 @@ func get_input():
 			$AnimatedSprite2D.animation = "kanan"
 			$AnimatedSprite2D.play()
 		else:
-			if is_manusia:
-				$AnimatedSprite2D.stop()
-			else:
-				$AnimatedSprite2D.play()
+			$AnimatedSprite2D.stop()
 	else:
 		velocity = Vector2.ZERO
-		if is_manusia:
-			$AnimatedSprite2D.stop()
-		else:
-			$AnimatedSprite2D.play()
+		$AnimatedSprite2D.stop()
 
 func _physics_process(_delta):
 	get_input()
 	move_and_slide()
-
-
-func _on_interaction_area_area_entered(area: Area2D) -> void:
-	all_interactions.insert(0,area)
-	update_interactions()
-
-
-func _on_interaction_area_area_exited(area: Area2D) -> void:
-	all_interactions.erase(area)
-	update_interactions()
-	
-func update_interactions():
-	if all_interactions:
-		interactLabel.text = all_interactions[0].interact_label
-	else:
-		interactLabel.text = ""
-		

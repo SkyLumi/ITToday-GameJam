@@ -1,11 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://2o51htk5nq6w"]
+[gd_scene load_steps=25 format=3 uid="uid://2o51htk5nq6w"]
 
-[ext_resource type="Script" path="res://scripts/CharacterMove.gd" id="1_s7y3p"]
+[ext_resource type="Script" path="res://scripts/ManusiaMovement.gd" id="1_nsaoy"]
 [ext_resource type="Texture2D" uid="uid://cuvxi4q1ccyxl" path="res://assets/characters/Ahan_front.png" id="2_br4no"]
 [ext_resource type="Texture2D" uid="uid://d1ieiglnhfgck" path="res://assets/characters/Ahan_back.png" id="2_btvyp"]
 [ext_resource type="Texture2D" uid="uid://c4sl4412jyk1n" path="res://assets/characters/Ahan_right.png" id="4_lps7d"]
 [ext_resource type="Texture2D" uid="uid://ckku0d75orc67" path="res://assets/characters/Ahan_left.png" id="5_c57ob"]
-[ext_resource type="FontFile" uid="uid://bp7puqk4bdxj1" path="res://Font/SolusFont-Regurawr.ttf" id="6_nxfrq"]
+[ext_resource type="PackedScene" uid="uid://b2r0pykksxfv6" path="res://scenes/plumbob.tscn" id="6_j4pow"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_825rm"]
 atlas = ExtResource("2_br4no")
@@ -145,13 +145,10 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qpcok"]
 height = 23.9251
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ubp26"]
-radius = 37.6301
-
-[node name="Manusia" type="CharacterBody2D"]
+[node name="Manusia" type="CharacterBody2D" groups=["Manusia"]]
 scale = Vector2(0.319999, 0.319999)
 collision_layer = 2
-script = ExtResource("1_s7y3p")
+script = ExtResource("1_nsaoy")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -165,36 +162,9 @@ rotation = 1.5708
 scale = Vector2(0.605, 0.8)
 shape = SubResource("CapsuleShape2D_qpcok")
 
-[node name="InteractionComponents" type="Node2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
 
-[node name="InteractionArea" type="Area2D" parent="InteractionComponents"]
-collision_layer = 0
-collision_mask = 4
-monitorable = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponents/InteractionArea"]
-shape = SubResource("CircleShape2D_ubp26")
-
-[node name="Label" type="Label" parent="InteractionComponents"]
-z_index = 20
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -37.5001
-offset_top = -100.0
-offset_right = 725.5
-offset_bottom = 200.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.1, 0.1)
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("6_nxfrq")
-theme_override_font_sizes/font_size = 200
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
-[connection signal="area_entered" from="InteractionComponents/InteractionArea" to="." method="_on_interaction_area_area_entered"]
-[connection signal="area_exited" from="InteractionComponents/InteractionArea" to="." method="_on_interaction_area_area_exited"]
+[node name="plumbob" parent="." instance=ExtResource("6_j4pow")]
+position = Vector2(-2.77779, -50.0003)
+scale = Vector2(0.888895, 0.888895)
