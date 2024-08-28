@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dh086ln2w5hni" path="res://assets/background/MAP_1.png" id="3_6q26s"]
 [ext_resource type="Texture2D" uid="uid://bvw8nylgn4vm0" path="res://assets/objects/kertass_nutup_pintu.png" id="4_33pu5"]
 [ext_resource type="Texture2D" uid="uid://dy5c3ua1ae130" path="res://assets/objects/solus_rusak.png" id="5_8mc4w"]
-[ext_resource type="PackedScene" uid="uid://bpn8g3rhbqki0" path="res://scenes/Buku.tscn" id="6_82qqf"]
+[ext_resource type="PackedScene" path="res://scenes/Buku.tscn" id="6_82qqf"]
 [ext_resource type="PackedScene" uid="uid://dngit0dfiw4du" path="res://interaction/interaction area/interaction_area.tscn" id="6_k1bup"]
 [ext_resource type="PackedScene" uid="uid://b6xiwegxiqc6v" path="res://scenes/Object/lampu.tscn" id="7_pifcx"]
 
