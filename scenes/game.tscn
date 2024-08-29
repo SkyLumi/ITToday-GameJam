@@ -43,7 +43,7 @@ texture = ExtResource("3_6q26s")
 
 [node name="Manusia" parent="." instance=ExtResource("2_gagws")]
 z_index = 1
-position = Vector2(174, 96)
+position = Vector2(175, 110)
 is_active = true
 
 [node name="Poster" type="Sprite2D" parent="."]

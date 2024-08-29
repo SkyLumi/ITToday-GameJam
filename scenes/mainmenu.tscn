@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cd0tmp35aboah"]
+[gd_scene load_steps=8 format=3 uid="uid://cd0tmp35aboah"]
 
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_grsx6"]
 [ext_resource type="Texture2D" uid="uid://b2uqr667ggjld" path="res://assets/background/bg.jpg" id="1_x87bd"]
@@ -6,11 +6,65 @@
 [sub_resource type="SystemFont" id="SystemFont_uuswk"]
 font_names = PackedStringArray("Impact")
 
+[sub_resource type="Animation" id="Animation_oh6da"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mmqro"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kdv3o"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4hoj5"]
+_data = {
+"RESET": SubResource("Animation_oh6da"),
+"fade_in": SubResource("Animation_mmqro"),
+"fade_out": SubResource("Animation_kdv3o")
+}
+
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_grsx6")
@@ -85,3 +139,18 @@ custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Keluar"
+
+[node name="Transition" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4hoj5")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Transition"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_right = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
