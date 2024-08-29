@@ -8,7 +8,7 @@ func _ready():
 	
 func _process(_delta: float) -> void:
 	if gelap.visible == false:
-		interaction_area.action_name = "Baca"
+		interaction_area.action_name = "baca"
 	
 func _on_interact():
 	if gelap.visible == false:

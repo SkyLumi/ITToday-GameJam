@@ -1,6 +1,7 @@
 extends Node2D
 
-signal key_collected
+@warning_ignore("unused_signal")
+signal batrai_ambil
 
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var gelap = get_parent().get_node("CanvasModulate")
@@ -11,9 +12,9 @@ func _ready():
 	
 func _process(_delta: float) -> void:
 	if gelap.visible == false:
-		interaction_area.action_name = "Ambil"
+		interaction_area.action_name = "ambil"
 	
 func _on_interact():
 	if gelap.visible == false:
-		emit_signal("key_collected")
+		emit_signal("batrai_ambil")
 		queue_free() 
