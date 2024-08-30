@@ -1,0 +1,215 @@
+[gd_scene load_steps=15 format=3 uid="uid://c15u0m0pgwwo6"]
+
+[ext_resource type="Script" path="res://scripts/nyambung_kabel.gd" id="1_1bgym"]
+[ext_resource type="Texture2D" uid="uid://c1eadmqmxgyix" path="res://assets/objects/solus_wire-export.png" id="1_8a4vk"]
+[ext_resource type="Texture2D" uid="uid://d3uacym6bwgf6" path="res://assets/objects/kabel/biru.png" id="3_xxxey"]
+[ext_resource type="Texture2D" uid="uid://cybl32cdbhqqw" path="res://assets/objects/kabel/wire_pink.png" id="4_g16oe"]
+[ext_resource type="Texture2D" uid="uid://b1bfjmvvjrmcg" path="res://assets/objects/kabel/ungu.png" id="4_iaiqi"]
+[ext_resource type="Texture2D" uid="uid://c3hyk3xs7tyo5" path="res://assets/objects/kabel/hijau.png" id="5_latiw"]
+[ext_resource type="Texture2D" uid="uid://dtmwo2tnpyclg" path="res://assets/objects/kabel/wire_yellow.png" id="5_uh8nt"]
+[ext_resource type="Texture2D" uid="uid://di65ud280bxo" path="res://assets/objects/kabel/wire_purple.png" id="6_77etv"]
+[ext_resource type="Texture2D" uid="uid://e22k8n7svtdh" path="res://assets/objects/kabel/orange.png" id="6_cgqwj"]
+[ext_resource type="Texture2D" uid="uid://b73gomkwaphg6" path="res://assets/objects/kabel/wire_orange.png" id="7_ilv30"]
+[ext_resource type="Texture2D" uid="uid://ct5g515bmwd77" path="res://assets/objects/kabel/kuning.png" id="7_ucfym"]
+[ext_resource type="Texture2D" uid="uid://qml1jeumyukj" path="res://assets/objects/kabel/wire_green.png" id="8_ssndw"]
+[ext_resource type="Texture2D" uid="uid://5elyxukmu27a" path="res://assets/objects/kabel/merah.png" id="8_wn7ju"]
+[ext_resource type="Texture2D" uid="uid://brq8jrkm1t76" path="res://assets/objects/kabel/wire_blue.png" id="9_7oxxy"]
+
+[node name="nyambung_kabel" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_1bgym")
+metadata/_edit_use_anchors_ = true
+
+[node name="RobotBG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -326.0
+offset_top = -327.0
+offset_right = 326.0
+offset_bottom = 327.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8a4vk")
+
+[node name="wireBiru" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -324.0
+offset_top = -325.0
+offset_right = 327.0
+offset_bottom = 325.0
+texture = ExtResource("9_7oxxy")
+
+[node name="wireMerah" type="TextureRect" parent="."]
+visible = false
+offset_left = -328.0
+offset_top = -324.0
+offset_right = 323.0
+offset_bottom = 326.0
+texture = ExtResource("4_g16oe")
+
+[node name="wireKuning" type="TextureRect" parent="."]
+visible = false
+offset_left = -324.0
+offset_top = -323.0
+offset_right = 327.0
+offset_bottom = 327.0
+texture = ExtResource("5_uh8nt")
+
+[node name="wireUngu" type="TextureRect" parent="."]
+visible = false
+offset_left = -325.0
+offset_top = -324.0
+offset_right = 326.0
+offset_bottom = 326.0
+texture = ExtResource("6_77etv")
+
+[node name="wireOren" type="TextureRect" parent="."]
+visible = false
+offset_left = -322.0
+offset_top = -325.0
+offset_right = 329.0
+offset_bottom = 325.0
+texture = ExtResource("7_ilv30")
+
+[node name="wireHijau" type="TextureRect" parent="."]
+visible = false
+offset_left = -323.0
+offset_top = -325.0
+offset_right = 328.0
+offset_bottom = 325.0
+texture = ExtResource("8_ssndw")
+
+[node name="BiruKanan" type="TextureButton" parent="."]
+z_index = 1
+layout_mode = 2
+offset_left = 264.0
+offset_top = -234.0
+offset_right = 304.0
+offset_bottom = -195.0
+scale = Vector2(1.59155, 1.59155)
+texture_normal = ExtResource("3_xxxey")
+stretch_mode = 0
+
+[node name="UnguKanan" type="TextureButton" parent="."]
+z_index = 1
+offset_left = 264.0
+offset_top = -166.0
+offset_right = 304.0
+offset_bottom = -127.0
+scale = Vector2(1.59155, 1.59155)
+texture_normal = ExtResource("4_iaiqi")
+stretch_mode = 0
+
+[node name="HijauKanan" type="TextureButton" parent="."]
+z_index = 1
+offset_left = 264.0
+offset_top = -94.0
+offset_right = 304.0
+offset_bottom = -55.0
+scale = Vector2(1.59155, 1.59155)
+texture_normal = ExtResource("5_latiw")
+stretch_mode = 0
+
+[node name="OrenKanan" type="TextureButton" parent="."]
+z_index = 1
+offset_left = 264.0
+offset_top = -18.0
+offset_right = 304.0
+offset_bottom = 21.0
+scale = Vector2(1.59155, 1.59155)
+texture_normal = ExtResource("6_cgqwj")
+stretch_mode = 0
+
+[node name="KuningKanan" type="TextureButton" parent="."]
+z_index = 1
+offset_left = 264.0
+offset_top = 58.0
+offset_right = 304.0
+offset_bottom = 97.0
+scale = Vector2(1.59155, 1.59155)
+texture_normal = ExtResource("7_ucfym")
+stretch_mode = 0
+
+[node name="MerahKanan" type="TextureButton" parent="."]
+z_index = 1
+offset_left = 264.0
+offset_top = 136.0
+offset_right = 304.0
+offset_bottom = 175.0
+scale = Vector2(1.59155, 1.59155)
+texture_normal = ExtResource("8_wn7ju")
+stretch_mode = 0
+
+[node name="BiruKiri" type="TextureButton" parent="."]
+z_index = 1
+offset_left = -326.0
+offset_top = -93.0
+offset_right = -286.0
+offset_bottom = -54.0
+scale = Vector2(1.59155, 1.59155)
+texture_normal = ExtResource("3_xxxey")
+stretch_mode = 0
+
+[node name="UnguKiri" type="TextureButton" parent="."]
+z_index = 1
+offset_left = -326.0
+offset_top = 139.0
+offset_right = -286.0
+offset_bottom = 178.0
+scale = Vector2(1.59155, 1.59155)
+texture_normal = ExtResource("4_iaiqi")
+stretch_mode = 0
+
+[node name="HijauKiri" type="TextureButton" parent="."]
+z_index = 1
+offset_left = -326.0
+offset_top = 58.0
+offset_right = -286.0
+offset_bottom = 97.0
+scale = Vector2(1.59155, 1.59155)
+texture_normal = ExtResource("5_latiw")
+stretch_mode = 0
+
+[node name="OrenKiri" type="TextureButton" parent="."]
+z_index = 1
+offset_left = -326.0
+offset_top = -18.0
+offset_right = -286.0
+offset_bottom = 21.0
+scale = Vector2(1.59155, 1.59155)
+texture_normal = ExtResource("6_cgqwj")
+stretch_mode = 0
+
+[node name="KuningKiri" type="TextureButton" parent="."]
+z_index = 1
+offset_left = -326.0
+offset_top = -168.0
+offset_right = -286.0
+offset_bottom = -129.0
+scale = Vector2(1.59155, 1.59155)
+texture_normal = ExtResource("7_ucfym")
+stretch_mode = 0
+
+[node name="MerahKiri" type="TextureButton" parent="."]
+z_index = 1
+offset_left = -326.0
+offset_top = -236.0
+offset_right = -286.0
+offset_bottom = -197.0
+scale = Vector2(1.59155, 1.59155)
+texture_normal = ExtResource("8_wn7ju")
+stretch_mode = 0

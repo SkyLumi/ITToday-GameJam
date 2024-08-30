@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpn8g3rhbqki0"]
+
+[ext_resource type="Texture2D" uid="uid://cgjejtofcuhab" path="res://assets/tilesets/Properties/Buku.png" id="1_m5cho"]
+[ext_resource type="Script" path="res://scripts/buku.gd" id="2_80cph"]
+[ext_resource type="PackedScene" uid="uid://dngit0dfiw4du" path="res://interaction/interaction area/interaction_area.tscn" id="3_1ajod"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_axr2h"]
+radius = 23.0
+
+[node name="BukuHijau" type="Sprite2D"]
+texture = ExtResource("1_m5cho")
+script = ExtResource("2_80cph")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_1ajod")]
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_axr2h")

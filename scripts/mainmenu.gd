@@ -6,7 +6,6 @@ extends Control
 @onready var start_level = preload("res://scenes/game.tscn") as PackedScene
 @onready var transisi = $Transition
 @onready var colorect = $Transition/ColorRect
-@onready var player = get_tree().get_nodes_in_group("Manusia")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,12 +21,10 @@ func on_start_pressed() -> void:
 	await transisi.animation_finished
 	colorect.visible = false
 	get_tree().change_scene_to_packed(start_level)
-	Dialogic.start("enter_underlab")
-	print(player)
 	
 func on_exit_pressed() -> void:
 	get_tree().quit()
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass

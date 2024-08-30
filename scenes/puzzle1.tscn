@@ -1,11 +1,12 @@
-[gd_scene load_steps=12 format=4 uid="uid://clskk6ymevqxr"]
+[gd_scene load_steps=14 format=4 uid="uid://clskk6ymevqxr"]
 
 [ext_resource type="Texture2D" uid="uid://cc2oo64jujapi" path="res://assets/tilesets/Ancient/TX Tileset Stone Ground.png" id="1_auvaf"]
 [ext_resource type="Texture2D" uid="uid://cgjejtofcuhab" path="res://assets/tilesets/Properties/Buku.png" id="1_y61r0"]
 [ext_resource type="Texture2D" uid="uid://bl3j488y2v4od" path="res://assets/tilesets/Ancient/TX Props.png" id="2_77g5k"]
 [ext_resource type="Texture2D" uid="uid://b2hloj0guegch" path="res://assets/objects/meja.png" id="4_e5aca"]
 [ext_resource type="PackedScene" uid="uid://bclymq4a2o10s" path="res://scenes/Players.tscn" id="5_ymway"]
-[ext_resource type="PackedScene" uid="uid://bpn8g3rhbqki0" path="res://scenes/Object/Buku.tscn" id="6_3bjex"]
+[ext_resource type="Script" path="res://scripts/tombol.gd" id="6_1qlcs"]
+[ext_resource type="PackedScene" uid="uid://dngit0dfiw4du" path="res://interaction/interaction area/interaction_area.tscn" id="7_c04ka"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_odm3c"]
 texture = ExtResource("1_y61r0")
@@ -195,6 +196,9 @@ sources/2 = SubResource("TileSetAtlasSource_wppw8")
 sources/0 = SubResource("TileSetAtlasSource_odm3c")
 sources/3 = SubResource("TileSetAtlasSource_e2ic0")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrm6f"]
+size = Vector2(26, 27)
+
 [node name="level1" type="Node2D"]
 position = Vector2(12, 8)
 
@@ -231,5 +235,12 @@ z_index = 1
 y_sort_enabled = true
 position = Vector2(539, 554)
 
-[node name="Buku" parent="." instance=ExtResource("6_3bjex")]
-position = Vector2(655, 464)
+[node name="tombol" type="Node2D" parent="."]
+position = Vector2(656, 462)
+script = ExtResource("6_1qlcs")
+
+[node name="InteractionArea" parent="tombol" instance=ExtResource("7_c04ka")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tombol/InteractionArea"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_wrm6f")

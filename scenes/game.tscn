@@ -1,23 +1,82 @@
-[gd_scene load_steps=13 format=3 uid="uid://d0u2krkq2c1av"]
+[gd_scene load_steps=21 format=3 uid="uid://d0u2krkq2c1av"]
 
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_styg6"]
 [ext_resource type="PackedScene" uid="uid://2o51htk5nq6w" path="res://scenes/manusia.tscn" id="2_gagws"]
 [ext_resource type="Texture2D" uid="uid://dh086ln2w5hni" path="res://assets/background/MAP_1.png" id="3_6q26s"]
 [ext_resource type="Texture2D" uid="uid://bvw8nylgn4vm0" path="res://assets/objects/kertass_nutup_pintu.png" id="4_33pu5"]
 [ext_resource type="Texture2D" uid="uid://dy5c3ua1ae130" path="res://assets/objects/solus_rusak.png" id="5_8mc4w"]
-[ext_resource type="PackedScene" uid="uid://bpn8g3rhbqki0" path="res://scenes/Object/Buku.tscn" id="6_82qqf"]
+[ext_resource type="Script" path="res://scripts/poster.gd" id="5_q8nrj"]
+[ext_resource type="PackedScene" uid="uid://bpn8g3rhbqki0" path="res://scenes/Object/BukuHijau.tscn" id="6_82qqf"]
 [ext_resource type="PackedScene" uid="uid://dngit0dfiw4du" path="res://interaction/interaction area/interaction_area.tscn" id="6_k1bup"]
 [ext_resource type="Script" path="res://scripts/robotInteract.gd" id="6_n3x83"]
 [ext_resource type="PackedScene" uid="uid://b6xiwegxiqc6v" path="res://scenes/Object/lampu.tscn" id="7_pifcx"]
+[ext_resource type="PackedScene" uid="uid://c15u0m0pgwwo6" path="res://scenes/GUI/nyambungKabel.tscn" id="8_4tb18"]
 [ext_resource type="PackedScene" uid="uid://dgbvmcrsbkrad" path="res://scenes/Object/batrai.tscn" id="9_1j4vl"]
 [ext_resource type="PackedScene" uid="uid://d5osej2gkwp5" path="res://scenes/Object/kabel.tscn" id="10_rf5bc"]
 [ext_resource type="FontFile" uid="uid://d2h84huewt2ny" path="res://Font/SolusV2-Regular.ttf" id="11_nv3ie"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lt744"]
+size = Vector2(36, 37)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_46u1b"]
 radius = 22.0227
+
+[sub_resource type="Animation" id="Animation_oh6da"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mmqro"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kdv3o"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4hoj5"]
+_data = {
+"RESET": SubResource("Animation_oh6da"),
+"fade_in": SubResource("Animation_mmqro"),
+"fade_out": SubResource("Animation_kdv3o")
+}
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(388, 272)
+script = ExtResource("1_styg6")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.359069, 0.359069, 0.359069, 1)
@@ -50,6 +109,14 @@ is_active = true
 z_index = 1
 position = Vector2(221.5, -97.9964)
 texture = ExtResource("4_33pu5")
+script = ExtResource("5_q8nrj")
+
+[node name="InteractionArea" parent="Poster" instance=ExtResource("6_k1bup")]
+position = Vector2(0.5, 9.9964)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Poster/InteractionArea"]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_lt744")
 
 [node name="Robot" type="Sprite2D" parent="."]
 z_index = 1
@@ -91,3 +158,22 @@ offset_bottom = 489.0
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("11_nv3ie")
 theme_override_font_sizes/font_size = 400
+
+[node name="nyambung_kabel" parent="CanvasLayer" instance=ExtResource("8_4tb18")]
+visible = false
+
+[node name="Transition" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_4hoj5")
+}
+movie_quit_on_finish = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Transition"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
