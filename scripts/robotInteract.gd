@@ -5,7 +5,9 @@ extends Sprite2D
 @onready var hint = get_node("../CanvasLayer/Label")
 @onready var hint2 = get_node("../CanvasLayer/Label2")
 @onready var nyambung_kabel = get_node("../CanvasLayer/nyambung_kabel")
+@onready var lobby = preload("res://scenes/lobby.tscn") as PackedScene
 @onready var manusia = get_node("../Manusia")
+
 
 var batrai_ambil: bool = false
 var kabel_ambil: bool = false
@@ -49,7 +51,7 @@ func _on_interact():
 			manusia.is_active = false
 			await nyambung_kabel.kabel_selesai
 			manusia.is_active = true
-			queue_free()
+			get_tree().change_scene_to_packed(lobby)
 		else:
 			hint.show()
 			hint2.show()

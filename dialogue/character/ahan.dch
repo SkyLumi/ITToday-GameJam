@@ -13,12 +13,13 @@
 "display_name": "ahan",
 "mirror": false,
 "nicknames": [""],
-"offset": Vector2(0, 0),
+"offset": Vector2(900, 0),
 "portraits": {
 "curious": {
 "export_overrides": {
 "image": "\"res://assets/characters/Ahan_bust_curious.png\""
 },
+"ignore_char_scale": false,
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,

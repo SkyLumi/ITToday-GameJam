@@ -1,22 +1,17 @@
-[gd_scene load_steps=21 format=3 uid="uid://d0u2krkq2c1av"]
+[gd_scene load_steps=16 format=3 uid="uid://ct7rab6qc8lls"]
 
-[ext_resource type="Script" path="res://scripts/game.gd" id="1_styg6"]
-[ext_resource type="PackedScene" uid="uid://2o51htk5nq6w" path="res://scenes/manusia.tscn" id="2_gagws"]
-[ext_resource type="Texture2D" uid="uid://dh086ln2w5hni" path="res://assets/background/MAP_1.png" id="3_6q26s"]
-[ext_resource type="Texture2D" uid="uid://bvw8nylgn4vm0" path="res://assets/objects/kertass_nutup_pintu.png" id="4_33pu5"]
-[ext_resource type="Texture2D" uid="uid://dy5c3ua1ae130" path="res://assets/objects/solus_rusak.png" id="5_8mc4w"]
-[ext_resource type="PackedScene" uid="uid://dngit0dfiw4du" path="res://interaction/interaction area/interaction_area.tscn" id="6_k1bup"]
-[ext_resource type="Script" path="res://scripts/robotInteract.gd" id="6_n3x83"]
-[ext_resource type="PackedScene" uid="uid://b6xiwegxiqc6v" path="res://scenes/Object/lampu.tscn" id="7_pifcx"]
-[ext_resource type="PackedScene" uid="uid://c15u0m0pgwwo6" path="res://scenes/GUI/nyambungKabel.tscn" id="8_4tb18"]
-[ext_resource type="PackedScene" uid="uid://dgbvmcrsbkrad" path="res://scenes/Object/batrai.tscn" id="9_1j4vl"]
-[ext_resource type="PackedScene" uid="uid://d5osej2gkwp5" path="res://scenes/Object/kabel.tscn" id="10_rf5bc"]
-[ext_resource type="FontFile" uid="uid://d2h84huewt2ny" path="res://Font/SolusV2-Regular.ttf" id="11_nv3ie"]
-[ext_resource type="Script" path="res://scripts/buku_biru.gd" id="14_xc817"]
-[ext_resource type="PackedScene" uid="uid://ddv0c6ban1yle" path="res://scenes/GUI/gui_buku_biru.tscn" id="14_ybm16"]
+[ext_resource type="Texture2D" uid="uid://dh086ln2w5hni" path="res://assets/background/MAP_1.png" id="1_63xx6"]
+[ext_resource type="PackedScene" uid="uid://bclymq4a2o10s" path="res://scenes/Players.tscn" id="2_uuuyl"]
+[ext_resource type="Texture2D" uid="uid://bvw8nylgn4vm0" path="res://assets/objects/kertass_nutup_pintu.png" id="3_xoh5w"]
+[ext_resource type="Script" path="res://scripts/poster.gd" id="4_au3sl"]
+[ext_resource type="PackedScene" uid="uid://dngit0dfiw4du" path="res://interaction/interaction area/interaction_area.tscn" id="5_h47q5"]
+[ext_resource type="FontFile" uid="uid://d2h84huewt2ny" path="res://Font/SolusV2-Regular.ttf" id="6_7qleg"]
+[ext_resource type="PackedScene" uid="uid://c15u0m0pgwwo6" path="res://scenes/GUI/nyambungKabel.tscn" id="7_24wvt"]
+[ext_resource type="PackedScene" uid="uid://ddv0c6ban1yle" path="res://scenes/GUI/gui_buku_biru.tscn" id="8_kiess"]
+[ext_resource type="Script" path="res://scripts/buku_biru.gd" id="9_yb2lf"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_46u1b"]
-radius = 22.0227
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lt744"]
+size = Vector2(36, 37)
 
 [sub_resource type="Animation" id="Animation_oh6da"]
 length = 0.001
@@ -73,13 +68,9 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_rndp4"]
 radius = 21.0238
 
-[node name="Game" type="Node2D"]
+[node name="lobby" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(388, 272)
-script = ExtResource("1_styg6")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.359069, 0.359069, 0.359069, 1)
 
 [node name="collisons" type="StaticBody2D" parent="."]
 position = Vector2(91, 10)
@@ -94,38 +85,26 @@ polygon = PackedVector2Array(186, -52, 186, -16, 158, -16, 158, 64, 185, 64, 185
 [node name="Background" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(171, 7)
-texture = ExtResource("3_6q26s")
+texture = ExtResource("1_63xx6")
 
-[node name="Manusia" parent="." instance=ExtResource("2_gagws")]
+[node name="Players" parent="." instance=ExtResource("2_uuuyl")]
 z_index = 1
-position = Vector2(175, 110)
-is_active = true
+y_sort_enabled = true
+position = Vector2(135, -30)
 
 [node name="Poster" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(221.5, -97.9964)
-texture = ExtResource("4_33pu5")
+texture = ExtResource("3_xoh5w")
+script = ExtResource("4_au3sl")
 
-[node name="Robot" type="Sprite2D" parent="."]
-z_index = 1
-position = Vector2(130, -60)
-texture = ExtResource("5_8mc4w")
-script = ExtResource("6_n3x83")
-
-[node name="InteractionArea" parent="Robot" instance=ExtResource("6_k1bup")]
+[node name="InteractionArea" parent="Poster" instance=ExtResource("5_h47q5")]
+position = Vector2(0.5, 9.9964)
 action_name = ""
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot/InteractionArea"]
-shape = SubResource("CircleShape2D_46u1b")
-
-[node name="Lampu" parent="." instance=ExtResource("7_pifcx")]
-position = Vector2(173, 7)
-
-[node name="Batrai" parent="." instance=ExtResource("9_1j4vl")]
-position = Vector2(78, 109)
-
-[node name="Kabel" parent="." instance=ExtResource("10_rf5bc")]
-position = Vector2(77, 23)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Poster/InteractionArea"]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_lt744")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -135,7 +114,7 @@ offset_top = 30.0
 offset_right = 228.0
 offset_bottom = 430.0
 scale = Vector2(0.1, 0.1)
-theme_override_fonts/font = ExtResource("11_nv3ie")
+theme_override_fonts/font = ExtResource("6_7qleg")
 theme_override_font_sizes/font_size = 400
 
 [node name="Label2" type="Label" parent="CanvasLayer"]
@@ -144,13 +123,13 @@ offset_top = 89.0
 offset_right = 228.0
 offset_bottom = 489.0
 scale = Vector2(0.1, 0.1)
-theme_override_fonts/font = ExtResource("11_nv3ie")
+theme_override_fonts/font = ExtResource("6_7qleg")
 theme_override_font_sizes/font_size = 400
 
-[node name="nyambung_kabel" parent="CanvasLayer" instance=ExtResource("8_4tb18")]
+[node name="nyambung_kabel" parent="CanvasLayer" instance=ExtResource("7_24wvt")]
 visible = false
 
-[node name="gui_buku_biru" parent="CanvasLayer" instance=ExtResource("14_ybm16")]
+[node name="gui_buku_biru" parent="CanvasLayer" instance=ExtResource("8_kiess")]
 visible = false
 
 [node name="Transition" type="AnimationPlayer" parent="CanvasLayer"]
@@ -171,10 +150,12 @@ metadata/_edit_use_anchors_ = true
 
 [node name="BukuBiru" type="Node2D" parent="."]
 position = Vector2(261, 10)
-script = ExtResource("14_xc817")
+script = ExtResource("9_yb2lf")
 
-[node name="InteractionArea" parent="BukuBiru" instance=ExtResource("6_k1bup")]
+[node name="InteractionArea" parent="BukuBiru" instance=ExtResource("5_h47q5")]
 action_name = "Baca"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BukuBiru/InteractionArea"]
 shape = SubResource("CircleShape2D_rndp4")
+
+[connection signal="body_exited" from="BukuBiru/InteractionArea" to="BukuBiru" method="_on_interaction_area_body_exited"]

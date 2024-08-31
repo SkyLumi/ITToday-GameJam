@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var is_active = false
 
 func get_input():
-	if is_active:
+	if is_active and Global.player_jalan:
 		var input_direction = Input.get_vector("jalan_kiri", "jalan_kanan", "jalan_depan", "jalan_belakang")
 		velocity = input_direction * speed
 		

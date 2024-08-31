@@ -4,10 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bpn8g3rhbqki0" path="res://scenes/Object/BukuHijau.tscn" id="5_qlr0g"]
 [ext_resource type="PackedScene" uid="uid://bclymq4a2o10s" path="res://scenes/Players.tscn" id="5_ymway"]
 [ext_resource type="Script" path="res://scripts/tombol.gd" id="6_1qlcs"]
+[ext_resource type="Texture2D" uid="uid://6o1cyvfhyopy" path="res://assets/objects/flashdisk.png" id="6_44oev"]
 [ext_resource type="PackedScene" uid="uid://dngit0dfiw4du" path="res://interaction/interaction area/interaction_area.tscn" id="7_c04ka"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wqu3"]
-size = Vector2(93, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrm6f"]
 size = Vector2(26, 117)
@@ -16,25 +14,24 @@ size = Vector2(26, 117)
 position = Vector2(12, 8)
 
 [node name="Map2" type="Sprite2D" parent="."]
-position = Vector2(598, 193)
+position = Vector2(894, 93)
 texture = ExtResource("1_26oqt")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(508, 630, 508, 466, 397, 466, 397, 397, 508, 397, 508, 175, 346, 175, 346, 120, 508, 120, 508, -55, 390, -55, 391, -118, 447, -118, 447, -177, 314, -177, 314, -229, 447, -229, 447, -245, 511, -245, 511, -118, 584, -118, 584, -21, 733, -21, 733, 102, 588, 102, 588, 201, 817, 201, 817, 258, 588, 258, 588, 335, 882, 335, 882, 432, 812, 432, 812, 387, 589, 387, 589, 631, 626, 630, 621, 436, 906, 456, 906, 296, 835, 105, 710, -116, 536, -283, 306, -271, 259, -112, 391, 22, 280, 170, 426, 285, 328, 439, 375, 554, 447, 603)
+polygon = PackedVector2Array(504, 620, 586, 620, 586, 377, 809, 377, 809, 422, 879, 422, 879, 324, 585, 324, 585, 247, 814, 247, 814, 190, 584, 190, 584, 32, 644, 32, 644, 174, 987, 174, 987, -110, 1800, -110, 1800, -233, 915, -233, 915, 109, 701, 109, 701, 32, 776, 32, 775, -229, 508, -228, 508, -252, 588, -252, 588, -342, 390, -341, 390, -251, 443, -251, 443, -239, 329, -239, 329, -370, 1326, -370, 1326, -435, 273, -434, 272, -336, -13, -336, -13, -275, 272, -275, 272, -186, 444, -186, 443, -128, 387, -128, 388, -65, 504, -65, 504, 109, 282, 109, 282, 0, 230, 0, 230, 165, 504, 165, 503, 387, 393, 387, 393, 455, 504, 455, 504, 625, 479, 625, 336, 470, 402, 282, 203, 199, 159, 7, 285, -79, 160, -216, -87, -264, -23, -393, 228, -445, 652, -479, 1408, -456, 1865, -242, 1745, 175, 994, 283, 817, 597, 511, 631)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(550.5, 637)
-shape = SubResource("RectangleShape2D_3wqu3")
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(508, -128, 508, -166, 708, -166, 708, -35, 585, -35, 585, -129)
 
 [node name="Player" parent="." instance=ExtResource("5_ymway")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(539, 554)
+position = Vector2(833, 385)
 
 [node name="tombol" type="Node2D" parent="."]
-position = Vector2(718, 41)
+position = Vector2(1781, -174)
 script = ExtResource("6_1qlcs")
 
 [node name="InteractionArea" parent="tombol" instance=ExtResource("7_c04ka")]
@@ -44,7 +41,12 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_wrm6f")
 
 [node name="BukuHijau" parent="." instance=ExtResource("5_qlr0g")]
-position = Vector2(350, -205)
+position = Vector2(1287, -401)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.187176, 0.187176, 0.187176, 1)
+
+[node name="Flashdisk" type="Sprite2D" parent="."]
+position = Vector2(544, 595)
+texture = ExtResource("6_44oev")
