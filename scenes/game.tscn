@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d0u2krkq2c1av"]
+[gd_scene load_steps=23 format=3 uid="uid://d0u2krkq2c1av"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_styg6"]
 [ext_resource type="PackedScene" uid="uid://2o51htk5nq6w" path="res://scenes/manusia.tscn" id="2_gagws"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bvw8nylgn4vm0" path="res://assets/objects/kertass_nutup_pintu.png" id="4_33pu5"]
 [ext_resource type="Texture2D" uid="uid://dy5c3ua1ae130" path="res://assets/objects/solus_rusak.png" id="5_8mc4w"]
 [ext_resource type="Script" path="res://scripts/poster.gd" id="5_q8nrj"]
-[ext_resource type="PackedScene" uid="uid://bpn8g3rhbqki0" path="res://scenes/Object/BukuHijau.tscn" id="6_82qqf"]
 [ext_resource type="PackedScene" uid="uid://dngit0dfiw4du" path="res://interaction/interaction area/interaction_area.tscn" id="6_k1bup"]
 [ext_resource type="Script" path="res://scripts/robotInteract.gd" id="6_n3x83"]
 [ext_resource type="PackedScene" uid="uid://b6xiwegxiqc6v" path="res://scenes/Object/lampu.tscn" id="7_pifcx"]
@@ -14,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://dgbvmcrsbkrad" path="res://scenes/Object/batrai.tscn" id="9_1j4vl"]
 [ext_resource type="PackedScene" uid="uid://d5osej2gkwp5" path="res://scenes/Object/kabel.tscn" id="10_rf5bc"]
 [ext_resource type="FontFile" uid="uid://d2h84huewt2ny" path="res://Font/SolusV2-Regular.ttf" id="11_nv3ie"]
+[ext_resource type="Script" path="res://scripts/buku_biru.gd" id="14_xc817"]
+[ext_resource type="PackedScene" uid="uid://ddv0c6ban1yle" path="res://scenes/GUI/gui_buku_biru.tscn" id="14_ybm16"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lt744"]
 size = Vector2(36, 37)
@@ -73,6 +74,9 @@ _data = {
 "fade_out": SubResource("Animation_kdv3o")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_rndp4"]
+radius = 21.0238
+
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(388, 272)
@@ -90,10 +94,6 @@ polygon = PackedVector2Array(1, 0, 1, -49, 77, -49, 77, -73, 131, -73, 131, -44,
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="collisons"]
 polygon = PackedVector2Array(186, -52, 186, -16, 158, -16, 158, 64, 185, 64, 185, 111, 7, 111, 7, 85, -26, 85, -26, 29, 3, 29, 3, -4, -26, -4, -47, -4, -47, 146, 203, 146, 203, -52)
-
-[node name="Buku" parent="." instance=ExtResource("6_82qqf")]
-z_index = 1
-position = Vector2(261, 10)
 
 [node name="Background" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -113,6 +113,7 @@ script = ExtResource("5_q8nrj")
 
 [node name="InteractionArea" parent="Poster" instance=ExtResource("6_k1bup")]
 position = Vector2(0.5, 9.9964)
+action_name = ""
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Poster/InteractionArea"]
 position = Vector2(0, 10)
@@ -162,6 +163,9 @@ theme_override_font_sizes/font_size = 400
 [node name="nyambung_kabel" parent="CanvasLayer" instance=ExtResource("8_4tb18")]
 visible = false
 
+[node name="gui_buku_biru" parent="CanvasLayer" instance=ExtResource("14_ybm16")]
+visible = false
+
 [node name="Transition" type="AnimationPlayer" parent="CanvasLayer"]
 libraries = {
 "": SubResource("AnimationLibrary_4hoj5")
@@ -177,3 +181,13 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="BukuBiru" type="Node2D" parent="."]
+position = Vector2(261, 10)
+script = ExtResource("14_xc817")
+
+[node name="InteractionArea" parent="BukuBiru" instance=ExtResource("6_k1bup")]
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BukuBiru/InteractionArea"]
+shape = SubResource("CircleShape2D_rndp4")

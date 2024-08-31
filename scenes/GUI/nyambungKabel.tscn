@@ -55,6 +55,7 @@ texture = ExtResource("9_7oxxy")
 
 [node name="wireMerah" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = -328.0
 offset_top = -324.0
 offset_right = 323.0
@@ -63,6 +64,7 @@ texture = ExtResource("4_g16oe")
 
 [node name="wireKuning" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = -324.0
 offset_top = -323.0
 offset_right = 327.0
@@ -71,6 +73,7 @@ texture = ExtResource("5_uh8nt")
 
 [node name="wireUngu" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = -325.0
 offset_top = -324.0
 offset_right = 326.0
@@ -79,6 +82,7 @@ texture = ExtResource("6_77etv")
 
 [node name="wireOren" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = -322.0
 offset_top = -325.0
 offset_right = 329.0
@@ -87,6 +91,7 @@ texture = ExtResource("7_ilv30")
 
 [node name="wireHijau" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = -323.0
 offset_top = -325.0
 offset_right = 328.0
@@ -106,6 +111,7 @@ stretch_mode = 0
 
 [node name="UnguKanan" type="TextureButton" parent="."]
 z_index = 1
+layout_mode = 0
 offset_left = 264.0
 offset_top = -166.0
 offset_right = 304.0
@@ -116,6 +122,7 @@ stretch_mode = 0
 
 [node name="HijauKanan" type="TextureButton" parent="."]
 z_index = 1
+layout_mode = 0
 offset_left = 264.0
 offset_top = -94.0
 offset_right = 304.0
@@ -126,6 +133,7 @@ stretch_mode = 0
 
 [node name="OrenKanan" type="TextureButton" parent="."]
 z_index = 1
+layout_mode = 0
 offset_left = 264.0
 offset_top = -18.0
 offset_right = 304.0
@@ -136,6 +144,7 @@ stretch_mode = 0
 
 [node name="KuningKanan" type="TextureButton" parent="."]
 z_index = 1
+layout_mode = 0
 offset_left = 264.0
 offset_top = 58.0
 offset_right = 304.0
@@ -146,6 +155,7 @@ stretch_mode = 0
 
 [node name="MerahKanan" type="TextureButton" parent="."]
 z_index = 1
+layout_mode = 0
 offset_left = 264.0
 offset_top = 136.0
 offset_right = 304.0
@@ -156,6 +166,7 @@ stretch_mode = 0
 
 [node name="BiruKiri" type="TextureButton" parent="."]
 z_index = 1
+layout_mode = 0
 offset_left = -326.0
 offset_top = -93.0
 offset_right = -286.0
@@ -166,6 +177,7 @@ stretch_mode = 0
 
 [node name="UnguKiri" type="TextureButton" parent="."]
 z_index = 1
+layout_mode = 0
 offset_left = -326.0
 offset_top = 139.0
 offset_right = -286.0
@@ -176,6 +188,7 @@ stretch_mode = 0
 
 [node name="HijauKiri" type="TextureButton" parent="."]
 z_index = 1
+layout_mode = 0
 offset_left = -326.0
 offset_top = 58.0
 offset_right = -286.0
@@ -186,6 +199,7 @@ stretch_mode = 0
 
 [node name="OrenKiri" type="TextureButton" parent="."]
 z_index = 1
+layout_mode = 0
 offset_left = -326.0
 offset_top = -18.0
 offset_right = -286.0
@@ -196,6 +210,7 @@ stretch_mode = 0
 
 [node name="KuningKiri" type="TextureButton" parent="."]
 z_index = 1
+layout_mode = 0
 offset_left = -326.0
 offset_top = -168.0
 offset_right = -286.0
@@ -206,6 +221,7 @@ stretch_mode = 0
 
 [node name="MerahKiri" type="TextureButton" parent="."]
 z_index = 1
+layout_mode = 0
 offset_left = -326.0
 offset_top = -236.0
 offset_right = -286.0
