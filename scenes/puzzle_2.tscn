@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://wogvnn4pkju3"]
+
+[ext_resource type="Texture2D" uid="uid://e3n5a6gff5sh" path="res://assets/background/map_3.png" id="1_5cwb0"]
+[ext_resource type="PackedScene" uid="uid://bclymq4a2o10s" path="res://scenes/Players.tscn" id="2_8lny3"]
+
+[node name="puzzle2" type="Node2D"]
+
+[node name="Map3" type="Sprite2D" parent="."]
+position = Vector2(566, 307)
+texture = ExtResource("1_5cwb0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(170, 370, 170, 247, 493, 247, 493, 288, 517, 288, 517, 234, 155, 235, 155, 386, 518, 384, 518, 326, 493, 326, 493, 371)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(517, 247, 954, 247, 954, 371, 517, 371, 517, 399, 986, 399, 986, 220, 515, 221)
+
+[node name="Player" parent="." instance=ExtResource("2_8lny3")]
+position = Vector2(187, 299)

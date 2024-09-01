@@ -164,7 +164,7 @@ scale = Vector2(0.355, 0.515)
 shape = SubResource("CapsuleShape2D_8tf2s")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
+zoom = Vector2(5, 5)
 
 [node name="plumbob" parent="." instance=ExtResource("6_4f1kj")]
 visible = false
@@ -172,6 +172,8 @@ position = Vector2(0, -33.75)
 scale = Vector2(0.405558, 0.405558)
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
-energy = 0.5
+position = Vector2(3.8147e-06, -3.8147e-06)
+scale = Vector2(0.491071, 0.491071)
+energy = 0.45
 texture = ExtResource("6_o0cq3")
 texture_scale = 0.7
