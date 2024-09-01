@@ -5,27 +5,27 @@ leave ahan
 *beep*
 join solus (thinking) 2
 solus (thinking): ...
-solus (thinking): memulai pengaktifan sistem, memeriksa keamanan dan memuat memori… 
-join ahan (curious) 1
+solus (thinking): memulai pengaktifan sistem, memeriksa keamanan dan memuat memori…
 update solus 1
 solus (default): Berhasil
+join ahan (curious) 1
 ahan (curious): Hmm?
-solus (thinking): Mengidentifikasi target, memulai analisa... 
+solus (thinking): Mengidentifikasi target, memulai analisa...
 solus (default): Analisa selesai.
-solus (default): Kau adalah orang yang telah menyelesaikan perakitanku. Terima kasih.\
+solus (happy): Kau adalah orang yang telah menyelesaikan perakitanku. Terima kasih.\
 Siapa namamu?
 ahan (smile): Ahan, kamu?
 solus (thinking): Menyimpan Informasi, Menambahkan Ahan ke dalam database...
 solus (default): Menjawab, Aku adalah Android turunan dari core Terminus yang diciptakan oleh Prof Rudy untuk mematikan Terminus secara paksa.
-ahan (curious): Type-S0LU5, codename Solus. Begitulah yang tertera di dalam memori.
+solus (default): Type-S0LU5, codename Solus. Begitulah yang tertera di dalam memori.
 solus (question): Pertanyaan, Jika aku sudah diaktifkan, artinya Ahan sudah membaca buku dari Profesor Rudy. Benar?
 ahan (smile): Begitulah
-ahan (curious): Tadi kamu bilang diciptakan untuk mematikan Terminus. Apa kau bisa melakukannya?
+ahan (curious): Tadi kamu bilang diciptakan untuk mematikan Terminus. Apa kamu benar-benar bisa melakukannya?
 solus (default): Mengonfirmasi, Bisa… Karena itulah aku diciptakan. Tetapi, aku tidak bisa berjalan menuju kota sendirian.
 ahan (curious): Apa maksudnya?
 solus (thinking): Membaca memori...
-solus: Karena aku diciptakan dengan rentan waktu yang terbatas, dalam pembuatannya, "Solus" hanya difokuskan untuk memuat cara mematikan core Terminus dengan mengesampingkan fitur lain.
-solus: Perjalanan menuju kota memerlukan keahlian lebih dari itu. 
+solus (default): Karena aku diciptakan dengan rentan waktu yang terbatas, dalam pembuatannya, "Solus" hanya difokuskan untuk memuat cara mematikan core Terminus dengan mengesampingkan fitur lain.
+solus: Perjalanan menuju kota memerlukan keahlian lebih dari itu.
 ahan (curious): Jadi, dengan kata lain kamu membutuhkan manusia untuk membantu misimu?”
 solus: Mengonfirmasi, Benar. Sebagai orang yang telah menyelesaikan diriku, aku berharap Ahan mau membantuku menuntas misi yang diberikan Profesor Rudy.
 ahan (curious): (Mungkin ini adalah kesempatan bagus untuk memulihkan kondisi kota, dan sepertinya dia tidak berbohong)
