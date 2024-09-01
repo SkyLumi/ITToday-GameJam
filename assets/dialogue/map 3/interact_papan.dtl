@@ -1,9 +1,9 @@
 join ahan (curious) 1
 join solus (default) 1
-Nyalakan semua lampu yang ada di graf ini dengan 5 warna yang ada.
-Rule 1\: dilarang mengubah warna bola dari bola yang sudah hidup dari awal.
-Rule 2\: warna suatu bola dengan bola lain yang terhubung dengan garis tidak boleh sama.
-Rule 3\: Jika suatu bola (A) terhubung dengan dua atau lebih bola lainnya, maka bola-bola yang terhubung dengan bola (A) tersebut tidak boleh memiliki warna yang sama.
+Untuk membuka pintu, nyalakan semua lampu yang ada di graf ini dengan 5 warna yang ada.
+Rule 1\: dilarang mengubah warna lampu dari lampu yang sudah hidup dari awal.
+Rule 2\: warna suatu lampu dengan lampu lain yang terhubung dengan garis tidak boleh sama.
+Rule 3\: Jika suatu lampu (A) terhubung dengan dua atau lebih lampu lainnya, maka lampu-lampu yang terhubung dengan lampu (A) tersebut tidak boleh memiliki warna yang sama.
 ahan (smile): Konsepnya seperti salah satu mata kuliahku di semester kedua, teorigraf bilangan kromatik. Sungguh kenangan yang...
 ahan (sad): Menyedihkan
 solus (default): ...
