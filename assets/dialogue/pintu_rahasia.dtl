@@ -1,4 +1,13 @@
+join ahan (curious) 1
 ahan (shocked): ! Pintu ini...!
 ahan (curious): Sepertinya aku menemukannya!
-solus (thinking): Menganalisa... 
-solus (happy): Ya, sepertinya ini adalah jalan yang benar.
+join solus 1
+update ahan (curious) 1
+solus (thinking): Menganalisa...
+solus (happy): Kamu benar. Ini adalah pintu jalan rahasia menuju laboratorium porofesor di kota.
+solus (default): Pintu ini dilindungi dengan passcode yang ada di memoriku. Passcodenya adalah... 8... 0... 1...
+ahan (shocked): Eh, pelan-pelan! 
+solus (default): 5... 2... 6...
+*beep*
+ahan (curious): Oke, sudah terbuka
+ahan (smile): Ayo masuk! 
