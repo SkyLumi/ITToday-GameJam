@@ -241,6 +241,7 @@ visible = false
 [connection signal="body_entered" from="BukuBiru/InteractionArea" to="BukuBiru" method="_on_interaction_area_body_entered"]
 [connection signal="body_exited" from="BukuBiru/InteractionArea" to="BukuBiru" method="_on_interaction_area_body_exited"]
 [connection signal="toolbox_ambil" from="Toolbox" to="Robot" method="_on_toolbox_diambil"]
+[connection signal="buku_closed" from="CanvasLayer/gui_buku_biru" to="Robot" method="_on_gui_buku_biru_buku_closed"]
 [connection signal="buku_closed" from="CanvasLayer/gui_buku_biru" to="Core" method="_on_gui_buku_biru_buku_closed"]
 [connection signal="buku_closed" from="CanvasLayer/gui_buku_biru" to="Batrai" method="_on_gui_buku_biru_buku_closed"]
 [connection signal="buku_closed" from="CanvasLayer/gui_buku_biru" to="Kabel" method="_on_gui_buku_biru_buku_closed"]

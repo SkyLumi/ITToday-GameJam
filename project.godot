@@ -28,15 +28,20 @@ directories/dch_directory={
 "solus": "res://assets/dialogue/character/solus.dch"
 }
 directories/dtl_directory={
-"Morse_pintu": "res://assets/dialogue/Morse_pintu.dtl",
-"after_fix_solus": "res://assets/dialogue/after_fix_solus.dtl",
-"dialogue/timeline": "res://assets/dialogue/timeline.dtl",
-"enter_underlab": "res://assets/dialogue/enter_underlab.dtl",
-"found_book": "res://assets/dialogue/found_book.dtl",
-"interact_solus_rusak": "res://assets/dialogue/interact_solus_rusak.dtl",
-"interact_solus_rusak_after_buku": "res://assets/dialogue/interact_solus_rusak_after_buku.dtl",
-"pintu_rahasia": "res://assets/dialogue/pintu_rahasia.dtl",
-"prolog": "res://assets/dialogue/prolog.dtl"
+"Morse_pintu_flashdisk": "res://assets/dialogue/map 2/Morse_pintu_flashdisk.dtl",
+"after_fix_solus": "res://assets/dialogue/map 1/after_fix_solus.dtl",
+"enter_map2": "res://assets/dialogue/map 2/enter_map2.dtl",
+"enter_underlab": "res://assets/dialogue/map 1/enter_underlab.dtl",
+"found_book": "res://assets/dialogue/map 1/found_book.dtl",
+"full_dialog": "res://assets/dialogue/map 4/full_dialog.dtl",
+"interact_buku": "res://assets/dialogue/map 2/interact_buku.dtl",
+"interact_papan": "res://assets/dialogue/map 3/interact_papan.dtl",
+"interact_solus_rusak": "res://assets/dialogue/map 1/interact_solus_rusak.dtl",
+"interact_solus_rusak_after_buku": "res://assets/dialogue/map 1/interact_solus_rusak_after_buku.dtl",
+"morse_pintu_awal": "res://assets/dialogue/map 2/morse_pintu_awal.dtl",
+"pintu_rahasia": "res://assets/dialogue/map 1/pintu_rahasia.dtl",
+"prolog": "res://assets/dialogue/map 1/prolog.dtl",
+"teorigraf_solved": "res://assets/dialogue/map 3/teorigraf_solved.dtl"
 }
 layout/style_list=[]
 layout/default_style="res://Dialogue/vn_style.tres"

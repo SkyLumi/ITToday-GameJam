@@ -46,6 +46,7 @@ flat = true
 
 [node name="silang" type="TextureButton" parent="."]
 z_index = 1
+layout_mode = 0
 offset_left = 220.265
 offset_top = -310.991
 offset_right = 260.265

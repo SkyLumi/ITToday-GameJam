@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://clskk6ymevqxr"]
+[gd_scene load_steps=23 format=3 uid="uid://clskk6ymevqxr"]
 
 [ext_resource type="Script" path="res://scripts/puzzle_1.gd" id="1_3tiqq"]
 [ext_resource type="Texture2D" uid="uid://csrgoax3b0yfd" path="res://assets/background/map_2.png" id="1_26oqt"]
@@ -25,6 +25,58 @@ radius = 12.5597
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xejbj"]
 size = Vector2(68, 19)
+
+[sub_resource type="Animation" id="Animation_oh6da"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mmqro"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kdv3o"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4hoj5"]
+_data = {
+"RESET": SubResource("Animation_oh6da"),
+"fade_in": SubResource("Animation_mmqro"),
+"fade_out": SubResource("Animation_kdv3o")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vcydt"]
 radius = 13.5818
@@ -104,6 +156,22 @@ visible = false
 [node name="pin_tombol" parent="CanvasLayer" instance=ExtResource("11_p25jo")]
 visible = false
 
+[node name="Transition" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_4hoj5")
+}
+movie_quit_on_finish = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Transition"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
 [node name="tombol_pin" type="Node2D" parent="."]
 position = Vector2(1340.76, -149.256)
 script = ExtResource("11_rkho8")
@@ -118,3 +186,5 @@ shape = SubResource("CircleShape2D_vcydt")
 position = Vector2(-1340.76, 149.256)
 stream = ExtResource("12_4agfy")
 pitch_scale = 0.73
+
+[connection signal="flashdisk_diambil" from="Flashdisk" to="tombol_pin" method="_on_flashdisk_flashdisk_diambil"]
