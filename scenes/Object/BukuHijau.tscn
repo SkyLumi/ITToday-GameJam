@@ -16,3 +16,5 @@ action_name = ""
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("CircleShape2D_axr2h")
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]

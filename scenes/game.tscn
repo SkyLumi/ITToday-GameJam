@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d0u2krkq2c1av"]
+[gd_scene load_steps=22 format=3 uid="uid://d0u2krkq2c1av"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_styg6"]
 [ext_resource type="PackedScene" uid="uid://2o51htk5nq6w" path="res://scenes/manusia.tscn" id="2_gagws"]
@@ -14,6 +14,7 @@
 [ext_resource type="FontFile" uid="uid://d2h84huewt2ny" path="res://Font/SolusV2-Regular.ttf" id="11_nv3ie"]
 [ext_resource type="PackedScene" uid="uid://gk7i1xnuju4e" path="res://scenes/GUI/gui_buku_biru.tscn" id="13_dby4e"]
 [ext_resource type="Script" path="res://scripts/buku_biru.gd" id="14_xc817"]
+[ext_resource type="AudioStream" uid="uid://ccu5w5q5ttcnr" path="res://assets/audio/book.mp3" id="15_ntghi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_46u1b"]
 radius = 22.0227
@@ -178,6 +179,9 @@ action_name = ""
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BukuBiru/InteractionArea"]
 shape = SubResource("CircleShape2D_rndp4")
+
+[node name="sfx" type="AudioStreamPlayer" parent="BukuBiru"]
+stream = ExtResource("15_ntghi")
 
 [connection signal="buku_closed" from="CanvasLayer/gui_buku_biru" to="Batrai" method="_on_gui_buku_biru_buku_closed"]
 [connection signal="buku_closed" from="CanvasLayer/gui_buku_biru" to="Kabel" method="_on_gui_buku_biru_buku_closed"]

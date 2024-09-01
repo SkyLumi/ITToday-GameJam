@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d5osej2gkwp5"]
+[gd_scene load_steps=5 format=3 uid="uid://d5osej2gkwp5"]
 
 [ext_resource type="Script" path="res://scripts/kabel.gd" id="1_jugen"]
 [ext_resource type="PackedScene" uid="uid://dngit0dfiw4du" path="res://interaction/interaction area/interaction_area.tscn" id="1_okgam"]
+[ext_resource type="AudioStream" uid="uid://dgirre2f1ww8a" path="res://assets/audio/item.mp3" id="3_megox"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mky40"]
 size = Vector2(40, 40)
@@ -14,3 +15,8 @@ action_name = ""
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("RectangleShape2D_mky40")
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_megox")
+volume_db = -24.19
+pitch_scale = 0.64
