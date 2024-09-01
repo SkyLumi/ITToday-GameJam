@@ -28,14 +28,14 @@ settings/stdout/print_fps=true
 [dialogic]
 
 directories/dch_directory={
-"ahan": "res://dialogue/character/ahan.dch",
-"solus": "res://dialogue/character/solus.dch"
+"ahan": "res://assets/dialogue/character/ahan.dch",
+"solus": "res://assets/dialogue/character/solus.dch"
 }
 directories/dtl_directory={
-"after_fix_solus": "res://dialogue/after_fix_solus.dtl",
-"enter_underlab": "res://dialogue/enter_underlab.dtl",
-"found_book": "res://dialogue/found_book.dtl",
-"prolog": "res://dialogue/prolog.dtl",
+"after_fix_solus": "res://assets/dialogue/after_fix_solus.dtl",
+"enter_underlab": "res://assets/dialogue/enter_underlab.dtl",
+"found_book": "res://assets/dialogue/found_book.dtl",
+"prolog": "res://assets/dialogue/prolog.dtl",
 "timeline": "res://timeline.dtl"
 }
 layout/style_list=[]

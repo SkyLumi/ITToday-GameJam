@@ -16,6 +16,7 @@ func _ready() -> void:
 	exit_button.button_down.connect(on_exit_pressed)
 
 func on_start_pressed() -> void:
+	$Hitsound.play()
 	colorect.visible = true
 	transisi.play("fade_out")
 	await transisi.animation_finished
@@ -23,6 +24,7 @@ func on_start_pressed() -> void:
 	get_tree().change_scene_to_packed(start_level)
 	
 func on_exit_pressed() -> void:
+	$Hitsound.play()
 	get_tree().quit()
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
