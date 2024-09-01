@@ -10,8 +10,9 @@ func _ready():
 func _on_interact():
 	if !gelap.visible:
 		if Global.is_manusia and !Global.buku_sudah_dialog: 
-			Dialogic.start("found_book")
 			Dialogic.timeline_ended.connect(_on_timeline_ended)
+			Dialogic.start("found_book")
+			interaction_area.monitoring = false
 			Global.player_jalan = false
 		elif Global.is_manusia and Global.buku_sudah_dialog:
 			gui_buku.visible = true
@@ -30,5 +31,7 @@ func _on_interaction_area_body_entered(_body: Node2D) -> void:
 	interaction_area.action_name = "baca"
 
 func _on_timeline_ended():
+	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
+	interaction_area.monitoring = true
 	gui_buku.visible = true
 	Global.buku_sudah_dialog = true
