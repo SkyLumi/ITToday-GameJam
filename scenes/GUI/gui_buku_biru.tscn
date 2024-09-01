@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddv0c6ban1yle"]
+[gd_scene load_steps=7 format=3 uid="uid://gk7i1xnuju4e"]
 
-[ext_resource type="Texture2D" uid="uid://dvbbo7y443g0e" path="res://assets/GUI/Objek_Gui/buku_biru_narasi_awal2.png" id="1_kvuo0"]
-[ext_resource type="Script" path="res://scripts/gui_buku_biru.gd" id="1_pj7gb"]
-[ext_resource type="Texture2D" uid="uid://bhh4pnbrv6bsg" path="res://assets/GUI/remakeGUI/silang.png" id="2_bqkkn"]
-[ext_resource type="Texture2D" uid="uid://pl6jk1d2b4xh" path="res://assets/GUI/remakeGUI/panah_kanan.png" id="3_h0cct"]
-[ext_resource type="Texture2D" uid="uid://dcsuwbt72nlh6" path="res://assets/GUI/remakeGUI/panah_kanan_pressed.png" id="4_j288n"]
-[ext_resource type="FontFile" uid="uid://d2h84huewt2ny" path="res://Font/SolusV2-Regular.ttf" id="6_fnwxm"]
+[ext_resource type="Script" path="res://scripts/gui_buku_biru.gd" id="1_gcb83"]
+[ext_resource type="Texture2D" uid="uid://dvbbo7y443g0e" path="res://assets/GUI/Objek_Gui/buku_biru_narasi_awal2.png" id="2_ktvo0"]
+[ext_resource type="Texture2D" uid="uid://bhh4pnbrv6bsg" path="res://assets/GUI/remakeGUI/silang.png" id="3_qoajn"]
+[ext_resource type="Texture2D" uid="uid://pl6jk1d2b4xh" path="res://assets/GUI/remakeGUI/panah_kanan.png" id="4_16fft"]
+[ext_resource type="Texture2D" uid="uid://dcsuwbt72nlh6" path="res://assets/GUI/remakeGUI/panah_kanan_pressed.png" id="5_nnbf8"]
+[ext_resource type="FontFile" uid="uid://d2h84huewt2ny" path="res://Font/SolusV2-Regular.ttf" id="6_bo04a"]
 
 [node name="gui_buku_biru" type="Control"]
 layout_mode = 3
@@ -21,7 +21,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.32, 1.32)
-script = ExtResource("1_pj7gb")
+script = ExtResource("1_gcb83")
 
 [node name="gui_buku" type="TextureRect" parent="."]
 layout_mode = 1
@@ -36,7 +36,7 @@ offset_right = 161.0
 offset_bottom = 131.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_kvuo0")
+texture = ExtResource("2_ktvo0")
 
 [node name="silang" type="TextureButton" parent="."]
 z_index = 1
@@ -45,7 +45,7 @@ offset_left = 282.0
 offset_top = -224.0
 offset_right = 322.0
 offset_bottom = -184.0
-texture_normal = ExtResource("2_bqkkn")
+texture_normal = ExtResource("3_qoajn")
 stretch_mode = 0
 
 [node name="TextureButton" type="TextureButton" parent="."]
@@ -54,8 +54,8 @@ offset_left = 399.0
 offset_top = -17.0
 offset_right = 463.0
 offset_bottom = 31.0
-texture_normal = ExtResource("3_h0cct")
-texture_pressed = ExtResource("4_j288n")
+texture_normal = ExtResource("4_16fft")
+texture_pressed = ExtResource("5_nnbf8")
 
 [node name="Label" type="Label" parent="."]
 modulate = Color(0, 0, 0, 1)
@@ -65,7 +65,7 @@ offset_top = -223.0
 offset_right = 2538.0
 offset_bottom = 4347.0
 scale = Vector2(0.1, 0.1)
-theme_override_fonts/font = ExtResource("6_fnwxm")
+theme_override_fonts/font = ExtResource("6_bo04a")
 theme_override_font_sizes/font_size = 220
 text = "Aku berhasil membawa kabur core cadangan milik Terminus dan membawanya ke dalam laboratorium rahasia ku. Bisa dikatakan aku hanyalah seseorang yang gagal dan menciptakan kekacauan yang terjadi di kota. Andai aku dapat menyadarinya lebih awal, aku bisa mencegah peristiwa ini terjadi.
 Setelah menyadari adanya anomali dari Terminus, aku dan tim sudah mencoba untuk mematikannya, tetapi Terminus seperti memiliki kehendaknya sendiri dan mencoba untuk mengendalikan kami. Aku berhasil kabur dengan membawa core cadangan yang sama dengan Terminus.
@@ -74,12 +74,13 @@ autowrap_mode = 2
 
 [node name="Label2" type="Label" parent="."]
 modulate = Color(0, 0, 0, 1)
+layout_mode = 0
 offset_left = 32.9999
 offset_top = -216.0
 offset_right = 2923.0
 offset_bottom = 4354.0
 scale = Vector2(0.1, 0.1)
-theme_override_fonts/font = ExtResource("6_fnwxm")
+theme_override_fonts/font = ExtResource("6_bo04a")
 theme_override_font_sizes/font_size = 220
 text = "Aku berusaha untuk mematikan Terminus melalui cara lain
 tetapi dia selalu menghalangiku dan mencoba untuk menangkapku. Setelah kabur menggunakan jalur rahasia aku berusaha untuk membuat obat penawar agar bisa mematikan Terminus di dalam laboratorium ini. Aku sadar jika aku hanya mementingkan keselamatan diriku sendiri dan pergi sendirian, tapi mau bagaimana lagi.

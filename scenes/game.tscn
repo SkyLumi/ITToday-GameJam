@@ -12,8 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://dgbvmcrsbkrad" path="res://scenes/Object/batrai.tscn" id="9_1j4vl"]
 [ext_resource type="PackedScene" uid="uid://d5osej2gkwp5" path="res://scenes/Object/kabel.tscn" id="10_rf5bc"]
 [ext_resource type="FontFile" uid="uid://d2h84huewt2ny" path="res://Font/SolusV2-Regular.ttf" id="11_nv3ie"]
+[ext_resource type="PackedScene" uid="uid://gk7i1xnuju4e" path="res://scenes/GUI/gui_buku_biru.tscn" id="13_dby4e"]
 [ext_resource type="Script" path="res://scripts/buku_biru.gd" id="14_xc817"]
-[ext_resource type="PackedScene" uid="uid://ddv0c6ban1yle" path="res://scenes/GUI/gui_buku_biru.tscn" id="14_ybm16"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_46u1b"]
 radius = 22.0227
@@ -150,9 +150,6 @@ theme_override_font_sizes/font_size = 400
 [node name="nyambung_kabel" parent="CanvasLayer" instance=ExtResource("8_4tb18")]
 visible = false
 
-[node name="gui_buku_biru" parent="CanvasLayer" instance=ExtResource("14_ybm16")]
-visible = false
-
 [node name="Transition" type="AnimationPlayer" parent="CanvasLayer"]
 libraries = {
 "": SubResource("AnimationLibrary_4hoj5")
@@ -169,12 +166,20 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
+[node name="gui_buku_biru" parent="CanvasLayer" instance=ExtResource("13_dby4e")]
+visible = false
+
 [node name="BukuBiru" type="Node2D" parent="."]
 position = Vector2(261, 10)
 script = ExtResource("14_xc817")
 
 [node name="InteractionArea" parent="BukuBiru" instance=ExtResource("6_k1bup")]
-action_name = "Baca"
+action_name = ""
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BukuBiru/InteractionArea"]
 shape = SubResource("CircleShape2D_rndp4")
+
+[connection signal="buku_closed" from="CanvasLayer/gui_buku_biru" to="Batrai" method="_on_gui_buku_biru_buku_closed"]
+[connection signal="buku_closed" from="CanvasLayer/gui_buku_biru" to="Kabel" method="_on_gui_buku_biru_buku_closed"]
+[connection signal="body_entered" from="BukuBiru/InteractionArea" to="BukuBiru" method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="BukuBiru/InteractionArea" to="BukuBiru" method="_on_interaction_area_body_exited"]

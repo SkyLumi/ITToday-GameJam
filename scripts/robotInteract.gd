@@ -25,18 +25,6 @@ func _ready():
 func _process(_delta: float) -> void:
 	if !gelap.visible:
 		interaction_area.action_name = "lihat"
-		
-	hint.text = "- kamu membutuhkan kabel"
-	hint2.text = "- kamu membutuhkan batrai"
-	if batrai_ambil && kabel_ambil:
-		hint.text = ""
-		hint2.text = ""
-	elif batrai_ambil:
-		hint.text = "- kamu membutuhkan kabel"
-		hint2.text = ""
-	elif kabel_ambil:
-		hint.text = "- kamu membutuhkan batrai"
-		hint2.text = ""
 
 func _on_kabel_diambil():
 	kabel_ambil = true
@@ -51,7 +39,8 @@ func _on_interact():
 			manusia.is_active = false
 			await nyambung_kabel.kabel_selesai
 			manusia.is_active = true
+			Global.player_position = manusia.position
 			get_tree().change_scene_to_packed(lobby)
 		else:
-			hint.show()
-			hint2.show()
+			pass
+			#diganti sama dialog ahan 

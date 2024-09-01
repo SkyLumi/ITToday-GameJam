@@ -5,16 +5,24 @@ signal batrai_ambil
 
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var gelap = get_parent().get_node("CanvasModulate")
-var bisa_diambil = true
+@onready var hint = get_node("../CanvasLayer/Label2")
+
+var baca_buku = false
 
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
+	hint.text = "- kamu membutuhkan Batrai"
 	
 func _process(_delta: float) -> void:
-	if gelap.visible == false:
+	if !gelap.visible and baca_buku:
 		interaction_area.action_name = "ambil"
 	
 func _on_interact():
-	if gelap.visible == false:
+	if !gelap.visible and baca_buku:
+		hint.text = ""
 		emit_signal("batrai_ambil")
 		queue_free() 
+
+func _on_gui_buku_biru_buku_closed() -> void:
+	baca_buku = true
+	hint.show()
