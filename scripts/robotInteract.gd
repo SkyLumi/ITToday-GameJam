@@ -2,25 +2,17 @@ extends Sprite2D
 
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var gelap = get_parent().get_node("CanvasModulate")
-@onready var hint = get_node("../CanvasLayer/Label")
-@onready var hint2 = get_node("../CanvasLayer/Label2")
 @onready var nyambung_kabel = get_node("../CanvasLayer/nyambung_kabel")
 @onready var lobby = preload("res://scenes/lobby.tscn") as PackedScene
 @onready var manusia = get_node("../Manusia")
 
-
-var batrai_ambil: bool = false
-var kabel_ambil: bool = false
+var batrai_ambil = false
+var kabel_ambil = false
+var core_ambil = false
+var toolbox_ambil = false
 
 func _ready():
-	hint.hide()
-	hint2.hide()
 	interaction_area.interact = Callable(self, "_on_interact")
-	var batrai = get_node("../Batrai")
-	var kabel = get_node("../Kabel")
-	
-	batrai.connect("batrai_ambil", Callable(self, "_on_batrai_diambil"))
-	kabel.connect("kabel_ambil", Callable(self, "_on_kabel_diambil"))
 	
 func _process(_delta: float) -> void:
 	if !gelap.visible:
@@ -32,9 +24,16 @@ func _on_kabel_diambil():
 func _on_batrai_diambil():
 	batrai_ambil = true
 	
+func _on_core_core_ambil() -> void:
+	core_ambil = true
+
+func _on_toolbox_diambil() -> void:
+	toolbox_ambil = true
+
+	
 func _on_interact():
 	if !gelap.visible:
-		if batrai_ambil && kabel_ambil:
+		if batrai_ambil && kabel_ambil && core_ambil && toolbox_ambil:
 			nyambung_kabel.visible = true
 			manusia.is_active = false
 			await nyambung_kabel.kabel_selesai

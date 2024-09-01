@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d0u2krkq2c1av"]
+[gd_scene load_steps=26 format=3 uid="uid://d0u2krkq2c1av"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_styg6"]
 [ext_resource type="PackedScene" uid="uid://2o51htk5nq6w" path="res://scenes/manusia.tscn" id="2_gagws"]
@@ -13,10 +13,22 @@
 [ext_resource type="PackedScene" uid="uid://d5osej2gkwp5" path="res://scenes/Object/kabel.tscn" id="10_rf5bc"]
 [ext_resource type="FontFile" uid="uid://d2h84huewt2ny" path="res://Font/SolusV2-Regular.ttf" id="11_nv3ie"]
 [ext_resource type="PackedScene" uid="uid://gk7i1xnuju4e" path="res://scenes/GUI/gui_buku_biru.tscn" id="13_dby4e"]
+[ext_resource type="Script" path="res://scripts/toolbox.gd" id="14_n76ak"]
 [ext_resource type="Script" path="res://scripts/buku_biru.gd" id="14_xc817"]
+[ext_resource type="Texture2D" uid="uid://biaeprhg1qbcp" path="res://assets/objects/core.png" id="15_s74cs"]
+[ext_resource type="Script" path="res://scripts/core.gd" id="16_osdyt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_46u1b"]
 radius = 22.0227
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3xus"]
+size = Vector2(26, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrk3l"]
+size = Vector2(27, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ii6q1"]
+radius = 24.0832
 
 [sub_resource type="Animation" id="Animation_oh6da"]
 length = 0.001
@@ -70,9 +82,6 @@ _data = {
 "fade_out": SubResource("Animation_kdv3o")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rndp4"]
-radius = 21.0238
-
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(388, 272)
@@ -118,6 +127,18 @@ action_name = ""
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Robot/InteractionArea"]
 shape = SubResource("CircleShape2D_46u1b")
 
+[node name="Core" type="Sprite2D" parent="."]
+position = Vector2(260, 29)
+texture = ExtResource("15_s74cs")
+script = ExtResource("16_osdyt")
+
+[node name="InteractionArea" parent="Core" instance=ExtResource("6_k1bup")]
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Core/InteractionArea"]
+position = Vector2(-3, 0)
+shape = SubResource("RectangleShape2D_r3xus")
+
 [node name="Lampu" parent="." instance=ExtResource("7_pifcx")]
 position = Vector2(173, 7)
 
@@ -126,6 +147,29 @@ position = Vector2(78, 109)
 
 [node name="Kabel" parent="." instance=ExtResource("10_rf5bc")]
 position = Vector2(77, 23)
+
+[node name="BukuBiru" type="Node2D" parent="."]
+position = Vector2(261, 10)
+script = ExtResource("14_xc817")
+
+[node name="InteractionArea" parent="BukuBiru" instance=ExtResource("6_k1bup")]
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BukuBiru/InteractionArea"]
+position = Vector2(-3.5, -1)
+shape = SubResource("RectangleShape2D_nrk3l")
+
+[node name="Toolbox" type="Node2D" parent="."]
+z_index = 1
+position = Vector2(78, -48)
+script = ExtResource("14_n76ak")
+
+[node name="InteractionArea" parent="Toolbox" instance=ExtResource("6_k1bup")]
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Toolbox/InteractionArea"]
+position = Vector2(2, 3)
+shape = SubResource("CircleShape2D_ii6q1")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -143,6 +187,24 @@ offset_left = 19.0
 offset_top = 89.0
 offset_right = 228.0
 offset_bottom = 489.0
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("11_nv3ie")
+theme_override_font_sizes/font_size = 400
+
+[node name="Label3" type="Label" parent="CanvasLayer"]
+offset_left = 19.0
+offset_top = 148.0
+offset_right = 228.0
+offset_bottom = 548.0
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("11_nv3ie")
+theme_override_font_sizes/font_size = 400
+
+[node name="Label4" type="Label" parent="CanvasLayer"]
+offset_left = 19.0
+offset_top = 205.0
+offset_right = 228.0
+offset_bottom = 605.0
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("11_nv3ie")
 theme_override_font_sizes/font_size = 400
@@ -169,17 +231,13 @@ metadata/_edit_use_anchors_ = true
 [node name="gui_buku_biru" parent="CanvasLayer" instance=ExtResource("13_dby4e")]
 visible = false
 
-[node name="BukuBiru" type="Node2D" parent="."]
-position = Vector2(261, 10)
-script = ExtResource("14_xc817")
-
-[node name="InteractionArea" parent="BukuBiru" instance=ExtResource("6_k1bup")]
-action_name = ""
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BukuBiru/InteractionArea"]
-shape = SubResource("CircleShape2D_rndp4")
-
-[connection signal="buku_closed" from="CanvasLayer/gui_buku_biru" to="Batrai" method="_on_gui_buku_biru_buku_closed"]
-[connection signal="buku_closed" from="CanvasLayer/gui_buku_biru" to="Kabel" method="_on_gui_buku_biru_buku_closed"]
+[connection signal="core_ambil" from="Core" to="Robot" method="_on_core_core_ambil"]
+[connection signal="batrai_ambil" from="Batrai" to="Robot" method="_on_batrai_diambil"]
+[connection signal="kabel_ambil" from="Kabel" to="Robot" method="_on_kabel_diambil"]
 [connection signal="body_entered" from="BukuBiru/InteractionArea" to="BukuBiru" method="_on_interaction_area_body_entered"]
 [connection signal="body_exited" from="BukuBiru/InteractionArea" to="BukuBiru" method="_on_interaction_area_body_exited"]
+[connection signal="toolbox_ambil" from="Toolbox" to="Robot" method="_on_toolbox_diambil"]
+[connection signal="buku_closed" from="CanvasLayer/gui_buku_biru" to="Core" method="_on_gui_buku_biru_buku_closed"]
+[connection signal="buku_closed" from="CanvasLayer/gui_buku_biru" to="Batrai" method="_on_gui_buku_biru_buku_closed"]
+[connection signal="buku_closed" from="CanvasLayer/gui_buku_biru" to="Kabel" method="_on_gui_buku_biru_buku_closed"]
+[connection signal="buku_closed" from="CanvasLayer/gui_buku_biru" to="Toolbox" method="_on_gui_buku_biru_buku_closed"]

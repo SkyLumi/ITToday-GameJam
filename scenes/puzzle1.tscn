@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bpn8g3rhbqki0" path="res://scenes/Object/BukuHijau.tscn" id="5_qlr0g"]
 [ext_resource type="PackedScene" uid="uid://bclymq4a2o10s" path="res://scenes/Players.tscn" id="5_ymway"]
 [ext_resource type="Script" path="res://scripts/tombol.gd" id="6_1qlcs"]
-[ext_resource type="Texture2D" uid="uid://6o1cyvfhyopy" path="res://assets/objects/flashdisk.png" id="6_44oev"]
+[ext_resource type="Texture2D" uid="uid://6o1cyvfhyopy" path="res://assets/characters/objects/flashdisk.png" id="6_44oev"]
 [ext_resource type="PackedScene" uid="uid://dngit0dfiw4du" path="res://interaction/interaction area/interaction_area.tscn" id="7_c04ka"]
 [ext_resource type="Script" path="res://scripts/pintu_lobby.gd" id="8_sa6em"]
 [ext_resource type="PackedScene" uid="uid://ddv0c6ban1yle" path="res://scenes/GUI/gui_buku_hijau.tscn" id="9_yv833"]
