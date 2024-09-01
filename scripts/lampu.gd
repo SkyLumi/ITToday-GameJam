@@ -9,6 +9,6 @@ func _ready():
 func _on_interact():
 	$lamp_sound.play()
 	gelap.visible = false
-	interaction_area.monitorable = false
+	interaction_area.monitoring = false
 	hide()
-	#queue_free()
+	interaction_area.action_name = ""

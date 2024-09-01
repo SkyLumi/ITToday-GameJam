@@ -23,7 +23,7 @@ func _on_interact():
 		$sfx.play()
 		hint.text = ""
 		emit_signal("kabel_ambil")
-		interaction_area.monitorable = false
+		interaction_area.monitoring = false
 		hide()
 		#queue_free() 
 

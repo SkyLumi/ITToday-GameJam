@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4v33ws7l0a7n"]
+
+[ext_resource type="Script" path="res://scripts/pin.gd" id="1_45ujx"]
+[ext_resource type="Texture2D" uid="uid://b4v34n0f005qf" path="res://assets/GUI/Objek_Gui/morse_tombol.png" id="1_f6emn"]
+[ext_resource type="FontFile" uid="uid://d2h84huewt2ny" path="res://Font/SolusV2-Regular.ttf" id="2_ijn7p"]
+[ext_resource type="Texture2D" uid="uid://bhh4pnbrv6bsg" path="res://assets/GUI/remakeGUI/silang.png" id="4_06c7g"]
+
+[node name="pin_tombol" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_45ujx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.0
+offset_top = -324.0
+offset_right = 271.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_f6emn")
+
+[node name="masukkan" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = -199.0
+offset_top = -267.0
+offset_right = 3767.0
+offset_bottom = 437.0
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("2_ijn7p")
+theme_override_font_sizes/font_size = 400
+placeholder_text = "pin"
+max_length = 20
+flat = true
+
+[node name="silang" type="TextureButton" parent="."]
+z_index = 1
+offset_left = 220.265
+offset_top = -310.991
+offset_right = 260.265
+offset_bottom = -270.991
+texture_normal = ExtResource("4_06c7g")
+stretch_mode = 0
+
+[connection signal="text_submitted" from="masukkan" to="." method="_on_masukkan_text_submitted"]
+[connection signal="pressed" from="silang" to="." method="_on_silang_pressed"]

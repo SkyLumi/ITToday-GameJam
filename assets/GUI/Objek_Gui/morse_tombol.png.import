@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biaeprhg1qbcp"
-path="res://.godot/imported/core.png-b9f3233f20d377107f368ae7f9d34abf.ctex"
+uid="uid://b4v34n0f005qf"
+path="res://.godot/imported/morse_tombol.png-bf067805488555d6b1a2d974b0278461.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/objects/core.png"
-dest_files=["res://.godot/imported/core.png-b9f3233f20d377107f368ae7f9d34abf.ctex"]
+source_file="res://assets/GUI/Objek_Gui/morse_tombol.png"
+dest_files=["res://.godot/imported/morse_tombol.png-bf067805488555d6b1a2d974b0278461.ctex"]
 
 [params]
 

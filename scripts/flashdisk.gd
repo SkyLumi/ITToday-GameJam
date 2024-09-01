@@ -1,7 +1,9 @@
 extends Sprite2D
 
+@warning_ignore("unused_signal")
+signal flashdisk_diambil
+
 @onready var interaction_area: InteractionArea = $InteractionArea
-@onready var gui_buku = get_node("../CanvasLayer/gui_buku_hijau")
 
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
@@ -11,6 +13,8 @@ func _process(_delta: float) -> void:
 	
 func _on_interact():
 	if Global.is_manusia:
-		gui_buku.visible = true
+		emit_signal("flashdisk_diambil")
+		#cutscene bangg
+		
 	else:
-		interaction_area.action_name = "bang gada tangan bang"
+		interaction_area.action_name = "eits robot tidak punya tangan"

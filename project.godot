@@ -28,11 +28,15 @@ directories/dch_directory={
 "solus": "res://assets/dialogue/character/solus.dch"
 }
 directories/dtl_directory={
+"Morse_pintu": "res://assets/dialogue/Morse_pintu.dtl",
 "after_fix_solus": "res://assets/dialogue/after_fix_solus.dtl",
+"dialogue/timeline": "res://assets/dialogue/timeline.dtl",
 "enter_underlab": "res://assets/dialogue/enter_underlab.dtl",
 "found_book": "res://assets/dialogue/found_book.dtl",
-"prolog": "res://assets/dialogue/prolog.dtl",
-"timeline": "res://timeline.dtl"
+"interact_solus_rusak": "res://assets/dialogue/interact_solus_rusak.dtl",
+"interact_solus_rusak_after_buku": "res://assets/dialogue/interact_solus_rusak_after_buku.dtl",
+"pintu_rahasia": "res://assets/dialogue/pintu_rahasia.dtl",
+"prolog": "res://assets/dialogue/prolog.dtl"
 }
 layout/style_list=[]
 layout/default_style="res://Dialogue/vn_style.tres"

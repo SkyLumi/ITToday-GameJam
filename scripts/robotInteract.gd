@@ -5,6 +5,8 @@ extends Sprite2D
 @onready var nyambung_kabel = get_node("../CanvasLayer/nyambung_kabel")
 @onready var lobby = preload("res://scenes/lobby.tscn") as PackedScene
 @onready var manusia = get_node("../Manusia")
+@onready var transisi = get_node("../CanvasLayer/Transition")
+@onready var colorect = get_node("../CanvasLayer/Transition/ColorRect")
 
 var batrai_ambil = false
 var kabel_ambil = false
@@ -37,9 +39,29 @@ func _on_interact():
 			nyambung_kabel.visible = true
 			manusia.is_active = false
 			await nyambung_kabel.kabel_selesai
-			manusia.is_active = true
-			Global.player_position = manusia.position
-			get_tree().change_scene_to_packed(lobby)
+			pause_karakter()
+			Dialogic.timeline_ended.connect(_on_dialog_selesai_afterfix)
+			Dialogic.start("after_fix_solus")
 		else:
-			pass
-			#diganti sama dialog ahan 
+			Dialogic.timeline_ended.connect(_on_dialog_selesai)
+			Dialogic.start("interact_solus_rusak_after_buku")
+			pause_karakter()
+func _on_dialog_selesai_afterfix():
+	Dialogic.timeline_ended.disconnect(_on_dialog_selesai_afterfix)
+	Global.player_position = manusia.position
+	colorect.visible = true
+	transisi.play("fade_out")
+	await transisi.animation_finished
+	get_tree().change_scene_to_packed(lobby)
+	
+func _on_dialog_selesai():
+	Dialogic.timeline_ended.disconnect(_on_dialog_selesai)
+	resume_karakter()
+
+func pause_karakter():
+	interaction_area.monitoring = false
+	manusia.is_active = false
+
+func resume_karakter():
+	interaction_area.monitoring = true
+	manusia.is_active = true

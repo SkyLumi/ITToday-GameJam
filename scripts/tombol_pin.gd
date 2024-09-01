@@ -1,7 +1,7 @@
-extends Sprite2D
+extends Node2D
 
 @onready var interaction_area: InteractionArea = $InteractionArea
-@onready var gui_buku = get_node("../CanvasLayer/gui_buku_hijau")
+@onready var pin_tombol = get_node("../CanvasLayer/pin_tombol")
 
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
@@ -11,6 +11,10 @@ func _process(_delta: float) -> void:
 	
 func _on_interact():
 	if Global.is_manusia:
-		gui_buku.visible = true
+		pin_tombol.visible = true
 	else:
-		interaction_area.action_name = "bang gada tangan bang"
+		$morse.play()
+
+
+func _on_flashdisk_flashdisk_diambil() -> void:
+	pass # Replace with function body.
