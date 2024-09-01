@@ -21,10 +21,6 @@ InteractionManager="*res://interaction/InteractionManager.tscn"
 Global="*res://scripts/global.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
-[debug]
-
-settings/stdout/print_fps=true
-
 [dialogic]
 
 directories/dch_directory={

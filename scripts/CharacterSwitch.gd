@@ -10,6 +10,7 @@ var robot
 func _ready():
 	manusia = get_node("Manusia")
 	robot = get_node("Robot")
+	Global.is_manusia = true
 	
 func switch_character():
 	if active_character == robot:

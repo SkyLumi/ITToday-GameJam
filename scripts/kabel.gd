@@ -10,6 +10,7 @@ signal kabel_ambil
 var baca_buku = false
 
 func _ready():
+	hint.hide()
 	interaction_area.interact = Callable(self, "_on_interact")
 	hint.text = "- kamu membutuhkan kabel"
 	
