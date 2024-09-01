@@ -1,17 +1,18 @@
-[gd_scene load_steps=16 format=3 uid="uid://ct7rab6qc8lls"]
+[gd_scene load_steps=17 format=3 uid="uid://ct7rab6qc8lls"]
 
 [ext_resource type="Texture2D" uid="uid://dh086ln2w5hni" path="res://assets/background/MAP_1.png" id="1_63xx6"]
+[ext_resource type="Script" path="res://scripts/lobby.gd" id="1_78nlk"]
 [ext_resource type="PackedScene" uid="uid://bclymq4a2o10s" path="res://scenes/Players.tscn" id="2_uuuyl"]
 [ext_resource type="Texture2D" uid="uid://bvw8nylgn4vm0" path="res://assets/objects/kertass_nutup_pintu.png" id="3_xoh5w"]
 [ext_resource type="Script" path="res://scripts/poster.gd" id="4_au3sl"]
 [ext_resource type="PackedScene" uid="uid://dngit0dfiw4du" path="res://interaction/interaction area/interaction_area.tscn" id="5_h47q5"]
 [ext_resource type="FontFile" uid="uid://d2h84huewt2ny" path="res://Font/SolusV2-Regular.ttf" id="6_7qleg"]
 [ext_resource type="PackedScene" uid="uid://c15u0m0pgwwo6" path="res://scenes/GUI/nyambungKabel.tscn" id="7_24wvt"]
-[ext_resource type="PackedScene" uid="uid://ddv0c6ban1yle" path="res://scenes/GUI/gui_buku_biru.tscn" id="8_kiess"]
 [ext_resource type="Script" path="res://scripts/buku_biru.gd" id="9_yb2lf"]
+[ext_resource type="PackedScene" uid="uid://gk7i1xnuju4e" path="res://scenes/GUI/gui_buku_biru.tscn" id="9_yme74"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lt744"]
-size = Vector2(36, 37)
+size = Vector2(44, 42.5)
 
 [sub_resource type="Animation" id="Animation_oh6da"]
 length = 0.001
@@ -71,6 +72,11 @@ radius = 21.0238
 [node name="lobby" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(388, 272)
+script = ExtResource("1_78nlk")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0.359069, 0.359069, 0.359069, 1)
 
 [node name="collisons" type="StaticBody2D" parent="."]
 position = Vector2(91, 10)
@@ -100,10 +106,10 @@ script = ExtResource("4_au3sl")
 
 [node name="InteractionArea" parent="Poster" instance=ExtResource("5_h47q5")]
 position = Vector2(0.5, 9.9964)
-action_name = ""
+action_name = "?"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Poster/InteractionArea"]
-position = Vector2(0, 10)
+position = Vector2(-1, 11)
 shape = SubResource("RectangleShape2D_lt744")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -129,9 +135,6 @@ theme_override_font_sizes/font_size = 400
 [node name="nyambung_kabel" parent="CanvasLayer" instance=ExtResource("7_24wvt")]
 visible = false
 
-[node name="gui_buku_biru" parent="CanvasLayer" instance=ExtResource("8_kiess")]
-visible = false
-
 [node name="Transition" type="AnimationPlayer" parent="CanvasLayer"]
 libraries = {
 "": SubResource("AnimationLibrary_4hoj5")
@@ -148,6 +151,9 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
+[node name="gui_buku_biru" parent="CanvasLayer" instance=ExtResource("9_yme74")]
+visible = false
+
 [node name="BukuBiru" type="Node2D" parent="."]
 position = Vector2(261, 10)
 script = ExtResource("9_yb2lf")
@@ -158,4 +164,5 @@ action_name = "Baca"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BukuBiru/InteractionArea"]
 shape = SubResource("CircleShape2D_rndp4")
 
+[connection signal="body_entered" from="BukuBiru/InteractionArea" to="BukuBiru" method="_on_interaction_area_body_entered"]
 [connection signal="body_exited" from="BukuBiru/InteractionArea" to="BukuBiru" method="_on_interaction_area_body_exited"]

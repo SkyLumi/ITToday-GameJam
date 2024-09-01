@@ -34,15 +34,12 @@ func _ready():
 
 func _on_left_button_pressed(button_name: StringName):
 	selected_left_button = get_node(NodePath(button_name)) 
-	print("Selected left button: ", button_name)
 
 func _on_right_button_pressed(button_name: StringName):
 	if selected_left_button == null:
-		print("No left button selected!")
 		return
 
 	if correct_pairs[selected_left_button.name] == button_name:
-		print("Match found: ", selected_left_button.name, " -> ", button_name)
 		selected_left_button.disabled = true
 		get_node(NodePath(button_name)).disabled = true 
 		
@@ -56,7 +53,7 @@ func _on_right_button_pressed(button_name: StringName):
 			_close_gui()
 			
 	else:
-		print("No match: ", selected_left_button.name, " -> ", button_name)
+		pass
 
 	# Reset selection
 	selected_left_button = null

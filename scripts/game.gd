@@ -14,4 +14,5 @@ func _process(_delta: float) -> void:
 	pass
 
 func _on_timeline_ended():
+	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
 	manusia.is_active = true

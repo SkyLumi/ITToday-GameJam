@@ -1,22 +1,36 @@
-ahan: (Seharusnya ini berhasil)
-solus: beep beep beep, memulai pengaktifan sistem, memeriksa keamanan dan memuat memori… Berhasil
-ahan: Hmm?
-solus: Mengidentifikasi target, memulai analisa. Analisa selesai
-solus: Jadi kamu yang telah menyelesaikan diriku, siapa namamu?
-ahan: Ahan, jika kamu?
-solus: Menyimpan Informasi, Menambahkan Ahan masuk ke dalam database
-solus: Menjawab, Aku adalah Android turunan dari core Terminus yang diciptakan oleh Prof Rudy untuk mematikan Terminus secara paksa.
-solus: Type-S0LU5 codename Solus, begitulah yang tertera dalam memori ku.
-solus: Pertanyaan, Jika aku sudah diaktifkan berarti Ahan sudah membaca buku dari Prof Rudy.
-ahan: Begitulah, Tadi kamu bilang diciptakan untuk mematikan Terminus. Apa kau bisa melakukannya?
-solus: Mengonfirmasi, Bisa… Karena itulah aku diciptakan. Tetapi, aku tidak bisa berjalan menuju kota sendirian
-ahan: Apa maksudnya?
-solus: Membaca memori, Karena diriku diciptakan dengan rentan waktu yang terbatas jadi dalam pembuatannya diriku hanya difokuskan untuk memuat cara mematikan core Terminus dengan mengesampingkan fitur lain. Bisa dibilang aku sekarang hanyalah robot support
-solus: Dalam perjalanan menuju kota membutuhkan verifikasi dan melewati robot-robot lain
-ahan: Jadi, dengan kata lain kamu membutuhkan manusia untuk membantu misimu itu?”
-solus: Mengonfirmasi, Benar. Sebagai orang yang telah menyelesaikan diriku, aku berharap Ahan mau membantuku menuntas misi yang diberikan Prof Rudy
-ahan: (Mungkin ini adalah kesempatan bagus untuk memulihkan kondisi kota dan sepertinya dia tidak berbohong)
-ahan: Baiklah aku akan membantumu, lagipula tujuan ku memang untuk dapat kembali ke kota itu
-solus: Apresiasi, Terimakasih Ahan telah menyetujui permintaan ini.
-ahan: Jadi, apakah kamu tau jalan yang aman menuju kota? Seharusnya kamu sudah tau jika kita melewati jalur biasa akan ada robot-robot jahat yang akan menghabisi kita.
-solus: Membaca memori, Sepertinya ada jalan rahasia yang menghubungkan antara lab ini dengan lab prof yang berada di kota. Kita perlu untuk mencari jalan masuk tersebut
+join ahan (curious) 0
+ahan (curious): (Passwordnya... 9..8,2..4..)
+ahan (curious): (Seharusnya ini berhasil)
+leave ahan
+*beep*
+join solus (thinking) 2
+solus (thinking): ...
+solus (thinking): memulai pengaktifan sistem, memeriksa keamanan dan memuat memori… 
+join ahan (curious) 1
+update solus 1
+solus (default): Berhasil
+ahan (curious): Hmm?
+solus (thinking): Mengidentifikasi target, memulai analisa... 
+solus (default): Analisa selesai.
+solus (default): Kau adalah orang yang telah menyelesaikan perakitanku. Terima kasih.\
+Siapa namamu?
+ahan (smile): Ahan, kamu?
+solus (thinking): Menyimpan Informasi, Menambahkan Ahan ke dalam database...
+solus (default): Menjawab, Aku adalah Android turunan dari core Terminus yang diciptakan oleh Prof Rudy untuk mematikan Terminus secara paksa.
+ahan (curious): Type-S0LU5, codename Solus. Begitulah yang tertera di dalam memori.
+solus (question): Pertanyaan, Jika aku sudah diaktifkan, artinya Ahan sudah membaca buku dari Profesor Rudy. Benar?
+ahan (smile): Begitulah
+ahan (curious): Tadi kamu bilang diciptakan untuk mematikan Terminus. Apa kau bisa melakukannya?
+solus (default): Mengonfirmasi, Bisa… Karena itulah aku diciptakan. Tetapi, aku tidak bisa berjalan menuju kota sendirian.
+ahan (curious): Apa maksudnya?
+solus (thinking): Membaca memori...
+solus: Karena aku diciptakan dengan rentan waktu yang terbatas, dalam pembuatannya, "Solus" hanya difokuskan untuk memuat cara mematikan core Terminus dengan mengesampingkan fitur lain.
+solus: Perjalanan menuju kota memerlukan keahlian lebih dari itu. 
+ahan (curious): Jadi, dengan kata lain kamu membutuhkan manusia untuk membantu misimu?”
+solus: Mengonfirmasi, Benar. Sebagai orang yang telah menyelesaikan diriku, aku berharap Ahan mau membantuku menuntas misi yang diberikan Profesor Rudy.
+ahan (curious): (Mungkin ini adalah kesempatan bagus untuk memulihkan kondisi kota, dan sepertinya dia tidak berbohong)
+ahan (smile): Baiklah, aku akan membantumu. Lagipula, tujuanku sekarang adalah untuk dapat kembali ke kota itu!
+solus (happy): Apresiasi, Terimakasih Ahan telah menyetujui permintaan ini.
+ahan (curious): Jadi, apakah kamu tau jalan yang aman menuju kota? Seharusnya kamu sudah tau jika kita melewati jalur biasa akan ada robot-robot jahat yang akan menghabisi kita.
+solus (thinking): Membaca memori...
+solus (default): Ada jalan rahasia yang menghubungkan antara lab ini dengan lab profesor yang berada di kota. Kita perlu untuk mencari jalan masuk tersebut.

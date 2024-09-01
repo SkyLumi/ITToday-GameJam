@@ -2,18 +2,64 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 "_translation_id": "",
-"color": Color(1, 1, 1, 1),
+"color": Color(0.15921, 0.751035, 0.867188, 1),
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "",
+"default_portrait": "thinking",
 "description": "",
 "display_name": "Solus",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
-"portraits": {},
+"portraits": {
+"default": {
+"export_overrides": {
+"image": "\"res://assets/characters/Solus bust eyes.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.45,
+"scene": ""
+},
+"happy": {
+"export_overrides": {
+"image": "\"res://assets/characters/Solus bust happy appreciation.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.45,
+"scene": ""
+},
+"question": {
+"export_overrides": {
+"image": "\"res://assets/characters/Solus bust question.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.45,
+"scene": ""
+},
+"thinking": {
+"export_overrides": {
+"image": "\"res://assets/characters/Solus bust loading.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.45,
+"scene": ""
+},
+"warning": {
+"export_overrides": {
+"image": "\"res://assets/characters/Solus bust warning.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.45,
+"scene": ""
+}
+},
 "scale": 1.0
 }
