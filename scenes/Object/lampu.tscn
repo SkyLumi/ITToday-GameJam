@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6xiwegxiqc6v"]
+[gd_scene load_steps=5 format=3 uid="uid://b6xiwegxiqc6v"]
 
 [ext_resource type="PackedScene" uid="uid://dngit0dfiw4du" path="res://interaction/interaction area/interaction_area.tscn" id="1_h5lhn"]
 [ext_resource type="Script" path="res://scripts/lampu.gd" id="1_w8ogt"]
+[ext_resource type="AudioStream" uid="uid://b6c1p14bc20p1" path="res://addons/dialogic/Example Assets/sound-effects/typing1.wav" id="3_dv7p5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m731q"]
 radius = 18.0278
@@ -15,3 +16,6 @@ action_name = "!"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("CircleShape2D_m731q")
+
+[node name="lamp_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_dv7p5")

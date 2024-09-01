@@ -12,6 +12,7 @@ func _on_interact():
 		if Global.is_manusia and !Global.buku_sudah_dialog: 
 			Dialogic.timeline_ended.connect(_on_timeline_ended)
 			Dialogic.start("found_book")
+			$sfx.play()
 			interaction_area.monitoring = false
 			Global.player_jalan = false
 		elif Global.is_manusia and Global.buku_sudah_dialog:

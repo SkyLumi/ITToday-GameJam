@@ -20,9 +20,12 @@ func _process(_delta: float) -> void:
 	
 func _on_interact():
 	if !gelap.visible and baca_buku:
+		$sfx.play()
 		hint.text = ""
 		emit_signal("kabel_ambil")
-		queue_free() 
+		interaction_area.monitorable = false
+		hide()
+		#queue_free() 
 
 func _on_gui_buku_biru_buku_closed() -> void:
 	baca_buku = true

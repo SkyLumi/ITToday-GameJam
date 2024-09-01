@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cd0tmp35aboah"]
+[gd_scene load_steps=9 format=3 uid="uid://cd0tmp35aboah"]
 
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_0d7y1"]
 [ext_resource type="Texture2D" uid="uid://b2uqr667ggjld" path="res://assets/background/bg.jpg" id="1_x87bd"]
+[ext_resource type="AudioStream" uid="uid://c3uw4nft0de13" path="res://addons/dialogic/Example Assets/sound-effects/typing2.wav" id="3_kutay"]
 
 [sub_resource type="SystemFont" id="SystemFont_uuswk"]
 font_names = PackedStringArray("Impact")
@@ -146,7 +147,6 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="Transition"]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -155,3 +155,6 @@ offset_right = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Hitsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_kutay")
