@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cd0tmp35aboah"]
 
-[ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_grsx6"]
+[ext_resource type="Script" path="res://scenes/mainmenu.gd" id="1_grsx6"]
 [ext_resource type="Texture2D" uid="uid://b2uqr667ggjld" path="res://assets/background/bg.jpg" id="1_x87bd"]
 
 [sub_resource type="SystemFont" id="SystemFont_uuswk"]
@@ -129,7 +129,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Mulai"
+text = "BUTTON 1"
 
 [node name="Seperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
