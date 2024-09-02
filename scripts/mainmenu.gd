@@ -1,8 +1,8 @@
 class_name MainMenu
 extends Control
 
-@onready var start_button = $MarginContainer/HBoxContainer/VBoxContainer/Start_Button as Button
-@onready var exit_button = $MarginContainer/HBoxContainer/VBoxContainer/Exit_Button as Button
+@onready var start_button = $Start_Button
+@onready var exit_button = $Exit_Button
 @onready var start_level = preload("res://scenes/game.tscn") as PackedScene
 @onready var transisi = $Transition
 @onready var colorect = $Transition/ColorRect

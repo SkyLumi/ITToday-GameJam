@@ -11,6 +11,20 @@ func _process(_delta: float) -> void:
 	
 func _on_interact():
 	if Global.is_manusia:
-		gui_buku.visible = true
+		if Global.buku_sudah_dialog_hijau:
+			Global.player_jalan = false
+			gui_buku.visible = true
+		else:
+			Dialogic.start("interact_buku")
+			Global.player_jalan = false
+			interaction_area.monitoring = false
+			Dialogic.timeline_ended.connect(_on_timeline_ended)
+			Global.buku_sudah_dialog = true
 	else:
 		interaction_area.action_name = "bang gada tangan bang"
+
+func _on_timeline_ended():
+	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
+	gui_buku.visible = true
+	Global.player_jalan = true
+	Global.buku_sudah_dialog_hijau = true

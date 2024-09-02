@@ -14,7 +14,8 @@ func _process(_delta: float) -> void:
 func _on_interact():
 	if Global.is_manusia:
 		emit_signal("flashdisk_diambil")
-		#cutscene bangg
+		hide()
+		interaction_area.monitoring = false
 		
 	else:
 		interaction_area.action_name = "eits robot tidak punya tangan"

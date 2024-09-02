@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cd0tmp35aboah"]
+[gd_scene load_steps=11 format=3 uid="uid://cd0tmp35aboah"]
 
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_0d7y1"]
-[ext_resource type="Texture2D" uid="uid://b2uqr667ggjld" path="res://assets/background/bg.jpg" id="1_x87bd"]
+[ext_resource type="Texture2D" uid="uid://dkf8tpajag54d" path="res://assets/GUI/SOLUS_COVER.png" id="2_81qdn"]
+[ext_resource type="VideoStream" path="res://assets/GUI/karakter/Ahan.ogv" id="3_hcuj7"]
 [ext_resource type="AudioStream" uid="uid://c3uw4nft0de13" path="res://addons/dialogic/Example Assets/sound-effects/typing2.wav" id="3_kutay"]
-
-[sub_resource type="SystemFont" id="SystemFont_uuswk"]
-font_names = PackedStringArray("Impact")
+[ext_resource type="Texture2D" uid="uid://btoqbfqbfjjal" path="res://assets/GUI/MenuTombol/new_game.png" id="3_u4xys"]
+[ext_resource type="Texture2D" uid="uid://cxgwfd0jc7c0h" path="res://assets/GUI/MenuTombol/new_game_pink.png" id="4_0uja0"]
 
 [sub_resource type="Animation" id="Animation_oh6da"]
 length = 0.001
@@ -64,8 +64,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0d7y1")
@@ -80,66 +78,49 @@ offset_right = -2.0
 offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_x87bd")
+texture = ExtResource("2_81qdn")
 expand_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -2.0
-offset_right = -2.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
+[node name="Start_Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 315.0
+offset_right = 707.0
+offset_bottom = 432.0
+scale = Vector2(0.751171, 0.751171)
+texture_normal = ExtResource("3_u4xys")
+texture_pressed = ExtResource("4_0uja0")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 60
-
-[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/outline_size = 12
-theme_override_constants/shadow_outline_size = 5
-theme_override_fonts/font = SubResource("SystemFont_uuswk")
-theme_override_font_sizes/font_size = 64
-text = "SOLUS"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 18
-alignment = 1
-
-[node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Start_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Exit_Button" type="Button" parent="."]
+visible = false
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Mulai"
-
-[node name="Seperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Exit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(120, 32)
-layout_mode = 2
+offset_left = 10.0
+offset_top = 12.0
+offset_right = 1138.0
+offset_bottom = 636.0
 theme_override_font_sizes/font_size = 32
 text = "Keluar"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -982.0
+offset_top = -553.0
+offset_right = 394.0
+offset_bottom = 823.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+stream = ExtResource("3_hcuj7")
+volume_db = -80.0
+autoplay = true
+expand = true
+loop = true
 
 [node name="Transition" type="AnimationPlayer" parent="."]
 libraries = {
@@ -147,6 +128,7 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="Transition"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

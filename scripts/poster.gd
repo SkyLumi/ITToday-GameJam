@@ -2,8 +2,8 @@ extends Sprite2D
 
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var start_puzzle = preload("res://scenes/puzzle1.tscn") as PackedScene
-@onready var transisi = $CanvasLayer/Transition
-@onready var colorRect = $CanvasLayer/Transition/ColorRect
+@onready var transisi = get_node("../CanvasLayer/Transition")
+@onready var colorRect = get_node("../CanvasLayer/Transition/ColorRect")
 
 
 func _ready():

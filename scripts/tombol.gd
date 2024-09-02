@@ -1,21 +1,19 @@
 extends Node2D
 
 @onready var interaction_area: InteractionArea = $InteractionArea
-@export var PlayerPath: NodePath = "../Player/Manusia" 
-@onready var player = get_node(PlayerPath)
+@onready var teori_graf = preload("res://scenes/puzzle_2.tscn") as PackedScene
+@onready var transisi = get_node("../CanvasLayer/Transition")
+@onready var colorRect = get_node("../CanvasLayer/Transition/ColorRect")
+
 
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
 
-	
-func _process(_delta: float) -> void:
-	pass
-	
+
 func _on_interact():
-	var player_aktif = player.get("is_active")
-	if player_aktif:
-		interaction_area.action_name = "manusia"
-	else:
-		interaction_area.action_name = "robot"
-	
-	
+		Global.player_position = Vector2(235,646)
+		colorRect.visible = true
+		transisi.play("fade_out")
+		await transisi.animation_finished
+		colorRect.visible = false
+		get_tree().change_scene_to_packed(teori_graf)
