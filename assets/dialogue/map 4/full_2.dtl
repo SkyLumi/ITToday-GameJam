@@ -1,0 +1,92 @@
+join solus 2
+solus (default): Super komputer ditemukan
+solus (thinking): Memulai transfusi data...
+solus (thinking): .........Progress transfusi data \: 10%...
+solus (thinking): .........Progress transfusi data \: 25%...
+solus (thinking): .........Progress transfusi data \: 37%...
+solus (default): (Dengan begini, semua terminus, termasuk aku akan musnah)
+solus (thinking): .........Progress transfusi data \: 48%...
+solus (default): (Waktu yang cukup singkat, namun cukup "berkesan")
+solus (thinking): .........Progress transfusi data \: 70%...
+solus (default): ....
+solus (thinking): .........Progress transfusi data \: 98%...
+solus (question): (Apakah aku memang harus berakhir di sini?)
+solus (thinking): .........Progress transfusi data \: 100%...
+solus: ...
+solus (question): ...?
+Masukkan kode di bawah.
+solus (default): !
+solus (question): Apa ini?
+solus (default): ....
+*TEEET*
+Input anda salah. Silahkan mencoba lagi.
+solus (default): .........
+*TEEET*
+Input anda salah. Silahkan mencoba lagi.
+solus (warning): Kode ini sangat rumit. Darurat.
+update solus [animation="Shake X"]
+solus (warning): Darurat. Aku tidak bisa menyelesaikan ini.
+terminus: [PENYUSUP. MUSNAHKAN.]
+solus: (!Sepertinya Terminus sudah mendeteksi keberadaanku disini.)
+solus: (Dengan begini, peradaban Terminus akan terus berkembang dan manusia akan musnah...)
+solus (default): (Ahan akan...)
+update solus 1
+join ahan (shocked) 1 [animation="Bounce In"]
+[signal arg="ahan_datang"]
+ahan (sad): SOLUS!!!
+solus: !
+terminus: [PENYUSUP. MUSNAHKAN.]
+update ahan [animation="Shake X"]
+ahan (shocked): Hiiiii-!! Terminus itu sedang mengejarku-!
+ahan: Solus, apakah penghancurannya masih lama? Apa semua baik-baik saja?
+solus: ...
+ahan (curious): Solus?
+solus (default): Maaf, Ahan. Pada akhirnya, aku tidak bisa menyelesaikan misiku. Kode ini sangat rumit bahkan untukku, aku tidak yakin manusia dapat memecahkannya.
+solus (thinking): Sepertinya kita sudah cukup sampai di sini.
+terminus: [PENYUSUP. MUSNAHKAN.]
+update ahan [animation="Shake Y"]
+ahan (shocked): HIIII!!! SOLUS!! TERMINUSNYA SUDAH MAU MASUK!!
+ahan (sad): (Kalau terus begini, aku dan Solus akan dihabisi Terminus)
+ahan (sad): (Bahkan AI berkualitas tinggi seperti Solus saja tidak bisa memecahkannya... bagaimana denganku?)
+terminus: [PENYUSUP. MUSNAHKAN.]
+ahan (shocked): (Ah, bodo amat! Yang penting aku coba dulu!!)
+ahan (smile): S- Sini biar aku lihat!!
+solus (default): Tapi Ahan-
+leave --All--
+join  1
+*beep*
+Masukkan kode di bawah.
+join ahan (curious) 0
+ahan (curious): ...........huh?
+ahan: ......
+*beep*
+Kode terverifikasi. Transfusi data selesai. Memulai penghancuran terminus.
+ahan (shocked): ..............
+...kode yang kamu bilang rumit itu... captcha...?
+*KLANG*
+ahan (curious): ! Suara apa itu?
+ahan (shocked): !! Para Terminus sudah mati!
+ahan (smile): Solus!! Kita berhasil!!!
+update ahan 1
+join solus (mati) 1
+solus (mati): ....
+ahan (curious): ....Solus?
+ahan (sad): Solus? SOLUS!!
+solus (question): ...Ahan?
+solus (question): ...Aku kira aku sudah mati.
+ahan (smile): ...Syukurlah-! Tentu saja tidak! Kamu tidak sama dengan Terminus yang lain!
+solus (default): ...iya.
+ahan: Hehehe... Kita berhasil, Solus!!
+solus: Iya, kamu benar.
+ahan: ...hehe
+ahan: Akhirnya kota ini sudah damai... Aku masih tidak percaya. Ini berkat bantuanmu, Solus.
+ahan: Ayo sampaikan ke orang-orang kalau kota telah berhasil diselamatkan!
+leave ahan
+update solus 2
+solus (default): ...
+solus (happy): ...
+[wait time="1.8"]
+leave solus
+[wait time="1.4"]
+Baik, Ahan.
+Fin.
