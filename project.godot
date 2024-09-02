@@ -28,7 +28,6 @@ directories/dch_directory={
 "solus": "res://assets/dialogue/character/solus.dch"
 }
 directories/dtl_directory={
-"Morse_pintu_flashdisk": "res://assets/dialogue/map 2/Morse_pintu_flashdisk.dtl",
 "after_fix_solus": "res://assets/dialogue/map 1/after_fix_solus.dtl",
 "enter_map2": "res://assets/dialogue/map 2/enter_map2.dtl",
 "enter_underlab": "res://assets/dialogue/map 1/enter_underlab.dtl",
@@ -39,6 +38,7 @@ directories/dtl_directory={
 "interact_solus_rusak": "res://assets/dialogue/map 1/interact_solus_rusak.dtl",
 "interact_solus_rusak_after_buku": "res://assets/dialogue/map 1/interact_solus_rusak_after_buku.dtl",
 "morse_pintu_awal": "res://assets/dialogue/map 2/morse_pintu_awal.dtl",
+"morse_pintu_flashdisk": "res://assets/dialogue/map 2/Morse_pintu_flashdisk.dtl",
 "pintu_rahasia": "res://assets/dialogue/map 1/pintu_rahasia.dtl",
 "prolog": "res://assets/dialogue/map 1/prolog.dtl",
 "teorigraf_solved": "res://assets/dialogue/map 3/teorigraf_solved.dtl"

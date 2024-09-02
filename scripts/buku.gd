@@ -6,9 +6,6 @@ extends Sprite2D
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
 	
-func _process(_delta: float) -> void:
-		interaction_area.action_name = "baca"
-	
 func _on_interact():
 	if Global.is_manusia:
 		if Global.buku_sudah_dialog_hijau:
@@ -19,12 +16,15 @@ func _on_interact():
 			Global.player_jalan = false
 			interaction_area.monitoring = false
 			Dialogic.timeline_ended.connect(_on_timeline_ended)
-			Global.buku_sudah_dialog = true
 	else:
 		interaction_area.action_name = "bang gada tangan bang"
 
 func _on_timeline_ended():
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
 	gui_buku.visible = true
-	Global.player_jalan = true
+	interaction_area.monitoring = true
 	Global.buku_sudah_dialog_hijau = true
+
+
+func _on_interaction_area_body_entered(_body: Node2D) -> void:
+	interaction_area.action_name = "baca"

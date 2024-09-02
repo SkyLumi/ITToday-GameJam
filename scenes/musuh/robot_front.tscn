@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://datjc5pibxxka"]
+
+[ext_resource type="Texture2D" uid="uid://faby0jytmccn" path="res://assets/characters/robotjahat/solusevil_front.png" id="1_e64js"]
+[ext_resource type="PackedScene" uid="uid://dngit0dfiw4du" path="res://interaction/interaction area/interaction_area.tscn" id="2_63wu3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7fpp"]
+atlas = ExtResource("1_e64js")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rbp0"]
+atlas = ExtResource("1_e64js")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xf23"]
+atlas = ExtResource("1_e64js")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcprc"]
+atlas = ExtResource("1_e64js")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7il2t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7fpp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rbp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xf23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcprc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocfx8"]
+size = Vector2(30, 73)
+
+[node name="robot_front" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7il2t")
+frame_progress = 0.532517
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_63wu3")]
+action_name = "musnahkan"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 32.5)
+shape = SubResource("RectangleShape2D_ocfx8")
