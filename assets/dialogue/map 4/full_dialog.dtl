@@ -26,7 +26,7 @@ Input anda salah. Silahkan mencoba lagi.
 solus (warning): Kode ini sangat rumit. Darurat.
 update solus [animation="Shake X"]
 solus (warning): Darurat. Aku tidak bisa menyelesaikan ini.
-[Musnahkan.]
+terminus: [PENYUSUP. MUSNAHKAN.]
 solus: (!Sepertinya Terminus sudah mendeteksi keberadaanku disini.)
 solus: (Dengan begini, peradaban Terminus akan terus berkembang dan manusia akan musnah...)
 solus (default): (Ahan akan...)
@@ -34,7 +34,7 @@ update solus 1
 join ahan (shocked) 1 [animation="Bounce In"]
 ahan (sad): SOLUS!!!
 solus: !
-[Musnahkan.]
+terminus: [PENYUSUP. MUSNAHKAN.]
 update ahan [animation="Shake X"]
 ahan (shocked): Hiiiii-!! Terminus itu sedang mengejarku-!
 ahan: Solus, apakah penghancurannya masih lama? Apa semua baik-baik saja?
@@ -42,12 +42,12 @@ solus: ...
 ahan (curious): Solus?
 solus (default): Maaf, Ahan. Pada akhirnya, aku tidak bisa menyelesaikan misiku. Kode ini sangat rumit bahkan untukku, aku tidak yakin manusia dapat memecahkannya.
 solus (thinking): Sepertinya kita sudah cukup sampai di sini.
-[Musnahkan.]
+terminus: [PENYUSUP. MUSNAHKAN.]
 update ahan [animation="Shake Y"]
 ahan (shocked): HIIII!!! SOLUS!! TERMINUSNYA SUDAH MAU MASUK!!
 ahan (sad): (Kalau terus begini, aku dan Solus akan dihabisi Terminus)
 ahan (sad): (Bahkan AI berkualitas tinggi seperti Solus saja tidak bisa memecahkannya... bagaimana denganku?)
-[Musnahkan.]
+terminus: [PENYUSUP. MUSNAHKAN.]
 ahan (shocked): (Ah, bodo amat! Yang penting aku coba dulu!!)
 ahan (smile): S- Sini biar aku lihat!!
 solus (default): Tapi Ahan-
