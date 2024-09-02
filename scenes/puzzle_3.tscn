@@ -1,10 +1,15 @@
-[gd_scene load_steps=22 format=3 uid="uid://dkqsr1k2qex3q"]
+[gd_scene load_steps=32 format=3 uid="uid://dkqsr1k2qex3q"]
 
 [ext_resource type="Script" path="res://scripts/puzzle_3.gd" id="1_bg1s0"]
 [ext_resource type="Texture2D" uid="uid://27xua1ix6h4n" path="res://assets/background/map_4.png" id="1_ej2uo"]
 [ext_resource type="Texture2D" uid="uid://vwss4nsr0phm" path="res://assets/tilesets/sekotak.png" id="3_53qrw"]
 [ext_resource type="PackedScene" uid="uid://dgiylk1w5nkt0" path="res://scenes/robot.tscn" id="4_3alm6"]
 [ext_resource type="Texture2D" uid="uid://ci0yiu76wdjs" path="res://assets/tilesets/kardus.png" id="4_jrc2u"]
+[ext_resource type="PackedScene" uid="uid://cb5b6fochyv6j" path="res://scenes/musuh/robot_right.tscn" id="6_0r5d3"]
+[ext_resource type="Script" path="res://scripts/kalah.gd" id="6_ibn84"]
+[ext_resource type="PackedScene" uid="uid://buarptsq5ekri" path="res://scenes/musuh/robot_back.tscn" id="7_3v0gw"]
+[ext_resource type="PackedScene" uid="uid://ynvnsi7q22x2" path="res://scenes/musuh/robot_left.tscn" id="8_1dknd"]
+[ext_resource type="PackedScene" uid="uid://datjc5pibxxka" path="res://scenes/musuh/robot_front.tscn" id="9_p7t7b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lycd1"]
 size = Vector2(166.5, 71)
@@ -53,6 +58,61 @@ size = Vector2(83, 124)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5k48"]
 size = Vector2(50, 612)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xvu5"]
+size = Vector2(220, 313)
+
+[sub_resource type="Animation" id="Animation_oh6da"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mmqro"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kdv3o"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4hoj5"]
+_data = {
+"RESET": SubResource("Animation_oh6da"),
+"fade_in": SubResource("Animation_mmqro"),
+"fade_out": SubResource("Animation_kdv3o")
+}
 
 [node name="puzzle3" type="Node2D"]
 y_sort_enabled = true
@@ -152,6 +212,10 @@ shape = SubResource("RectangleShape2D_a5k48")
 position = Vector2(447, 114.5)
 shape = SubResource("RectangleShape2D_ugbl5")
 
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(186, -324.5)
+shape = SubResource("RectangleShape2D_3xvu5")
+
 [node name="Sekotak" type="Sprite2D" parent="."]
 z_index = 1
 y_sort_enabled = true
@@ -175,3 +239,63 @@ offset = Vector2(0, -23.95)
 z_index = 1
 y_sort_enabled = true
 position = Vector2(667, 1329)
+
+[node name="musuh" type="Node2D" parent="."]
+script = ExtResource("6_ibn84")
+
+[node name="robot1" parent="musuh" instance=ExtResource("6_0r5d3")]
+position = Vector2(838, 823)
+
+[node name="robot2" parent="musuh" instance=ExtResource("6_0r5d3")]
+position = Vector2(1057, 720)
+
+[node name="robot3" parent="musuh" instance=ExtResource("7_3v0gw")]
+position = Vector2(769, 518)
+
+[node name="robot4" parent="musuh" instance=ExtResource("6_0r5d3")]
+position = Vector2(464, 399)
+
+[node name="robot5" parent="musuh" instance=ExtResource("8_1dknd")]
+position = Vector2(1185, 287)
+
+[node name="robot6" parent="musuh" instance=ExtResource("9_p7t7b")]
+position = Vector2(637, 65)
+
+[node name="robot7" parent="musuh" instance=ExtResource("8_1dknd")]
+position = Vector2(775, 62)
+
+[node name="robot8" parent="musuh" instance=ExtResource("9_p7t7b")]
+position = Vector2(92, 271)
+
+[node name="robot9" parent="musuh" instance=ExtResource("9_p7t7b")]
+position = Vector2(142, 271)
+
+[node name="robot10" parent="musuh" instance=ExtResource("9_p7t7b")]
+position = Vector2(193, 271)
+
+[node name="robot11" parent="musuh" instance=ExtResource("7_3v0gw")]
+position = Vector2(91, 396)
+
+[node name="robot12" parent="musuh" instance=ExtResource("7_3v0gw")]
+position = Vector2(139, 396)
+
+[node name="robot13" parent="musuh" instance=ExtResource("7_3v0gw")]
+position = Vector2(194, 396)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Transition" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_4hoj5")
+}
+movie_quit_on_finish = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Transition"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true

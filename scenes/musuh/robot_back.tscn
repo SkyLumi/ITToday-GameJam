@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://buarptsq5ekri"]
+
+[ext_resource type="Texture2D" uid="uid://m44rrt7shyfv" path="res://assets/characters/robotjahat/solusevil_back.png" id="1_smcf6"]
+[ext_resource type="Script" path="res://scripts/robot_musuh.gd" id="1_xrl5w"]
+[ext_resource type="PackedScene" uid="uid://dngit0dfiw4du" path="res://interaction/interaction area/interaction_area.tscn" id="2_ajcik"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqv4p"]
+atlas = ExtResource("1_smcf6")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fy52u"]
+atlas = ExtResource("1_smcf6")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3n6h"]
+atlas = ExtResource("1_smcf6")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3r73"]
+atlas = ExtResource("1_smcf6")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v2i0a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqv4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy52u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3n6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3r73")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlco3"]
+size = Vector2(66, 100)
+
+[node name="robot_back" type="Node2D"]
+script = ExtResource("1_xrl5w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v2i0a")
+autoplay = "default"
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_ajcik")]
+action_name = "!!!"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, -41)
+shape = SubResource("RectangleShape2D_nlco3")
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]

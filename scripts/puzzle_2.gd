@@ -7,7 +7,7 @@ func _ready() -> void:
 	var player = $Player
 	
 		#komentar code ini untuk debug
-	#player.position = Global.player_position
+	player.position = Global.player_position
 	
 	colorRect.visible = true
 	transisi.play("fade_in")

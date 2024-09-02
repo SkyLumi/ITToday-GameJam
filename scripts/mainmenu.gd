@@ -30,3 +30,13 @@ func on_exit_pressed() -> void:
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
+
+
+func _on_credit_button_pressed() -> void:
+	$credits_popup.visible = true
+	$silang.visible = true
+
+
+func _on_silang_pressed() -> void:
+	$credits_popup.visible = false
+	$silang.visible = false

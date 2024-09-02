@@ -10,3 +10,4 @@ var pintu_map2_terbuka = false
 var pintu_map3_terbuka = false
 var map2_dialog = false
 var after_fix_solus = false
+var ketahuan = false

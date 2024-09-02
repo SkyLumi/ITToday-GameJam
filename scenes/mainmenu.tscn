@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cd0tmp35aboah"]
+[gd_scene load_steps=19 format=3 uid="uid://cd0tmp35aboah"]
 
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_0d7y1"]
 [ext_resource type="Texture2D" uid="uid://cemxriglinpuu" path="res://assets/GUI/AAAAAAAAAAA.png" id="2_pis8j"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://m2siekkpqcmg" path="res://assets/GUI/MenuTombol/exit_pink.png" id="8_lriyj"]
 [ext_resource type="Texture2D" uid="uid://dey48a53rk8ax" path="res://assets/GUI/Solus logo.png" id="11_c51do"]
 [ext_resource type="Texture2D" uid="uid://cfe7hgxjtu1s7" path="res://assets/GUI/check vid.png" id="12_1k56n"]
+[ext_resource type="Texture2D" uid="uid://bppnp10ryibes" path="res://assets/GUI/PopUp_Gui/Credits.png" id="13_kfwwp"]
+[ext_resource type="Texture2D" uid="uid://bhh4pnbrv6bsg" path="res://assets/GUI/remakeGUI/silang.png" id="14_wvq0o"]
 
 [sub_resource type="Animation" id="Animation_oh6da"]
 length = 0.001
@@ -165,3 +167,26 @@ texture = ExtResource("11_c51do")
 position = Vector2(446, 874)
 scale = Vector2(0.720087, 0.720087)
 texture = ExtResource("12_1k56n")
+
+[node name="credits_popup" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_top = 40.0
+offset_right = 2844.0
+offset_bottom = 1639.0
+scale = Vector2(0.650499, 0.650499)
+texture = ExtResource("13_kfwwp")
+
+[node name="silang" type="TextureButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1360.0
+offset_top = 96.0
+offset_right = 1400.0
+offset_bottom = 136.0
+scale = Vector2(1.48, 1.48)
+texture_normal = ExtResource("14_wvq0o")
+stretch_mode = 4
+
+[connection signal="pressed" from="Credit_Button" to="." method="_on_credit_button_pressed"]
+[connection signal="pressed" from="silang" to="." method="_on_silang_pressed"]

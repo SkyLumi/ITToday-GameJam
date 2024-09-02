@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://datjc5pibxxka"]
+[gd_scene load_steps=10 format=3 uid="uid://datjc5pibxxka"]
 
+[ext_resource type="Script" path="res://scripts/robot_musuh.gd" id="1_cyhu7"]
 [ext_resource type="Texture2D" uid="uid://faby0jytmccn" path="res://assets/characters/robotjahat/solusevil_front.png" id="1_e64js"]
 [ext_resource type="PackedScene" uid="uid://dngit0dfiw4du" path="res://interaction/interaction area/interaction_area.tscn" id="2_63wu3"]
 
@@ -40,17 +41,21 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocfx8"]
-size = Vector2(30, 73)
+size = Vector2(67, 120)
 
 [node name="robot_front" type="Node2D"]
+script = ExtResource("1_cyhu7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7il2t")
+autoplay = "default"
 frame_progress = 0.532517
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_63wu3")]
-action_name = "musnahkan"
+action_name = "!!!"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(0, 32.5)
+position = Vector2(0.5, 30)
 shape = SubResource("RectangleShape2D_ocfx8")
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
