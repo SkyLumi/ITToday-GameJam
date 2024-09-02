@@ -48,7 +48,7 @@ offset_bottom = -184.0
 texture_normal = ExtResource("3_qoajn")
 stretch_mode = 0
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="Tanda_Panah_Kanan" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 399.0
 offset_top = -17.0
@@ -89,3 +89,4 @@ Bagi seseorang yang menemukan buku ini, aku mungkin tidak sempat menyelesaikan r
 autowrap_mode = 2
 
 [connection signal="pressed" from="silang" to="." method="_on_silang_pressed"]
+[connection signal="pressed" from="Tanda_Panah_Kanan" to="." method="_on_texture_button_pressed"]

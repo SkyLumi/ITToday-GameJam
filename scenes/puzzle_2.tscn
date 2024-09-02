@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://wogvnn4pkju3"]
+[gd_scene load_steps=23 format=3 uid="uid://wogvnn4pkju3"]
 
 [ext_resource type="Texture2D" uid="uid://b8kly2ppj7aso" path="res://assets/background/map_3.png" id="1_16g13"]
 [ext_resource type="Script" path="res://scripts/puzzle_2.gd" id="1_c1k5w"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://scripts/sudoku_check.gd" id="7_uk8aq"]
 [ext_resource type="PackedScene" uid="uid://c1i7m7qr2yrbk" path="res://scenes/tombol_lampu.tscn" id="7_xnqjx"]
 [ext_resource type="Script" path="res://scripts/pintu_puzzle_3.gd" id="11_po8b2"]
+[ext_resource type="Texture2D" uid="uid://vwss4nsr0phm" path="res://assets/tilesets/sekotak.png" id="12_47fh5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rhb0c"]
 size = Vector2(116.5, 108)
@@ -203,4 +204,13 @@ action_name = "Masuk"
 position = Vector2(-0.5, -4.5)
 shape = SubResource("RectangleShape2D_ngp8w")
 
+[node name="Sekotak2" type="Sprite2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(671, 114)
+texture = ExtResource("12_47fh5")
+offset = Vector2(0, -23.95)
+
+[connection signal="tombol_benar" from="Sudoku" to="." method="_on_sudoku_tombol_benar"]
 [connection signal="tombol_benar" from="Sudoku" to="PintuTutup" method="_on_sudoku_tombol_benar"]
+[connection signal="body_entered" from="PintuPuzzle3/InteractionArea" to="PintuPuzzle3" method="_on_interaction_area_body_entered"]

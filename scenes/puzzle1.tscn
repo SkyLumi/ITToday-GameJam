@@ -204,5 +204,6 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [connection signal="flashdisk_diambil" from="Flashdisk" to="tombol_pin" method="_on_flashdisk_flashdisk_diambil"]
+[connection signal="body_entered" from="Flashdisk/InteractionArea" to="Flashdisk" method="_on_interaction_area_body_entered"]
 [connection signal="body_entered" from="tombol_pin/InteractionArea" to="tombol_pin" method="_on_interaction_area_body_entered"]
 [connection signal="password_benar" from="CanvasLayer/pin_tombol" to="Pintu" method="_on_pin_tombol_password_benar"]

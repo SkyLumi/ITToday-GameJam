@@ -5,4 +5,5 @@ func _ready() -> void:
 		queue_free()
 
 func _on_sudoku_tombol_benar() -> void:
+	
 	queue_free()

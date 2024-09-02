@@ -11,7 +11,7 @@ func _ready() -> void:
 	await transisi.animation_finished
 	colorRect.visible = false
 	
-	if Global.map2_dialog:
+	if !Global.map2_dialog:
 		Dialogic.start("enter_map2")
 		Global.player_jalan = false
 		Dialogic.timeline_ended.connect(_on_timeline_ended)

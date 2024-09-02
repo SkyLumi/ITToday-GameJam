@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ct7rab6qc8lls"]
+[gd_scene load_steps=18 format=3 uid="uid://ct7rab6qc8lls"]
 
 [ext_resource type="Texture2D" uid="uid://dh086ln2w5hni" path="res://assets/background/MAP_1.png" id="1_63xx6"]
 [ext_resource type="Script" path="res://scripts/lobby.gd" id="1_78nlk"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c15u0m0pgwwo6" path="res://scenes/GUI/nyambungKabel.tscn" id="7_24wvt"]
 [ext_resource type="Script" path="res://scripts/buku_biru.gd" id="9_yb2lf"]
 [ext_resource type="PackedScene" uid="uid://gk7i1xnuju4e" path="res://scenes/GUI/gui_buku_biru.tscn" id="9_yme74"]
+[ext_resource type="AudioStream" uid="uid://ccu5w5q5ttcnr" path="res://assets/audio/book.mp3" id="11_poabx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lt744"]
 size = Vector2(44, 42.5)
@@ -163,6 +164,9 @@ action_name = "Baca"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BukuBiru/InteractionArea"]
 shape = SubResource("CircleShape2D_rndp4")
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="BukuBiru"]
+stream = ExtResource("11_poabx")
 
 [connection signal="body_entered" from="BukuBiru/InteractionArea" to="BukuBiru" method="_on_interaction_area_body_entered"]
 [connection signal="body_exited" from="BukuBiru/InteractionArea" to="BukuBiru" method="_on_interaction_area_body_exited"]

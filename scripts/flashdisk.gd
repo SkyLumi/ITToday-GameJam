@@ -8,9 +8,6 @@ signal flashdisk_diambil
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
 	
-func _process(_delta: float) -> void:
-		interaction_area.action_name = "baca"
-	
 func _on_interact():
 	if Global.is_manusia:
 		emit_signal("flashdisk_diambil")
@@ -19,3 +16,7 @@ func _on_interact():
 		
 	else:
 		interaction_area.action_name = "eits robot tidak punya tangan"
+
+
+func _on_interaction_area_body_entered(_body: Node2D) -> void:
+	interaction_area.action_name = "ambil"

@@ -40,9 +40,11 @@ func _on_interact():
 			nyambung_kabel.visible = true
 			manusia.is_active = false
 			await nyambung_kabel.kabel_selesai
-			pause_karakter()
-			Dialogic.timeline_ended.connect(_on_dialog_selesai_afterfix)
-			Dialogic.start("after_fix_solus")
+			colorect.visible = true
+			transisi.play("fade_out")
+			await transisi.animation_finished
+			Global.player_position = manusia.position
+			get_tree().change_scene_to_packed(lobby)
 		elif sudah_dialog:
 			Dialogic.timeline_ended.connect(_on_dialog_selesai)
 			Dialogic.start("interact_solus_rusak_after_buku")
@@ -52,13 +54,6 @@ func _on_interact():
 			Dialogic.start("interact_solus_rusak")
 			pause_karakter()
 		
-func _on_dialog_selesai_afterfix():
-	Dialogic.timeline_ended.disconnect(_on_dialog_selesai_afterfix)
-	Global.player_position = manusia.position
-	colorect.visible = true
-	transisi.play("fade_out")
-	await transisi.animation_finished
-	get_tree().change_scene_to_packed(lobby)
 	
 func _on_dialog_selesai():
 	Dialogic.timeline_ended.disconnect(_on_dialog_selesai)
