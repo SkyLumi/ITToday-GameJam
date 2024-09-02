@@ -14,3 +14,4 @@ func _on_interact():
 func _on_timeline_ended():
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
 	Global.player_jalan = true
+	interaction_area.monitoring = true

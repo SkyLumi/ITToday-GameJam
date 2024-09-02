@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cd0tmp35aboah"]
+[gd_scene load_steps=15 format=3 uid="uid://cd0tmp35aboah"]
 
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_0d7y1"]
 [ext_resource type="Texture2D" uid="uid://dkf8tpajag54d" path="res://assets/GUI/SOLUS_COVER.png" id="2_81qdn"]
@@ -6,6 +6,10 @@
 [ext_resource type="AudioStream" uid="uid://c3uw4nft0de13" path="res://addons/dialogic/Example Assets/sound-effects/typing2.wav" id="3_kutay"]
 [ext_resource type="Texture2D" uid="uid://btoqbfqbfjjal" path="res://assets/GUI/MenuTombol/new_game.png" id="3_u4xys"]
 [ext_resource type="Texture2D" uid="uid://cxgwfd0jc7c0h" path="res://assets/GUI/MenuTombol/new_game_pink.png" id="4_0uja0"]
+[ext_resource type="Texture2D" uid="uid://w0a7xyo8mq1h" path="res://assets/GUI/MenuTombol/credits.png" id="5_sciik"]
+[ext_resource type="Texture2D" uid="uid://3r2xu4081ldx" path="res://assets/GUI/MenuTombol/credit_pink.png" id="6_ne6og"]
+[ext_resource type="Texture2D" uid="uid://btn8gp28jf2we" path="res://assets/GUI/MenuTombol/exit.png" id="7_okkju"]
+[ext_resource type="Texture2D" uid="uid://m2siekkpqcmg" path="res://assets/GUI/MenuTombol/exit_pink.png" id="8_lriyj"]
 
 [sub_resource type="Animation" id="Animation_oh6da"]
 length = 0.001
@@ -84,23 +88,32 @@ expand_mode = 1
 [node name="Start_Button" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 182.0
-offset_top = 315.0
+offset_top = 328.0
 offset_right = 707.0
-offset_bottom = 432.0
+offset_bottom = 445.0
 scale = Vector2(0.751171, 0.751171)
 texture_normal = ExtResource("3_u4xys")
 texture_pressed = ExtResource("4_0uja0")
 
-[node name="Exit_Button" type="Button" parent="."]
-visible = false
-custom_minimum_size = Vector2(120, 32)
-layout_mode = 2
-offset_left = 10.0
-offset_top = 12.0
-offset_right = 1138.0
-offset_bottom = 636.0
-theme_override_font_sizes/font_size = 32
-text = "Keluar"
+[node name="Credit_Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 463.0
+offset_right = 707.0
+offset_bottom = 580.0
+scale = Vector2(0.751171, 0.751171)
+texture_normal = ExtResource("5_sciik")
+texture_pressed = ExtResource("6_ne6og")
+
+[node name="Exit_Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 598.0
+offset_right = 707.0
+offset_bottom = 715.0
+scale = Vector2(0.751171, 0.751171)
+texture_normal = ExtResource("7_okkju")
+texture_pressed = ExtResource("8_lriyj")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 1

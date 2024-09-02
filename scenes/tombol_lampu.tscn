@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1i7m7qr2yrbk"]
+
+[ext_resource type="Script" path="res://scripts/sudoku.gd" id="1_0ce3c"]
+[ext_resource type="PackedScene" uid="uid://dngit0dfiw4du" path="res://interaction/interaction area/interaction_area.tscn" id="3_kvpn6"]
+[ext_resource type="Texture2D" uid="uid://yytspaehkdgg" path="res://assets/tilesets/Properties/abuabu.png" id="3_thttm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3oni2"]
+radius = 12.0
+
+[node name="Tombol_Lampu" type="Node2D"]
+script = ExtResource("1_0ce3c")
+
+[node name="Tombol" type="Sprite2D" parent="."]
+texture = ExtResource("3_thttm")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_kvpn6")]
+action_name = "Ganti"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_3oni2")

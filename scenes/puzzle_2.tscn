@@ -1,14 +1,25 @@
-[gd_scene load_steps=14 format=3 uid="uid://wogvnn4pkju3"]
+[gd_scene load_steps=22 format=3 uid="uid://wogvnn4pkju3"]
 
 [ext_resource type="Texture2D" uid="uid://b8kly2ppj7aso" path="res://assets/background/map_3.png" id="1_16g13"]
 [ext_resource type="Script" path="res://scripts/puzzle_2.gd" id="1_c1k5w"]
 [ext_resource type="PackedScene" uid="uid://bclymq4a2o10s" path="res://scenes/Players.tscn" id="2_8lny3"]
-[ext_resource type="Script" path="res://scripts/pintu_lobby.gd" id="4_rnwn1"]
+[ext_resource type="Texture2D" uid="uid://dqodanw6kwimy" path="res://assets/tilesets/map_4_pintu_tutup.png" id="3_xxo30"]
+[ext_resource type="Script" path="res://scripts/pintu_tutup_puzzle2.gd" id="4_h5p4w"]
 [ext_resource type="PackedScene" uid="uid://dngit0dfiw4du" path="res://interaction/interaction area/interaction_area.tscn" id="5_ygkua"]
+[ext_resource type="Script" path="res://scripts/pintu_puzzlel1.gd" id="6_5svnm"]
 [ext_resource type="Script" path="res://scripts/papan.gd" id="6_gmtud"]
+[ext_resource type="Script" path="res://scripts/sudoku_check.gd" id="7_uk8aq"]
+[ext_resource type="PackedScene" uid="uid://c1i7m7qr2yrbk" path="res://scenes/tombol_lampu.tscn" id="7_xnqjx"]
+[ext_resource type="Script" path="res://scripts/pintu_puzzle_3.gd" id="11_po8b2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhb0c"]
+size = Vector2(116.5, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1h8t7"]
+size = Vector2(104, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kn05w"]
-size = Vector2(22, 120)
+size = Vector2(28, 120)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3xtsy"]
 radius = 34.1321
@@ -68,6 +79,9 @@ _data = {
 "fade_out": SubResource("Animation_kdv3o")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngp8w"]
+size = Vector2(329, 29)
+
 [node name="puzzle2" type="Node2D"]
 script = ExtResource("1_c1k5w")
 
@@ -80,18 +94,38 @@ texture = ExtResource("1_16g13")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(197, 713, 197, 590, 501, 590, 501, -61, 835, -62, 834, 713, 179, 714, 183, 741, 868, 742, 857, -92, 466, -85, 470, 555, 160, 578, 187, 710)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(559.75, 108)
+shape = SubResource("RectangleShape2D_rhb0c")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(779.5, 108)
+shape = SubResource("RectangleShape2D_rhb0c")
+
+[node name="PintuTutup" type="Sprite2D" parent="."]
+position = Vector2(670, 136)
+texture = ExtResource("3_xxo30")
+script = ExtResource("4_h5p4w")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PintuTutup"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PintuTutup/StaticBody2D"]
+shape = SubResource("RectangleShape2D_1h8t7")
+
 [node name="Player" parent="." instance=ExtResource("2_8lny3")]
+z_index = 1
+y_sort_enabled = true
 position = Vector2(235, 646)
 
 [node name="PintuPuzzle1" type="Node2D" parent="."]
 position = Vector2(211, 651)
-script = ExtResource("4_rnwn1")
+script = ExtResource("6_5svnm")
 
 [node name="InteractionArea" parent="PintuPuzzle1" instance=ExtResource("5_ygkua")]
 action_name = "Kembali"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PintuPuzzle1/InteractionArea"]
-position = Vector2(-2, 1)
+position = Vector2(2, 1)
 shape = SubResource("RectangleShape2D_kn05w")
 
 [node name="papan" type="Node2D" parent="."]
@@ -128,3 +162,45 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="Sudoku" type="Node2D" parent="."]
+position = Vector2(575, 305)
+script = ExtResource("7_uk8aq")
+
+[node name="Lampu" parent="Sudoku" instance=ExtResource("7_xnqjx")]
+position = Vector2(55, 175)
+
+[node name="Lampu2" parent="Sudoku" instance=ExtResource("7_xnqjx")]
+position = Vector2(130, 175)
+
+[node name="Lampu3" parent="Sudoku" instance=ExtResource("7_xnqjx")]
+position = Vector2(55, 138)
+
+[node name="Lampu4" parent="Sudoku" instance=ExtResource("7_xnqjx")]
+position = Vector2(131, 139)
+
+[node name="Lampu5" parent="Sudoku" instance=ExtResource("7_xnqjx")]
+position = Vector2(93, 99)
+
+[node name="Lampu6" parent="Sudoku" instance=ExtResource("7_xnqjx")]
+position = Vector2(131, 100)
+
+[node name="Lampu7" parent="Sudoku" instance=ExtResource("7_xnqjx")]
+position = Vector2(56, 63)
+
+[node name="Lampu8" parent="Sudoku" instance=ExtResource("7_xnqjx")]
+position = Vector2(131, 64)
+
+[node name="PintuPuzzle3" type="Node2D" parent="."]
+position = Vector2(669, -38)
+script = ExtResource("11_po8b2")
+
+[node name="InteractionArea" parent="PintuPuzzle3" instance=ExtResource("5_ygkua")]
+position = Vector2(-1, -1)
+action_name = "Masuk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PintuPuzzle3/InteractionArea"]
+position = Vector2(-0.5, -4.5)
+shape = SubResource("RectangleShape2D_ngp8w")
+
+[connection signal="tombol_benar" from="Sudoku" to="PintuTutup" method="_on_sudoku_tombol_benar"]
