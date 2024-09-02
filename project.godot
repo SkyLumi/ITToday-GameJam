@@ -25,14 +25,16 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "ahan": "res://assets/dialogue/character/ahan.dch",
-"solus": "res://assets/dialogue/character/solus.dch"
+"solus": "res://assets/dialogue/character/solus.dch",
+"terminus": "res://assets/characters/terminus.dch"
 }
 directories/dtl_directory={
 "after_fix_solus": "res://assets/dialogue/map 1/after_fix_solus.dtl",
 "enter_map2": "res://assets/dialogue/map 2/enter_map2.dtl",
 "enter_underlab": "res://assets/dialogue/map 1/enter_underlab.dtl",
 "found_book": "res://assets/dialogue/map 1/found_book.dtl",
-"full_dialog": "res://assets/dialogue/map 4/full_dialog.dtl",
+"full_1": "res://assets/dialogue/map 4/full_1.dtl",
+"full_2": "res://assets/dialogue/map 4/full_2.dtl",
 "interact_buku": "res://assets/dialogue/map 2/interact_buku.dtl",
 "interact_papan": "res://assets/dialogue/map 3/interact_papan.dtl",
 "interact_solus_rusak": "res://assets/dialogue/map 1/interact_solus_rusak.dtl",

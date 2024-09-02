@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://clskk6ymevqxr"]
+[gd_scene load_steps=27 format=3 uid="uid://clskk6ymevqxr"]
 
 [ext_resource type="Script" path="res://scripts/puzzle_1.gd" id="1_3tiqq"]
 [ext_resource type="Texture2D" uid="uid://csrgoax3b0yfd" path="res://assets/background/map_2.png" id="1_26oqt"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://cpup7dagm0ofy" path="res://assets/audio/morse.wav" id="12_4agfy"]
 [ext_resource type="Texture2D" uid="uid://dhtemoeohbxjm" path="res://assets/tilesets/pintu.png" id="12_21nuq"]
 [ext_resource type="Script" path="res://scripts/pintu.gd" id="13_natr8"]
+[ext_resource type="Texture2D" uid="uid://b00en6lhmgn75" path="res://assets/tilesets/atap_map_2.png" id="16_bcj8f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjl0o"]
 size = Vector2(23.5, 49.5)
@@ -202,6 +203,11 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="AtapMap2" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(1347.38, -173.75)
+texture = ExtResource("16_bcj8f")
 
 [connection signal="flashdisk_diambil" from="Flashdisk" to="tombol_pin" method="_on_flashdisk_flashdisk_diambil"]
 [connection signal="body_entered" from="Flashdisk/InteractionArea" to="Flashdisk" method="_on_interaction_area_body_entered"]

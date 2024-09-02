@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dkqsr1k2qex3q"]
+[gd_scene load_steps=34 format=3 uid="uid://dkqsr1k2qex3q"]
 
 [ext_resource type="Script" path="res://scripts/puzzle_3.gd" id="1_bg1s0"]
 [ext_resource type="Texture2D" uid="uid://27xua1ix6h4n" path="res://assets/background/map_4.png" id="1_ej2uo"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://buarptsq5ekri" path="res://scenes/musuh/robot_back.tscn" id="7_3v0gw"]
 [ext_resource type="PackedScene" uid="uid://ynvnsi7q22x2" path="res://scenes/musuh/robot_left.tscn" id="8_1dknd"]
 [ext_resource type="PackedScene" uid="uid://datjc5pibxxka" path="res://scenes/musuh/robot_front.tscn" id="9_p7t7b"]
+[ext_resource type="PackedScene" uid="uid://dngit0dfiw4du" path="res://interaction/interaction area/interaction_area.tscn" id="11_ihe3f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lycd1"]
 size = Vector2(166.5, 71)
@@ -113,6 +114,9 @@ _data = {
 "fade_in": SubResource("Animation_mmqro"),
 "fade_out": SubResource("Animation_kdv3o")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqhup"]
+size = Vector2(104, 54)
 
 [node name="puzzle3" type="Node2D"]
 y_sort_enabled = true
@@ -299,3 +303,16 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(330, 155)
+
+[node name="InteractionArea" parent="Node2D" instance=ExtResource("11_ihe3f")]
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/InteractionArea"]
+position = Vector2(6, -8)
+shape = SubResource("RectangleShape2D_hqhup")
+
+[connection signal="ketahuan" from="musuh" to="." method="_on_musuh_ketahuan"]
+[connection signal="body_entered" from="Node2D/InteractionArea" to="." method="_on_interaction_area_body_entered"]

@@ -1,25 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://celarorwlxqpf"]
+[gd_scene load_steps=13 format=3 uid="uid://wx4lciq1l4m6"]
 
 [ext_resource type="Script" path="res://scripts/cutscene.gd" id="1_o1fgu"]
 [ext_resource type="Texture2D" uid="uid://dc1ivgl41pkj5" path="res://assets/background/map 5.png" id="2_rxehd"]
 [ext_resource type="PackedScene" uid="uid://dgiylk1w5nkt0" path="res://scenes/robot.tscn" id="3_sfekp"]
 [ext_resource type="PackedScene" uid="uid://2o51htk5nq6w" path="res://scenes/manusia.tscn" id="4_vevnv"]
-
-[sub_resource type="Animation" id="Animation_qwnuj"]
-resource_name = "new_animation"
-length = 110.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Robot:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(344, 830), Vector2(346, 630)]
-}
 
 [sub_resource type="Animation" id="Animation_ouw0p"]
 length = 0.001
@@ -64,11 +48,79 @@ tracks/0/keys = {
 "values": [Vector2(392, 811), Vector2(368, 632)]
 }
 
+[sub_resource type="Animation" id="Animation_qwnuj"]
+resource_name = "new_animation"
+length = 110.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Robot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(344, 830), Vector2(346, 630)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fexvy"]
 _data = {
 "RESET": SubResource("Animation_ouw0p"),
 "ahan_datang": SubResource("Animation_mc6yn"),
 "new_animation": SubResource("Animation_qwnuj")
+}
+
+[sub_resource type="Animation" id="Animation_oh6da"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mmqro"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kdv3o"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4hoj5"]
+_data = {
+"RESET": SubResource("Animation_oh6da"),
+"fade_in": SubResource("Animation_mmqro"),
+"fade_out": SubResource("Animation_kdv3o")
 }
 
 [node name="animasi_cutscene" type="Node2D"]
@@ -88,3 +140,21 @@ libraries = {
 
 [node name="Manusia" parent="." instance=ExtResource("4_vevnv")]
 position = Vector2(396, 889)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Transition" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_4hoj5")
+}
+movie_quit_on_finish = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Transition"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
