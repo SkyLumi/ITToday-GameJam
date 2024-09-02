@@ -1,7 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://cd0tmp35aboah"]
+[gd_scene load_steps=17 format=3 uid="uid://cd0tmp35aboah"]
 
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_0d7y1"]
-[ext_resource type="Texture2D" uid="uid://dkf8tpajag54d" path="res://assets/GUI/SOLUS_COVER.png" id="2_81qdn"]
+[ext_resource type="Texture2D" uid="uid://cemxriglinpuu" path="res://assets/GUI/AAAAAAAAAAA.png" id="2_pis8j"]
 [ext_resource type="VideoStream" path="res://assets/GUI/karakter/Ahan.ogv" id="3_hcuj7"]
 [ext_resource type="AudioStream" uid="uid://c3uw4nft0de13" path="res://addons/dialogic/Example Assets/sound-effects/typing2.wav" id="3_kutay"]
 [ext_resource type="Texture2D" uid="uid://btoqbfqbfjjal" path="res://assets/GUI/MenuTombol/new_game.png" id="3_u4xys"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://3r2xu4081ldx" path="res://assets/GUI/MenuTombol/credit_pink.png" id="6_ne6og"]
 [ext_resource type="Texture2D" uid="uid://btn8gp28jf2we" path="res://assets/GUI/MenuTombol/exit.png" id="7_okkju"]
 [ext_resource type="Texture2D" uid="uid://m2siekkpqcmg" path="res://assets/GUI/MenuTombol/exit_pink.png" id="8_lriyj"]
+[ext_resource type="Texture2D" uid="uid://dey48a53rk8ax" path="res://assets/GUI/Solus logo.png" id="11_c51do"]
+[ext_resource type="Texture2D" uid="uid://cfe7hgxjtu1s7" path="res://assets/GUI/check vid.png" id="12_1k56n"]
 
 [sub_resource type="Animation" id="Animation_oh6da"]
 length = 0.001
@@ -82,7 +84,7 @@ offset_right = -2.0
 offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_81qdn")
+texture = ExtResource("2_pis8j")
 expand_mode = 1
 
 [node name="Start_Button" type="TextureButton" parent="."]
@@ -122,13 +124,13 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -982.0
-offset_top = -553.0
-offset_right = 394.0
-offset_bottom = 823.0
+offset_left = -1278.0
+offset_top = -456.0
+offset_right = 98.0
+offset_bottom = 920.0
 grow_horizontal = 0
 grow_vertical = 2
-scale = Vector2(0.8, 0.8)
+scale = Vector2(1.12701, 1.12701)
 stream = ExtResource("3_hcuj7")
 volume_db = -80.0
 autoplay = true
@@ -153,3 +155,13 @@ color = Color(0, 0, 0, 1)
 
 [node name="Hitsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_kutay")
+
+[node name="SolusLogo" type="Sprite2D" parent="."]
+position = Vector2(515, 225)
+scale = Vector2(0.614883, 0.614883)
+texture = ExtResource("11_c51do")
+
+[node name="CheckVid" type="Sprite2D" parent="."]
+position = Vector2(446, 874)
+scale = Vector2(0.720087, 0.720087)
+texture = ExtResource("12_1k56n")
