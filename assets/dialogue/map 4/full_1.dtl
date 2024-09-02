@@ -31,6 +31,8 @@ solus: (!Sepertinya Terminus sudah mendeteksi keberadaanku disini.)
 solus: (Dengan begini, peradaban Terminus akan terus berkembang dan manusia akan musnah...)
 solus (default): (Ahan akan...)
 update solus 1
+[signal arg="ahan_datang"]
+[wait time="5.0"]
 join ahan (shocked) 1 [animation="Bounce In"]
 ahan (sad): SOLUS!!!
 solus: !
