@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlc8bwg0my6ec"]
+
+[ext_resource type="AudioStream" uid="uid://c0epcbqjnwp4e" path="res://assets/audio/Y2meta.app - 【フリーBGM】花時雨【ピアノ・感動・爽やか・切ない・リラックス】 (320 kbps).mp3" id="1_uoim1"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_uoim1")
+volume_db = -13.394
+autoplay = true

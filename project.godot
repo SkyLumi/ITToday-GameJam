@@ -11,14 +11,16 @@ config_version=5
 [application]
 
 config/name="It Today-game Jam"
+config/description="Game Buatan Arerumi"
 run/main_scene="res://scenes/mainmenu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Solus.png"
 
 [autoload]
 
 InteractionManager="*res://interaction/InteractionManager.tscn"
 Global="*res://scripts/global.gd"
+Musik="*res://scenes/musik.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
@@ -71,6 +73,8 @@ variables={}
 [display]
 
 window/size/mode=3
+window/windows_native_icon=""
+window/icon="res://icon.svg"
 
 [editor_plugins]
 
