@@ -87,6 +87,7 @@ texture = ExtResource("2_pis8j")
 expand_mode = 1
 
 [node name="Start_Button" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 182.0
 offset_top = 328.0
 offset_right = 707.0
@@ -106,6 +107,7 @@ texture_normal = ExtResource("5_sciik")
 texture_pressed = ExtResource("6_ne6og")
 
 [node name="Exit_Button" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 182.0
 offset_top = 598.0
 offset_right = 707.0
@@ -165,6 +167,7 @@ texture = ExtResource("12_1k56n")
 
 [node name="credits_popup" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_top = 40.0
 offset_right = 2844.0
 offset_bottom = 1639.0

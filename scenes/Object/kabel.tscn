@@ -18,5 +18,5 @@ shape = SubResource("RectangleShape2D_mky40")
 
 [node name="sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_megox")
-volume_db = -24.19
+volume_db = -15.0
 pitch_scale = 0.64

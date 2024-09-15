@@ -140,6 +140,7 @@ libraries = {
 
 [node name="Manusia" parent="." instance=ExtResource("4_vevnv")]
 position = Vector2(396, 889)
+scale = Vector2(0.6, 0.6)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

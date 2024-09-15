@@ -19,3 +19,4 @@ shape = SubResource("CircleShape2D_m731q")
 
 [node name="lamp_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_dv7p5")
+volume_db = 5.0

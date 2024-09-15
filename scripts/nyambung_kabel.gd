@@ -1,80 +1,33 @@
 extends Control
 
-@warning_ignore("unused_signal")
-signal kabel_selesai
-
-var correct_pairs = {
-	"BiruKiri": "BiruKanan",
-	"UnguKiri": "UnguKanan",
-	"HijauKiri": "HijauKanan",
-	"OrenKiri": "OrenKanan",
-	"KuningKiri": "KuningKanan",
-	"MerahKiri": "MerahKanan"
-}
-
-var matched_pairs: int = 0
-var selected_left_button: TextureButton = null
+var original_size = Vector2()  # Menyimpan ukuran awal
+var dragging = false  # Untuk mendeteksi apakah sedang di-drag
+var start_mouse_pos = Vector2()  # Menyimpan posisi mouse saat klik dimulai
+var start_scale = Vector2()  # Menyimpan skala awal saat klik dimulai
 
 func _ready():
-	# Connect all left-side buttons using Callable
-	$BiruKiri.pressed.connect(Callable(self, "_on_left_button_pressed").bind("BiruKiri"))
-	$UnguKiri.pressed.connect(Callable(self, "_on_left_button_pressed").bind("UnguKiri"))
-	$HijauKiri.pressed.connect(Callable(self, "_on_left_button_pressed").bind("HijauKiri"))
-	$OrenKiri.pressed.connect(Callable(self, "_on_left_button_pressed").bind("OrenKiri"))
-	$KuningKiri.pressed.connect(Callable(self, "_on_left_button_pressed").bind("KuningKiri"))
-	$MerahKiri.pressed.connect(Callable(self, "_on_left_button_pressed").bind("MerahKiri"))
+	# Menyimpan ukuran asli untuk referensi
+	original_size = $MerahKiri.scale
 
-	# Connect all right-side buttons using Callable
-	$BiruKanan.pressed.connect(Callable(self, "_on_right_button_pressed").bind("BiruKanan"))
-	$UnguKanan.pressed.connect(Callable(self, "_on_right_button_pressed").bind("UnguKanan"))
-	$HijauKanan.pressed.connect(Callable(self, "_on_right_button_pressed").bind("HijauKanan"))
-	$OrenKanan.pressed.connect(Callable(self, "_on_right_button_pressed").bind("OrenKanan"))
-	$KuningKanan.pressed.connect(Callable(self, "_on_right_button_pressed").bind("KuningKanan"))
-	$MerahKanan.pressed.connect(Callable(self, "_on_right_button_pressed").bind("MerahKanan"))
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			dragging = true
+			# Menyimpan posisi mouse dan skala saat klik dimulai
+			start_mouse_pos = get_global_mouse_position()
+			start_scale = $MerahKiri.scale
+		elif event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
+			# Jika klik kiri dilepas, hentikan drag
+			dragging = false
+			# Mengembalikan skala ke ukuran asli
+			$MerahKiri.scale = original_size
 
-func _on_left_button_pressed(button_name: StringName):
-	selected_left_button = get_node(NodePath(button_name)) 
-
-func _on_right_button_pressed(button_name: StringName):
-	if selected_left_button == null:
-		return
-
-	if correct_pairs[selected_left_button.name] == button_name:
-		selected_left_button.disabled = true
-		get_node(NodePath(button_name)).disabled = true 
+func _process(_delta):
+	if dragging:
+		var current_mouse_pos = get_global_mouse_position()
+		# Menghitung delta (perbedaan) antara posisi mouse awal dan posisi mouse saat ini
+		var delta_mouse = current_mouse_pos.x - start_mouse_pos.x
 		
-		_show_wire(selected_left_button.name)
-		
-		matched_pairs += 1
-		
-		if matched_pairs == correct_pairs.size():
-			emit_signal("kabel_selesai")
-			
-			_close_gui()
-			
-	else:
-		pass
-
-	# Reset selection
-	selected_left_button = null
-
-
-func _show_wire(left_button_name: StringName):
-	var wire_mapping = {
-		"BiruKiri": "wireBiru",
-		"UnguKiri": "wireUngu",
-		"HijauKiri": "wireHijau",
-		"OrenKiri": "wireOren",
-		"KuningKiri": "wireKuning",
-		"MerahKiri": "wireMerah"
-		}
-
-	var wire_name = wire_mapping[left_button_name]
-
-	if wire_name != null:
-		get_node(NodePath(wire_name)).visible = true
-	else:
-		pass
-
-func _close_gui():
-	self.visible = false
+		# Mengubah skala berdasarkan perbedaan posisi mouse
+		# Perbesar atau perkecil skala sumbu X berdasarkan perubahan posisi mouse
+		$MerahKiri.scale = Vector2(start_scale.x + delta_mouse / 40, original_size.y)

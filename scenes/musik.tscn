@@ -6,3 +6,4 @@
 stream = ExtResource("1_uoim1")
 volume_db = -13.394
 autoplay = true
+parameters/looping = true

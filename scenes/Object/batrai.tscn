@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ij8ql"]
 size = Vector2(38.75, 34.5)
 
-[node name="Kabel" type="Node2D"]
+[node name="Batrai" type="Node2D"]
 script = ExtResource("1_2yp0l")
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_056uk")]
@@ -19,5 +19,5 @@ shape = SubResource("RectangleShape2D_ij8ql")
 
 [node name="sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_h0xja")
-volume_db = -24.19
+volume_db = -15.0
 pitch_scale = 0.64

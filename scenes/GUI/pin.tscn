@@ -54,5 +54,42 @@ offset_bottom = -270.991
 texture_normal = ExtResource("4_06c7g")
 stretch_mode = 0
 
+[node name="A" type="Button" parent="."]
+layout_mode = 0
+offset_left = -213.0
+offset_top = -169.0
+offset_right = -147.0
+offset_bottom = -98.0
+
+[node name="A2" type="Button" parent="."]
+offset_left = -139.186
+offset_top = -169.397
+offset_right = -73.1859
+offset_bottom = -98.3969
+
+[node name="A3" type="Button" parent="."]
+offset_left = -66.1654
+offset_top = -168.603
+offset_right = -0.165405
+offset_bottom = -97.6031
+
+[node name="A4" type="Button" parent="."]
+offset_left = 6.45819
+offset_top = -168.603
+offset_right = 72.4582
+offset_bottom = -97.6031
+
+[node name="A5" type="Button" parent="."]
+offset_left = 80.3224
+offset_top = -167.765
+offset_right = 146.322
+offset_bottom = -96.765
+
+[node name="A6" type="Button" parent="."]
+offset_left = 153.955
+offset_top = -168.328
+offset_right = 219.955
+offset_bottom = -97.3282
+
 [connection signal="text_submitted" from="masukkan" to="." method="_on_masukkan_text_submitted"]
 [connection signal="pressed" from="silang" to="." method="_on_silang_pressed"]
