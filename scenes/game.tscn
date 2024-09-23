@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://d0u2krkq2c1av"]
+[gd_scene load_steps=29 format=3 uid="uid://d0u2krkq2c1av"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_styg6"]
 [ext_resource type="PackedScene" uid="uid://2o51htk5nq6w" path="res://scenes/manusia.tscn" id="2_gagws"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://biaeprhg1qbcp" path="res://assets/characters/objects/core.png" id="15_s74cs"]
 [ext_resource type="Script" path="res://scripts/core.gd" id="16_osdyt"]
 [ext_resource type="AudioStream" uid="uid://dgirre2f1ww8a" path="res://assets/audio/item.mp3" id="16_v3o0w"]
+[ext_resource type="PackedScene" uid="uid://bcuwf2tjehkeo" path="res://scenes/Pause.tscn" id="20_kyh4l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_46u1b"]
 radius = 22.0227
@@ -246,6 +247,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="gui_buku_biru" parent="CanvasLayer" instance=ExtResource("13_dby4e")]
 visible = false
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("20_kyh4l")]
 
 [connection signal="core_ambil" from="Core" to="Robot" method="_on_core_core_ambil"]
 [connection signal="batrai_ambil" from="Batrai" to="Robot" method="_on_batrai_diambil"]

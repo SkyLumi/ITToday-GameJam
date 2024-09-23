@@ -171,7 +171,7 @@ visible = false
 position = Vector2(0, -33.75)
 scale = Vector2(0.405558, 0.405558)
 
-[node name="PointLight2D2" type="PointLight2D" parent="."]
+[node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(3.8147e-06, -3.8147e-06)
 scale = Vector2(0.491071, 0.491071)
 energy = 0.45

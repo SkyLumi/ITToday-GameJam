@@ -5,6 +5,7 @@ extends Node2D
 
 func _ready() -> void:
 	var player = $Players
+	$Players/Robot/PointLight2D.hide()
 	player.position = Global.player_position
 	colorRect.visible = true
 	transisi.play("fade_in")
