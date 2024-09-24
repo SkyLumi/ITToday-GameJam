@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://wogvnn4pkju3"]
+[gd_scene load_steps=24 format=3 uid="uid://wogvnn4pkju3"]
 
 [ext_resource type="Texture2D" uid="uid://b8kly2ppj7aso" path="res://assets/background/map_3.png" id="1_16g13"]
 [ext_resource type="Script" path="res://scripts/puzzle_2.gd" id="1_c1k5w"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://scripts/papan.gd" id="6_gmtud"]
 [ext_resource type="Script" path="res://scripts/sudoku_check.gd" id="7_uk8aq"]
 [ext_resource type="PackedScene" uid="uid://c1i7m7qr2yrbk" path="res://scenes/tombol_lampu.tscn" id="7_xnqjx"]
+[ext_resource type="PackedScene" uid="uid://bcuwf2tjehkeo" path="res://scenes/Pause.tscn" id="9_f8g1f"]
 [ext_resource type="Script" path="res://scripts/pintu_puzzle_3.gd" id="11_po8b2"]
 [ext_resource type="Texture2D" uid="uid://vwss4nsr0phm" path="res://assets/tilesets/sekotak.png" id="12_47fh5"]
 
@@ -163,6 +164,9 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("9_f8g1f")]
+visible = false
 
 [node name="Sudoku" type="Node2D" parent="."]
 position = Vector2(575, 305)

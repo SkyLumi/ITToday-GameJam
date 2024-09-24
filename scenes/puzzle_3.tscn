@@ -1,15 +1,17 @@
-[gd_scene load_steps=34 format=3 uid="uid://dkqsr1k2qex3q"]
+[gd_scene load_steps=39 format=3 uid="uid://dkqsr1k2qex3q"]
 
 [ext_resource type="Script" path="res://scripts/puzzle_3.gd" id="1_bg1s0"]
 [ext_resource type="Texture2D" uid="uid://27xua1ix6h4n" path="res://assets/background/map_4.png" id="1_ej2uo"]
 [ext_resource type="Texture2D" uid="uid://vwss4nsr0phm" path="res://assets/tilesets/sekotak.png" id="3_53qrw"]
 [ext_resource type="PackedScene" uid="uid://dgiylk1w5nkt0" path="res://scenes/robot.tscn" id="4_3alm6"]
 [ext_resource type="Texture2D" uid="uid://ci0yiu76wdjs" path="res://assets/tilesets/kardus.png" id="4_jrc2u"]
-[ext_resource type="PackedScene" uid="uid://cb5b6fochyv6j" path="res://scenes/musuh/robot_right.tscn" id="6_0r5d3"]
+[ext_resource type="PackedScene" uid="uid://cb5b6fochyv6j" path="res://scenes/musuh/robotMusuh.tscn" id="6_0r5d3"]
 [ext_resource type="Script" path="res://scripts/kalah.gd" id="6_ibn84"]
 [ext_resource type="PackedScene" uid="uid://buarptsq5ekri" path="res://scenes/musuh/robot_back.tscn" id="7_3v0gw"]
 [ext_resource type="PackedScene" uid="uid://ynvnsi7q22x2" path="res://scenes/musuh/robot_left.tscn" id="8_1dknd"]
 [ext_resource type="PackedScene" uid="uid://datjc5pibxxka" path="res://scenes/musuh/robot_front.tscn" id="9_p7t7b"]
+[ext_resource type="PackedScene" uid="uid://bcuwf2tjehkeo" path="res://scenes/Pause.tscn" id="11_6g87v"]
+[ext_resource type="Script" path="res://scripts/path_follow_2d.gd" id="11_8ett3"]
 [ext_resource type="PackedScene" uid="uid://dngit0dfiw4du" path="res://interaction/interaction area/interaction_area.tscn" id="11_ihe3f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lycd1"]
@@ -62,6 +64,27 @@ size = Vector2(50, 612)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3xvu5"]
 size = Vector2(220, 313)
+
+[sub_resource type="Curve2D" id="Curve2D_m73e2"]
+bake_interval = 15.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 29, 0, 0, 0, 0, 0, 59, 0, 0, 0, 0, 0, 59, 98, 0, 0, 0, 0, -139, 98, 0, 0, 0, 0, -139, 0, 0, 0, 0, 0, 29, 0)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_hn2g6"]
+bake_interval = 24.01
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1061, 722, 0, 0, 0, 0, 899, 722, 0, 0, 0, 0, 899, 450, 0, 0, 0, 0, 1024, 450, 0, 0, 0, 0, 1026, 607, 0, 0, 0, 0, 1061, 607, 0, 0, 0, 0, 1061, 722)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_qvqr2"]
+bake_interval = 15.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1184, 286, 0, 0, 0, 0, 1184, 449, 0, 0, 0, 0, 1080, 449, 0, 0, 0, 0, 1080, 285, 0, 0, 0, 0, 1180, 286)
+}
+point_count = 5
 
 [sub_resource type="Animation" id="Animation_oh6da"]
 length = 0.001
@@ -247,12 +270,6 @@ position = Vector2(667, 1329)
 [node name="musuh" type="Node2D" parent="."]
 script = ExtResource("6_ibn84")
 
-[node name="robot1" parent="musuh" instance=ExtResource("6_0r5d3")]
-position = Vector2(838, 823)
-
-[node name="robot2" parent="musuh" instance=ExtResource("6_0r5d3")]
-position = Vector2(1057, 720)
-
 [node name="robot3" parent="musuh" instance=ExtResource("7_3v0gw")]
 position = Vector2(769, 518)
 
@@ -264,9 +281,6 @@ position = Vector2(1185, 287)
 
 [node name="robot6" parent="musuh" instance=ExtResource("9_p7t7b")]
 position = Vector2(637, 65)
-
-[node name="robot7" parent="musuh" instance=ExtResource("8_1dknd")]
-position = Vector2(775, 62)
 
 [node name="robot8" parent="musuh" instance=ExtResource("9_p7t7b")]
 position = Vector2(92, 271)
@@ -286,6 +300,32 @@ position = Vector2(139, 396)
 [node name="robot13" parent="musuh" instance=ExtResource("7_3v0gw")]
 position = Vector2(194, 396)
 
+[node name="Path2D" type="Path2D" parent="musuh"]
+position = Vector2(838, 823)
+curve = SubResource("Curve2D_m73e2")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="musuh/Path2D"]
+position = Vector2(59.4369, 96.2654)
+progress = 125.563
+rotates = false
+script = ExtResource("11_8ett3")
+
+[node name="robotMusuh" parent="musuh/Path2D/PathFollow2D" instance=ExtResource("6_0r5d3")]
+
+[node name="Path2D2" type="Path2D" parent="musuh"]
+curve = SubResource("Curve2D_hn2g6")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="musuh/Path2D2"]
+position = Vector2(952.783, 450)
+progress = 487.912
+rotates = false
+script = ExtResource("11_8ett3")
+
+[node name="robotMusuh" parent="musuh/Path2D2/PathFollow2D" instance=ExtResource("6_0r5d3")]
+
+[node name="Path2D3" type="Path2D" parent="musuh"]
+curve = SubResource("Curve2D_qvqr2")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Transition" type="AnimationPlayer" parent="CanvasLayer"]
@@ -303,6 +343,9 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("11_6g87v")]
+visible = false
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(330, 155)

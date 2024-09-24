@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://clskk6ymevqxr"]
+[gd_scene load_steps=28 format=3 uid="uid://clskk6ymevqxr"]
 
 [ext_resource type="Script" path="res://scripts/puzzle_1.gd" id="1_3tiqq"]
 [ext_resource type="Texture2D" uid="uid://csrgoax3b0yfd" path="res://assets/background/map_2.png" id="1_26oqt"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dhtemoeohbxjm" path="res://assets/tilesets/pintu.png" id="12_21nuq"]
 [ext_resource type="Script" path="res://scripts/pintu.gd" id="13_natr8"]
 [ext_resource type="Texture2D" uid="uid://b00en6lhmgn75" path="res://assets/tilesets/atap_map_2.png" id="16_bcj8f"]
+[ext_resource type="PackedScene" uid="uid://bcuwf2tjehkeo" path="res://scenes/Pause.tscn" id="16_omgim"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjl0o"]
 size = Vector2(23.5, 49.5)
@@ -204,6 +205,9 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("16_omgim")]
+visible = false
 
 [node name="AtapMap2" type="Sprite2D" parent="."]
 z_index = 2

@@ -36,6 +36,6 @@ func _on_dialog_selesai():
 	Global.player_jalan = true
 
 
-func _on_interaction_area_body_entered(body: Node2D) -> void:
+func _on_interaction_area_body_entered(_body: Node2D) -> void:
 	fade_in()
 	get_tree().change_scene_to_packed(cutscene)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ct7rab6qc8lls"]
+[gd_scene load_steps=19 format=3 uid="uid://ct7rab6qc8lls"]
 
 [ext_resource type="Texture2D" uid="uid://dh086ln2w5hni" path="res://assets/background/MAP_1.png" id="1_63xx6"]
 [ext_resource type="Script" path="res://scripts/lobby.gd" id="1_78nlk"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c15u0m0pgwwo6" path="res://scenes/GUI/nyambungKabel.tscn" id="7_24wvt"]
 [ext_resource type="Script" path="res://scripts/buku_biru.gd" id="9_yb2lf"]
 [ext_resource type="PackedScene" uid="uid://gk7i1xnuju4e" path="res://scenes/GUI/gui_buku_biru.tscn" id="9_yme74"]
+[ext_resource type="PackedScene" uid="uid://bcuwf2tjehkeo" path="res://scenes/Pause.tscn" id="10_v3c6v"]
 [ext_resource type="AudioStream" uid="uid://ccu5w5q5ttcnr" path="res://assets/audio/book.mp3" id="11_poabx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lt744"]
@@ -154,6 +155,13 @@ metadata/_edit_use_anchors_ = true
 
 [node name="gui_buku_biru" parent="CanvasLayer" instance=ExtResource("9_yme74")]
 visible = false
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("10_v3c6v")]
+visible = false
+offset_left = 10.8734
+offset_top = -144.051
+offset_right = 10.8734
+offset_bottom = -144.051
 
 [node name="BukuBiru" type="Node2D" parent="."]
 position = Vector2(261, 10)

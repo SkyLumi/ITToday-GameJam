@@ -249,6 +249,7 @@ metadata/_edit_use_anchors_ = true
 visible = false
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("20_kyh4l")]
+visible = false
 
 [connection signal="core_ambil" from="Core" to="Robot" method="_on_core_core_ambil"]
 [connection signal="batrai_ambil" from="Batrai" to="Robot" method="_on_batrai_diambil"]
