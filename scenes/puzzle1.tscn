@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://clskk6ymevqxr"]
+[gd_scene load_steps=29 format=3 uid="uid://clskk6ymevqxr"]
 
 [ext_resource type="Script" path="res://scripts/puzzle_1.gd" id="1_3tiqq"]
 [ext_resource type="Texture2D" uid="uid://csrgoax3b0yfd" path="res://assets/background/map_2.png" id="1_26oqt"]
@@ -19,7 +19,10 @@
 [ext_resource type="PackedScene" uid="uid://bcuwf2tjehkeo" path="res://scenes/Pause.tscn" id="16_omgim"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjl0o"]
-size = Vector2(23.5, 49.5)
+size = Vector2(25.9686, 49.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_olclc"]
+size = Vector2(26.6129, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrm6f"]
 size = Vector2(26, 117)
@@ -28,7 +31,7 @@ size = Vector2(26, 117)
 radius = 12.5597
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xejbj"]
-size = Vector2(68, 19)
+size = Vector2(23.1758, 19)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vcydt"]
 radius = 13.5818
@@ -98,24 +101,25 @@ texture = ExtResource("1_26oqt")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(504, 620, 586, 620, 586, 377, 809, 377, 809, 422, 879, 422, 879, 324, 585, 324, 585, 247, 814, 247, 814, 190, 584, 190, 584, 32, 644, 32, 644, 174, 987, 174, 987, -110, 1800, -110, 1800, -233, 915, -233, 915, 109, 701, 109, 701, 32, 776, 32, 775, -229, 508, -228, 508, -252, 588, -252, 588, -342, 390, -341, 390, -251, 443, -251, 443, -239, 329, -239, 329, -370, 1326, -370, 1326, -435, 273, -434, 272, -336, -13, -336, -13, -275, 272, -275, 272, -186, 444, -186, 443, -128, 387, -128, 388, -65, 504, -65, 504, 109, 282, 109, 282, 0, 230, 0, 230, 165, 504, 165, 503, 387, 393, 387, 393, 455, 504, 455, 504, 625, 479, 625, 336, 470, 402, 282, 203, 199, 159, 7, 285, -79, 160, -216, -87, -264, -23, -393, 228, -445, 652, -479, 1408, -456, 1865, -242, 1745, 175, 994, 283, 817, 597, 511, 631)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(508, -128, 508, -166, 708, -166, 708, -35, 585, -35, 585, -129)
-
 [node name="Dinding2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1347.5, -128.75)
+position = Vector2(1056.13, 132.019)
 shape = SubResource("RectangleShape2D_gjl0o")
 
 [node name="Dinding1" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1347.25, -218)
+position = Vector2(1057.6, 43.1281)
 shape = SubResource("RectangleShape2D_gjl0o")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(806.411, 212.505, 805.59, 131.493, 1191.75, 131.25, 1193.13, 28.1331, 594.963, 28.8623, 596.026, 211.91, 741.126, 212.282, 740.857, 234.625, 579.036, 234.772, 578.5, -50, 1214.13, -51.904, 1206.57, 158.268, 831.942, 159.458, 833.625, 235.75, 764.826, 235.131, 764.828, 212.637)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(753.196, 245.055)
+shape = SubResource("RectangleShape2D_olclc")
 
 [node name="Player" parent="." instance=ExtResource("5_ymway")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(833, 385)
+position = Vector2(734.712, 182.06)
 
 [node name="next_area" type="Node2D" parent="."]
 position = Vector2(1785.26, -172)
@@ -131,10 +135,6 @@ shape = SubResource("RectangleShape2D_wrm6f")
 [node name="BukuHijau" parent="." instance=ExtResource("5_qlr0g")]
 position = Vector2(1287, -401)
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-position = Vector2(4, 2)
-color = Color(0.113725, 0.113725, 0.113725, 1)
-
 [node name="Flashdisk" type="Sprite2D" parent="."]
 position = Vector2(544, 595)
 texture = ExtResource("6_44oev")
@@ -147,13 +147,14 @@ action_name = ""
 shape = SubResource("CircleShape2D_vvmed")
 
 [node name="PintuLobby" type="Node2D" parent="."]
-position = Vector2(844, 411)
+position = Vector2(753.081, 225.393)
 script = ExtResource("8_sa6em")
 
 [node name="InteractionArea" parent="PintuLobby" instance=ExtResource("7_c04ka")]
 action_name = "Kembali"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PintuLobby/InteractionArea"]
+position = Vector2(-0.048584, 0)
 shape = SubResource("RectangleShape2D_xejbj")
 
 [node name="tombol_pin" type="Node2D" parent="."]
@@ -164,6 +165,7 @@ script = ExtResource("11_rkho8")
 action_name = "lihat"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tombol_pin/InteractionArea"]
+position = Vector2(-292.597, 260.804)
 shape = SubResource("CircleShape2D_vcydt")
 
 [node name="morse" type="AudioStreamPlayer2D" parent="tombol_pin"]
@@ -172,7 +174,7 @@ stream = ExtResource("12_4agfy")
 pitch_scale = 0.73
 
 [node name="Pintu" type="Sprite2D" parent="."]
-position = Vector2(1340.46, -173.601)
+position = Vector2(1049.46, 87.6491)
 texture = ExtResource("12_21nuq")
 script = ExtResource("13_natr8")
 
@@ -211,7 +213,7 @@ visible = false
 
 [node name="AtapMap2" type="Sprite2D" parent="."]
 z_index = 2
-position = Vector2(1347.38, -173.75)
+position = Vector2(1056.56, 87.3267)
 texture = ExtResource("16_bcj8f")
 
 [connection signal="flashdisk_diambil" from="Flashdisk" to="tombol_pin" method="_on_flashdisk_flashdisk_diambil"]

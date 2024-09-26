@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://cb5b6fochyv6j" path="res://scenes/musuh/robotMusuh.tscn" id="6_0r5d3"]
 [ext_resource type="Script" path="res://scripts/kalah.gd" id="6_ibn84"]
 [ext_resource type="PackedScene" uid="uid://buarptsq5ekri" path="res://scenes/musuh/robot_back.tscn" id="7_3v0gw"]
-[ext_resource type="PackedScene" uid="uid://ynvnsi7q22x2" path="res://scenes/musuh/robot_left.tscn" id="8_1dknd"]
 [ext_resource type="PackedScene" uid="uid://datjc5pibxxka" path="res://scenes/musuh/robot_front.tscn" id="9_p7t7b"]
 [ext_resource type="PackedScene" uid="uid://bcuwf2tjehkeo" path="res://scenes/Pause.tscn" id="11_6g87v"]
 [ext_resource type="Script" path="res://scripts/path_follow_2d.gd" id="11_8ett3"]
@@ -82,7 +81,13 @@ point_count = 7
 [sub_resource type="Curve2D" id="Curve2D_qvqr2"]
 bake_interval = 15.0
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1184, 286, 0, 0, 0, 0, 1184, 449, 0, 0, 0, 0, 1080, 449, 0, 0, 0, 0, 1080, 285, 0, 0, 0, 0, 1180, 286)
+"points": PackedVector2Array(0, 0, 0, 0, 1184, 286, 0, 0, 0, 0, 1184, 449, 0, 0, 0, 0, 1080, 449, 0, 0, 0, 0, 1080, 285, 0, 0, 0, 0, 1184, 285)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_dftxl"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 332, 404, 0, 0, 0, 0, 770, 404, 0, 0, 0, 0, 769, 513, 0, 0, 0, 0, 331, 513, 0, 0, 0, 0, 331, 404)
 }
 point_count = 5
 
@@ -246,9 +251,9 @@ shape = SubResource("RectangleShape2D_3xvu5")
 [node name="Sekotak" type="Sprite2D" parent="."]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(706.135, 1070.15)
+position = Vector2(707, 1079)
 texture = ExtResource("3_53qrw")
-offset = Vector2(0, -37.015)
+offset = Vector2(0, -45.51)
 
 [node name="Kardus" type="Sprite2D" parent="."]
 z_index = 1
@@ -270,35 +275,26 @@ position = Vector2(667, 1329)
 [node name="musuh" type="Node2D" parent="."]
 script = ExtResource("6_ibn84")
 
-[node name="robot3" parent="musuh" instance=ExtResource("7_3v0gw")]
-position = Vector2(769, 518)
-
-[node name="robot4" parent="musuh" instance=ExtResource("6_0r5d3")]
-position = Vector2(464, 399)
-
-[node name="robot5" parent="musuh" instance=ExtResource("8_1dknd")]
-position = Vector2(1185, 287)
-
 [node name="robot6" parent="musuh" instance=ExtResource("9_p7t7b")]
 position = Vector2(637, 65)
 
 [node name="robot8" parent="musuh" instance=ExtResource("9_p7t7b")]
-position = Vector2(92, 271)
+position = Vector2(87, 270)
 
 [node name="robot9" parent="musuh" instance=ExtResource("9_p7t7b")]
-position = Vector2(142, 271)
+position = Vector2(147, 271)
 
 [node name="robot10" parent="musuh" instance=ExtResource("9_p7t7b")]
-position = Vector2(193, 271)
+position = Vector2(201, 271)
 
 [node name="robot11" parent="musuh" instance=ExtResource("7_3v0gw")]
-position = Vector2(91, 396)
+position = Vector2(86, 395)
 
 [node name="robot12" parent="musuh" instance=ExtResource("7_3v0gw")]
-position = Vector2(139, 396)
+position = Vector2(143, 395)
 
 [node name="robot13" parent="musuh" instance=ExtResource("7_3v0gw")]
-position = Vector2(194, 396)
+position = Vector2(199, 395)
 
 [node name="Path2D" type="Path2D" parent="musuh"]
 position = Vector2(838, 823)
@@ -316,7 +312,7 @@ script = ExtResource("11_8ett3")
 curve = SubResource("Curve2D_hn2g6")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="musuh/Path2D2"]
-position = Vector2(952.783, 450)
+position = Vector2(952.784, 450)
 progress = 487.912
 rotates = false
 script = ExtResource("11_8ett3")
@@ -325,6 +321,27 @@ script = ExtResource("11_8ett3")
 
 [node name="Path2D3" type="Path2D" parent="musuh"]
 curve = SubResource("Curve2D_qvqr2")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="musuh/Path2D3"]
+position = Vector2(1184, 286)
+rotation = 1.5708
+rotates = false
+script = ExtResource("11_8ett3")
+
+[node name="robotMusuh" parent="musuh/Path2D3/PathFollow2D" instance=ExtResource("6_0r5d3")]
+
+[node name="Path2D4" type="Path2D" parent="musuh"]
+curve = SubResource("Curve2D_dftxl")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="musuh/Path2D4"]
+position = Vector2(332, 404)
+rotates = false
+script = ExtResource("11_8ett3")
+
+[node name="robotMusuh" parent="musuh/Path2D4/PathFollow2D" instance=ExtResource("6_0r5d3")]
+
+[node name="robotMusuh" parent="musuh" instance=ExtResource("6_0r5d3")]
+position = Vector2(719, -23)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
