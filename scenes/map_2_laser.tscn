@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://b8lkjtprel5go"]
+
+[ext_resource type="Script" path="res://scripts/map_2_laser.gd" id="1_8oxlc"]
+[ext_resource type="Texture2D" uid="uid://cpogql3m367im" path="res://assets/background/map_2.laser.png" id="1_s23d3"]
+[ext_resource type="PackedScene" uid="uid://bclymq4a2o10s" path="res://scenes/Players.tscn" id="2_lv327"]
+[ext_resource type="Script" path="res://scripts/pintu_laser.gd" id="4_3adhk"]
+[ext_resource type="PackedScene" uid="uid://dngit0dfiw4du" path="res://interaction/interaction area/interaction_area.tscn" id="5_eh1af"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42gf6"]
+size = Vector2(28.0945, 18.3602)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n22o3"]
+size = Vector2(19.7807, 23.0688)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5pv17"]
+size = Vector2(23.1758, 19)
+
+[node name="map2_laser" type="Node2D"]
+script = ExtResource("1_8oxlc")
+
+[node name="Map2_laser" type="Sprite2D" parent="."]
+position = Vector2(923.323, 532.034)
+texture = ExtResource("1_s23d3")
+
+[node name="dinding" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="dinding"]
+polygon = PackedVector2Array(851.203, 501.473, 924.119, 502.307, 924.286, 518.992, 995.199, 518.492, 994.886, 619.773, 928.241, 619.597, 928.064, 640.28, 1013.45, 639.926, 1013.5, 468.82, 841.206, 466.616, 840.25, 646.5, 904, 644.25, 904.5, 619.625, 851.5, 619.875)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dinding"]
+position = Vector2(917.453, 649.32)
+shape = SubResource("RectangleShape2D_42gf6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="dinding"]
+position = Vector2(873.75, 519.724)
+shape = SubResource("RectangleShape2D_n22o3")
+
+[node name="Node2D" parent="." instance=ExtResource("2_lv327")]
+position = Vector2(906.732, 604.881)
+
+[node name="PintuBalik" type="Node2D" parent="."]
+position = Vector2(916.858, 631.073)
+script = ExtResource("4_3adhk")
+posisi = Vector2(800, 30)
+
+[node name="InteractionArea" parent="PintuBalik" instance=ExtResource("5_eh1af")]
+action_name = "Kembali"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PintuBalik/InteractionArea"]
+position = Vector2(-0.048584, 0)
+shape = SubResource("RectangleShape2D_5pv17")

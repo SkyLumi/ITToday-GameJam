@@ -1,0 +1,73 @@
+[gd_scene load_steps=13 format=3 uid="uid://d0d00vbmnh6qd"]
+
+[ext_resource type="Texture2D" uid="uid://bwnqmndl4btrs" path="res://assets/background/map_2._kuncigede.png" id="1_co4b7"]
+[ext_resource type="Script" path="res://scripts/map_2_terminus.gd" id="1_klwwf"]
+[ext_resource type="Texture2D" uid="uid://b6is0wgcu0e3k" path="res://assets/tilesets/tombol.png" id="2_sjnjw"]
+[ext_resource type="Script" path="res://scripts/path_follow_2d.gd" id="4_4nuu3"]
+[ext_resource type="PackedScene" uid="uid://cb5b6fochyv6j" path="res://scenes/musuh/robotMusuh.tscn" id="4_335n3"]
+[ext_resource type="PackedScene" uid="uid://dngit0dfiw4du" path="res://interaction/interaction area/interaction_area.tscn" id="4_i35rx"]
+[ext_resource type="Script" path="res://scripts/turnoff.gd" id="4_vwki7"]
+[ext_resource type="PackedScene" uid="uid://bclymq4a2o10s" path="res://scenes/Players.tscn" id="5_gdi6w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5d3wc"]
+size = Vector2(26.1631, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75pci"]
+size = Vector2(20, 22.8591)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uqb02"]
+radius = 15.9968
+
+[sub_resource type="Curve2D" id="Curve2D_6b7el"]
+bake_interval = 15.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 864, 519, 0, 0, 0, 0, 1089, 519, 0, 0, 0, 0, 1089, 563, 0, 0, 0, 0, 864, 563, 0, 0, 0, 0, 864, 519)
+}
+point_count = 5
+
+[node name="map_2_terminus" type="Node2D"]
+script = ExtResource("1_klwwf")
+
+[node name="Map2_Kuncigede" type="Sprite2D" parent="."]
+position = Vector2(979.01, 495.63)
+texture = ExtResource("1_co4b7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(963.118, 583.83, 963.118, 603.43, 811.919, 604.668, 812.588, 435.436, 1144.58, 435.986, 1144.26, 605.219, 987.008, 604.9, 987.008, 582.731, 1122.57, 582.946, 1122.14, 465.05, 834.792, 465.05, 835.13, 583.446)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(974.741, 613.525)
+shape = SubResource("RectangleShape2D_5d3wc")
+
+[node name="Tombol" type="Sprite2D" parent="."]
+position = Vector2(869.217, 490.304)
+texture = ExtResource("2_sjnjw")
+script = ExtResource("4_vwki7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tombol"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tombol/StaticBody2D"]
+position = Vector2(0, 0.110352)
+shape = SubResource("RectangleShape2D_75pci")
+
+[node name="InteractionArea" parent="Tombol" instance=ExtResource("4_i35rx")]
+action_name = "Tekan"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tombol/InteractionArea"]
+shape = SubResource("CircleShape2D_uqb02")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_6b7el")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(864, 519)
+rotates = false
+script = ExtResource("4_4nuu3")
+speed = 0.1
+
+[node name="robotMusuh" parent="Path2D/PathFollow2D" instance=ExtResource("4_335n3")]
+
+[node name="Players" parent="." instance=ExtResource("5_gdi6w")]
+position = Vector2(958.607, 569.004)

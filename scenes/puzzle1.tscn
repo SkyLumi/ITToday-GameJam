@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://clskk6ymevqxr"]
+[gd_scene load_steps=31 format=3 uid="uid://clskk6ymevqxr"]
 
 [ext_resource type="Script" path="res://scripts/puzzle_1.gd" id="1_3tiqq"]
 [ext_resource type="Texture2D" uid="uid://csrgoax3b0yfd" path="res://assets/background/map_2.png" id="1_26oqt"]
@@ -17,6 +17,8 @@
 [ext_resource type="Script" path="res://scripts/pintu.gd" id="13_natr8"]
 [ext_resource type="Texture2D" uid="uid://b00en6lhmgn75" path="res://assets/tilesets/atap_map_2.png" id="16_bcj8f"]
 [ext_resource type="PackedScene" uid="uid://bcuwf2tjehkeo" path="res://scenes/Pause.tscn" id="16_omgim"]
+[ext_resource type="PackedScene" uid="uid://8tan077l4pyc" path="res://scenes/Object/pintumap_2.tscn" id="18_xc4om"]
+[ext_resource type="PackedScene" uid="uid://b8lkjtprel5go" path="res://scenes/map_2_laser.tscn" id="19_6mqqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjl0o"]
 size = Vector2(25.9686, 49.5)
@@ -99,20 +101,20 @@ script = ExtResource("1_3tiqq")
 position = Vector2(894, 93)
 texture = ExtResource("1_26oqt")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="dinding" type="StaticBody2D" parent="."]
 
-[node name="Dinding2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Dinding2" type="CollisionShape2D" parent="dinding"]
 position = Vector2(1056.13, 132.019)
 shape = SubResource("RectangleShape2D_gjl0o")
 
-[node name="Dinding1" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Dinding1" type="CollisionShape2D" parent="dinding"]
 position = Vector2(1057.6, 43.1281)
 shape = SubResource("RectangleShape2D_gjl0o")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="dinding"]
 polygon = PackedVector2Array(806.411, 212.505, 805.59, 131.493, 1191.75, 131.25, 1193.13, 28.1331, 594.963, 28.8623, 596.026, 211.91, 741.126, 212.282, 740.857, 234.625, 579.036, 234.772, 578.5, -50, 1214.13, -51.904, 1206.57, 158.268, 831.942, 159.458, 833.625, 235.75, 764.826, 235.131, 764.828, 212.637)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dinding"]
 position = Vector2(753.196, 245.055)
 shape = SubResource("RectangleShape2D_olclc")
 
@@ -122,7 +124,7 @@ y_sort_enabled = true
 position = Vector2(734.712, 182.06)
 
 [node name="next_area" type="Node2D" parent="."]
-position = Vector2(1785.26, -172)
+position = Vector2(1179.81, 83.6325)
 script = ExtResource("6_1qlcs")
 
 [node name="InteractionArea" parent="next_area" instance=ExtResource("7_c04ka")]
@@ -215,6 +217,10 @@ visible = false
 z_index = 2
 position = Vector2(1056.56, 87.3267)
 texture = ExtResource("16_bcj8f")
+
+[node name="Pintumap2" parent="." instance=ExtResource("18_xc4om")]
+position = Vector2(811.052, 12.0208)
+map = ExtResource("19_6mqqv")
 
 [connection signal="flashdisk_diambil" from="Flashdisk" to="tombol_pin" method="_on_flashdisk_flashdisk_diambil"]
 [connection signal="body_entered" from="Flashdisk/InteractionArea" to="Flashdisk" method="_on_interaction_area_body_entered"]

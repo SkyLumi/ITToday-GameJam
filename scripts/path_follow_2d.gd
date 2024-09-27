@@ -1,14 +1,14 @@
 extends PathFollow2D
 
 @onready var posisi_terakhir = position
-var speed = 0.15
+@export var speed = 0.15
+var stop = false
 
 func _process(delta: float) -> void:
-	if Global.player_jalan:
+	if Global.player_jalan or !stop:
 		progress_ratio += delta * speed
-
 	var movement_vector = position - posisi_terakhir
-	
+
 	if movement_vector.y > 0:
 		$robotMusuh/AnimatedSprite2D.animation = "depan"
 		$robotMusuh/Node2D.rotation = 90
