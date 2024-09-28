@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8lkjtprel5go"]
+[gd_scene load_steps=10 format=3 uid="uid://b8lkjtprel5go"]
 
 [ext_resource type="Script" path="res://scripts/map_2_laser.gd" id="1_8oxlc"]
 [ext_resource type="Texture2D" uid="uid://cpogql3m367im" path="res://assets/background/map_2.laser.png" id="1_s23d3"]
@@ -14,6 +14,9 @@ size = Vector2(19.7807, 23.0688)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5pv17"]
 size = Vector2(23.1758, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8p7uf"]
+size = Vector2(143.66, 69.8457)
 
 [node name="map2_laser" type="Node2D"]
 script = ExtResource("1_8oxlc")
@@ -49,3 +52,12 @@ action_name = "Kembali"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PintuBalik/InteractionArea"]
 position = Vector2(-0.048584, 0)
 shape = SubResource("RectangleShape2D_5pv17")
+
+[node name="Laser" type="Node2D" parent="."]
+
+[node name="InteractionArea" parent="Laser" instance=ExtResource("5_eh1af")]
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Laser/InteractionArea"]
+position = Vector2(923.75, 566.516)
+shape = SubResource("RectangleShape2D_8p7uf")

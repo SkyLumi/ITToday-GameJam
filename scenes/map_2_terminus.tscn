@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d0d00vbmnh6qd"]
+[gd_scene load_steps=17 format=3 uid="uid://d0d00vbmnh6qd"]
 
 [ext_resource type="Texture2D" uid="uid://bwnqmndl4btrs" path="res://assets/background/map_2._kuncigede.png" id="1_co4b7"]
 [ext_resource type="Script" path="res://scripts/map_2_terminus.gd" id="1_klwwf"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://dngit0dfiw4du" path="res://interaction/interaction area/interaction_area.tscn" id="4_i35rx"]
 [ext_resource type="Script" path="res://scripts/turnoff.gd" id="4_vwki7"]
 [ext_resource type="PackedScene" uid="uid://bclymq4a2o10s" path="res://scenes/Players.tscn" id="5_gdi6w"]
+[ext_resource type="Texture2D" uid="uid://dish3mdp7xn83" path="res://assets/tilesets/terminus mati.png" id="9_k4fx0"]
+[ext_resource type="FontFile" uid="uid://d2h84huewt2ny" path="res://Font/SolusV2-Regular.ttf" id="10_xge44"]
+[ext_resource type="Script" path="res://scripts/terminus_mati.gd" id="10_ygdwt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5d3wc"]
 size = Vector2(26.1631, 20)
@@ -24,6 +27,9 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 864, 519, 0, 0, 0, 0, 1089, 519, 0, 0, 0, 0, 1089, 563, 0, 0, 0, 0, 864, 563, 0, 0, 0, 0, 864, 519)
 }
 point_count = 5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t4e3o"]
+radius = 13.6857
 
 [node name="map_2_terminus" type="Node2D"]
 script = ExtResource("1_klwwf")
@@ -71,3 +77,33 @@ speed = 0.1
 
 [node name="Players" parent="." instance=ExtResource("5_gdi6w")]
 position = Vector2(958.607, 569.004)
+
+[node name="TerminusMati" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1170.77, 416.977)
+texture = ExtResource("9_k4fx0")
+script = ExtResource("10_ygdwt")
+
+[node name="InteractionArea" parent="TerminusMati" instance=ExtResource("4_i35rx")]
+action_name = "Ambil"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TerminusMati/InteractionArea"]
+shape = SubResource("CircleShape2D_t4e3o")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 19.0
+offset_top = 30.0
+offset_right = 228.0
+offset_bottom = 430.0
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("10_xge44")
+theme_override_font_sizes/font_size = 400
+text = "Kamu mendapatkan Flashdisk"
+
+[node name="Timer" type="Timer" parent="CanvasLayer"]
+wait_time = 2.0
+
+[connection signal="timeout" from="CanvasLayer/Timer" to="TerminusMati" method="_on_timer_timeout"]

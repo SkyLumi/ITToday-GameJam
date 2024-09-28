@@ -2,10 +2,9 @@ extends PathFollow2D
 
 @onready var posisi_terakhir = position
 @export var speed = 0.15
-var stop = false
 
 func _process(delta: float) -> void:
-	if Global.player_jalan or !stop:
+	if Global.player_jalan:
 		progress_ratio += delta * speed
 	var movement_vector = position - posisi_terakhir
 

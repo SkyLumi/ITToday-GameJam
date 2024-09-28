@@ -14,7 +14,7 @@ func _ready():
 	
 func _on_interact():
 	if Global.poster_removed_status:
-		Global.player_position = Vector2(833,385)
+		Global.player_position = Vector2(734,182)
 		colorRect.visible = true
 		transisi.play("fade_out")
 		await transisi.animation_finished
